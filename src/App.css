@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+}
+.mapboxgl-canvas {
+  position: fixed !important;
+  height: 100% !important;
+}
+
