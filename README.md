@@ -4,7 +4,11 @@
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Title of project goes here
+![MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)
+![React](https://img.shields.io/badge/React-v16.9.0-blue.svg)
+![Code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+
+# 1️⃣ Crime Statistics For Travelers
 
 1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
 
@@ -12,7 +16,7 @@
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
+|                                       [Bryce A. Soghigian](https://github.com/Bryce-Soghigian)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
@@ -33,9 +37,9 @@
 
 ## Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
-
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+1️⃣ [Trello Board](https://trello.com/b/d9Ut99fr/labs-16-crime-statistics-for-travelers)
+-insert an image of the trello here
+1️⃣ [Product Canvas](https://www.notion.so/Crime-Statistics-for-Travelers-a7e69847024d4cdc85aaf85cb413df71)
 
 1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
 
@@ -58,14 +62,14 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### ReactJS
 
 🚫 Why did you choose this framework?
 
--    point one
--    point two
--    point three
--    point four
+-    We chose React because everyone on the team knows it and we want to make use of the vast amount of npm packages built just for react.
+-    React JS has a really great ways to manage component state. Our team is a huge fan of hooks and the power of Context Api(which is built in the box for react)
+-  There is this styling library called Chakra.UI which works really well for our UX vision that is really compatible with react
+
 
 🚫List the rest of the front end features and libraries in the same format as the framework above.
 
