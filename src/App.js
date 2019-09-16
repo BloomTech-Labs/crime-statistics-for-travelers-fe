@@ -6,6 +6,7 @@ import MapContainer from './Components/Map/MapContainer';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Navbar from './Components/NavBar/Navbar'
+import OurMap from './Components/Map/OurMap';
 
 export default function App() {
 //Styles
@@ -34,12 +35,11 @@ useEffect(() => {
         <NavContainer>
         <Navbar /> 
         </NavContainer>
-         <MapboxContainer>
+        <OurMap/>
+         {/* <MapboxContainer>
          <MapContainer />
-         </MapboxContainer>
+         </MapboxContainer> */}
         
-        <Route path="/login"  component={Login}/>
-        <Route path="/signup" component={Signup}/>  
       </TokenContext.Provider>
     </div>
   )

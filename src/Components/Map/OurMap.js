@@ -11,14 +11,14 @@ var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 //Public mapbox token used in api documentation. This key is available to everyone.
 mapboxgl.accessToken ='pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
 
-const styledMap = styled.div`
-  @media(max-width: 600px){
-    border: 5px dashed red;
-  }
+// const styledMap = styled.div`
+//   @media(max-width: 600px){
+//     border: 5px dashed red;
+//   }
 
-`
+// `
 
-class Map extends Component {
+class OurMap extends Component {
     constructor(props) {
         super(props);
         //Within state define your map center
@@ -81,4 +81,4 @@ class Map extends Component {
   }
 }
 
-export default Map; 
+export default OurMap; 

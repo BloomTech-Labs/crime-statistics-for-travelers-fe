@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
-
+import {Link,Route} from 'react-router-dom';
+import OurMap from '../Map/OurMap';
+import MapContainer from '../Map/MapContainer'
+import Login from '../Login/Login';
 const NavbarContainer = styled.header`
 display:flex;
 justify-content:flex-start;
@@ -9,26 +12,35 @@ align-items:center;
   width: 100%;
   background-color:#1E2F40;
 `
-const NavItem = styled.div`
+const NavItem = styled(Link)`
 text-decoration:none;
 margin:5px;
 color:whitesmoke;
+:hover{
+  color:78c6e6;
+}
 `
 
 const Navbar = () => {
   return (
+    <div>
     <NavbarContainer>
-    <NavItem>
-      <a>Login</a>
-      </NavItem>
-      <NavItem>
-      <a>About the data</a>
+    <NavItem to="/" component={OurMap}>
+      Map
     </NavItem>
-    <NavItem>
-      <a>Who we serve</a>
+    <NavItem to="/Login" component={Login}>
+      Login
+      </NavItem>
+      <NavItem to="/data">
+      About the data
     </NavItem>
    
+   
     </NavbarContainer>
+    <Route exact path ="/" />
+    <Route exact path = 'data'/>
+    <Route exact path ="Login" render={Login} />
+    </div>
   )
 }
 
