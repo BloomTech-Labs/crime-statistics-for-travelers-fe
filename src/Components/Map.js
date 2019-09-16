@@ -22,8 +22,8 @@ class Map extends Component {
       componentDidMount() {
         const { lng, lat, zoom } = this.state;
         const bounds = [
-            [-130, 22], // Southwest coordinates
-[-63, 50] 
+            [-170, 9], // Southwest coordinates
+[-24, 75] 
         ]
 
         
