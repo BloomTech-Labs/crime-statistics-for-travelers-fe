@@ -17,10 +17,9 @@ return (
   
     <div>
         <TokenContext.Provider value={{token, setToken}}>
-          <Map/>
-          <Route exact path="/"/>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path='/signup' component={Signup}/>  
+          <Route exact path="/" component={Map}/>
+          <Route path="/login" component={Login}/>
+          <Route path='/signup' component={Signup}/>  
         </TokenContext.Provider>
     </div>
     )
