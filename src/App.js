@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import {TokenContext} from './Components/Context/Contexts';
 import {Route,Link} from 'react-router-dom';
-import Map from './Components/Map';
+import Map from './Components/Map/Map';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 
 export default function App() {
+//Gets Token from local storage.
 const [token,setToken] = useState(false);
 useEffect(() => {
     setToken(localStorage.getItem("token"));
@@ -13,12 +14,12 @@ useEffect(() => {
   }, [token]); 
 
 
-return (
+  return ( 
     <div>
       <TokenContext.Provider value={{token, setToken}}>
         <Route exact path="/" component={Map}/>
-        <Route exact path="/login" component={Login}/>
-        <Route exact path='/signup' component={Signup}/>  
+        <Route path="/login"  component={Login}/>
+        <Route path="/signup" component={Signup}/>  
       </TokenContext.Provider>
     </div>
   )
