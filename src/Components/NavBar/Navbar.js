@@ -10,6 +10,7 @@ align-items:center;
   background-color:#1E2F40;
 `
 const NavItem = styled.div`
+text-decoration:none;
 margin:5px;
 color:whitesmoke;
 `
@@ -18,12 +19,14 @@ const Navbar = () => {
   return (
     <NavbarContainer>
     <NavItem>
-      <p>Hello</p>
+      <a>Login</a>
+      </NavItem>
+      <NavItem>
+      <a>About the data</a>
     </NavItem>
     <NavItem>
-      <p>login</p>
-      </NavItem>
-
+      <a>Who we serve</a>
+    </NavItem>
    
     </NavbarContainer>
   )
