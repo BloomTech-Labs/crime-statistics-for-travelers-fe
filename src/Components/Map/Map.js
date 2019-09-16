@@ -6,19 +6,20 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
 
-
+//Public mapbox token used in api documentation. This key is available to everyone.
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
 
 class Map extends Component {
     constructor(props) {
         super(props);
+        //Within state define your map center
         this.state = {
           lng: 5,
           lat: 34,
           zoom: 1.5
         };
       }
-    
+    //Setting bounds in our mount allows our map to exlusively show only the united states.
       componentDidMount() {
         const { lng, lat, zoom } = this.state;
         const bounds = [
@@ -26,16 +27,16 @@ class Map extends Component {
 [-63, 50] 
         ]
 
-        
+        //Generating our map
         const map = new mapboxgl.Map({
           container: this.mapContainer,
-          style: 'mapbox://styles/bsoghigian/ck0eubu3v0wzj1cp3eu3khs2e',
-          center: [lng, lat],
-          zoom:zoom,
-          maxBounds: bounds
+          style: 'mapbox://styles/bsoghigian/ck0eubu3v0wzj1cp3eu3khs2e',//Dynamic Style URL for our map style
+          center: [lng, lat],//Center of where the mapbox map 
+          zoom:zoom,//State value that allows you to set a default application zoom.
+          maxBounds: bounds//it takes the SW coordinates and the NE coorinates and sets teh map in place
         });
         map.addControl(new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
+            accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
             mapboxgl: mapboxgl
             }));
     
@@ -51,7 +52,7 @@ class Map extends Component {
       }
     
       render() {
-        const { lng, lat, zoom } = this.state;
+        const { lng, lat, zoom } = this.state;//Deconstucting your state object.
     
         return (
           <div>
