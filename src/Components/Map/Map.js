@@ -2,12 +2,20 @@ import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import styled from 'styled-components';
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
 
 //Public mapbox token used in api documentation. This key is available to everyone.
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
+
+const styledMap = styled.div`
+  @media(max-width: 600px){
+    border: 5px dashed red;
+  }
+
+`
 
 class Map extends Component {
     constructor(props) {
@@ -24,7 +32,7 @@ class Map extends Component {
         const { lng, lat, zoom } = this.state;
         const bounds = [
             [-170, 9], // Southwest coordinates
-[-24, 75] 
+            [-24, 75] 
         ]
 
         //Generating our map
@@ -45,7 +53,7 @@ class Map extends Component {
         // Add zoom and rotation controls to the map.
         map.addControl(new mapboxgl.NavigationControl());
 
-        
+
         map.on('move', () => {
           const { lng, lat } = map.getCenter();
     

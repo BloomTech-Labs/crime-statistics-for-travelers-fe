@@ -11,6 +11,7 @@ import "../../App.css"
 
 const H5 = styled.h5`
   color: #b22222;
+  
 `;
 
 const FormContainer = styled.div`
@@ -19,8 +20,12 @@ const FormContainer = styled.div`
 `;
 const BTN =styled.button`
  
-`
-const Btn = styled(Link)``
+`;
+
+const Btn = styled(Link)`
+
+
+`;
 
 // const Label = styled.label`
 //   color: #f3e367;

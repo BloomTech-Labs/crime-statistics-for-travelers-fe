@@ -1,9 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import {TokenContext} from './Components/Context/Contexts';
 import {Route,Link} from 'react-router-dom';
-import Map from './Components/Map/Map';
+import MapContainer from './Components/Map/MapContainer';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
+import Navbar from './Components/NavBar/Navbar'
 
 export default function App() {
 //Gets Token from local storage.
@@ -17,7 +18,8 @@ useEffect(() => {
   return ( 
     <div>
       <TokenContext.Provider value={{token, setToken}}>
-        <Route exact path="/" component={Map}/>
+        <Navbar />
+        <MapContainer />
         <Route path="/login"  component={Login}/>
         <Route path="/signup" component={Signup}/>  
       </TokenContext.Provider>
