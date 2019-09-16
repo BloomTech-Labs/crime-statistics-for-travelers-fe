@@ -16,12 +16,14 @@ useEffect(() => {
 
 return (
   
-    <div>
-        <TokenContext.Provider value={{token, setToken}}>
-          <Route exact path="/" component={Map}/>
-          <Route path="/login" component={Login}/>
-          <Route path='/signup' component={Signup}/>  
-        </TokenContext.Provider>
-    </div>
+
+  <div>
+    <TokenContext.Provider value={{token, setToken}}>
+      <Route exact path="/" component={Map}/>
+      <Route path="/login"  component={Login}/>
+      <Route path="/signup" component={Signup}/>  
+    </TokenContext.Provider>
+  </div>
+
     )
 }
