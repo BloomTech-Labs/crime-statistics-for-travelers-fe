@@ -39,6 +39,8 @@ class Map extends Component {
             mapboxgl: mapboxgl
             }));
     
+        map.addControl(new mapboxgl.NavigationControl());
+        
         map.on('move', () => {
           const { lng, lat } = map.getCenter();
     
