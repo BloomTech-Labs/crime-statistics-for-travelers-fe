@@ -2,7 +2,7 @@
     text-align: center;
   }
   .mapboxgl-canvas {
-    margin-top: 100px;
+    margin-top:60px;
     /* position: fixed !important; */
     /* height: 100% !important; */
   }

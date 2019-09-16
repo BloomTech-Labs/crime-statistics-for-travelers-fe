@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl';
+import dotenv from 'dotenv';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import styled from 'styled-components';
@@ -8,7 +9,7 @@ var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
 
 //Public mapbox token used in api documentation. This key is available to everyone.
-mapboxgl.accessToken = 'pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
+mapboxgl.accessToken ='pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
 
 const styledMap = styled.div`
   @media(max-width: 600px){
@@ -70,8 +71,9 @@ class Map extends Component {
     
     return (
       <div>
-        <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
-          <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
+        <div>
+        {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold"> */}
+          {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div> */}
         </div>
         <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
       </div>

@@ -1,19 +1,31 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const NavBar = styled.header`
-  height: 100px;
+const NavbarContainer = styled.header`
+display:flex;
+justify-content:flex-start;
+align-items:center;
+  height: 60px;
   width: 100%;
-  background-color: #eaeaea;
+  background-color:#1E2F40;
+`
+const NavItem = styled.div`
+margin:5px;
+color:whitesmoke;
 `
 
 const Navbar = () => {
   return (
-    <NavBar>
+    <NavbarContainer>
+    <NavItem>
       <p>Hello</p>
+    </NavItem>
+    <NavItem>
       <p>login</p>
+      </NavItem>
 
-    </NavBar>
+   
+    </NavbarContainer>
   )
 }
 
