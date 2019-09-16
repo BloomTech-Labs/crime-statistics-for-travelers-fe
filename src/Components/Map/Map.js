@@ -24,7 +24,7 @@ class Map extends Component {
         const { lng, lat, zoom } = this.state;
         const bounds = [
             [-130, 22], // Southwest coordinates
-[-63, 50] 
+[-63, 50] //NE
         ]
 
         //Generating our map
