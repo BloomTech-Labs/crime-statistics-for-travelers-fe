@@ -1,11 +1,12 @@
 import React,{useState,useEffect} from 'react'
 import {TokenContext} from './Components/Context/Contexts';
 import {Route,Link} from 'react-router-dom';
-import Map from './Components/Map';
+import Map from './Components/Map/Map';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 
 export default function App() {
+//Gets Token from local storage.
 const [token,setToken] = useState(false);
 useEffect(() => {
     setToken(localStorage.getItem("token"));
