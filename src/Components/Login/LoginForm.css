@@ -3,21 +3,24 @@ html, body, #root, #app>div {
 }
 
 .col-container {
+  width: 100%;
 }
 
-.col1{
+.col4{
   position: absolute;
-  height: 100%;
   width: 30%;
+  top: 0%;
+  right: 0%;
   padding: 16px;
   height: 100%;
   text-align: center;
   background-color: grey
 }
 
-.col2{
+.col3{
   position: absolute;
-  left: 30%;
+  left: 0%;
+  top: 0%;
   padding: 16px;
   height: 100%;
   width: 70%;

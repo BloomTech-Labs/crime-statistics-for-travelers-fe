@@ -20,9 +20,6 @@ const H5 = styled.h5`
 
 `;
 
-const BTN =styled.button`
- 
-`;
 
 const Btn = styled(Link)`
 
@@ -39,19 +36,32 @@ function Signup({ touched, errors }) {
   return (
     <div className="col-container">
       <div className="col1">
-        <h1 className="heading">Where to next?</h1>
-        <p>Welcome Back!</p>
-        <p>Please sign in </p>
-        <p>with your info.</p>
-        <FontAwesomeIcon icon={ faThumbsUp }/>
-        <Button variantColor="green">Button</Button>
+        <div className="heading-container">
+
+          <Heading as='h1'>Where to next?</Heading>
+          <strong>
+          <p>Welcome Back!</p>
+          <p>Please sign in </p>
+          <p>with your info.</p>
+          </strong>
+        </div>
       </div>
 
 
       <div className="col2">
         <Box p={5} shadow="lg" borderWidth="2px" rounded="lg" className="form-container">
-          <Form className="form">
             <h1 className="heading">Create an account.</h1>
+            <div className="auth-links">
+              <div className="auth-link">
+              <FontAwesomeIcon icon={ faThumbsUp }/>                    
+              </div>
+              <div className="auth-link">
+                <FontAwesomeIcon icon={ faThumbsUp }/>    
+              </div>
+
+            </div>
+          <Form className="form"> 
+            
             <Field
               className="form-input"
               id="name"
@@ -83,7 +93,7 @@ function Signup({ touched, errors }) {
               name="password"
             />
             <H5>{touched.password && errors.password}</H5> 
-            <Button  className="formBTN" type="submit">
+            <Button variantColor="green" className="formBTN" type="submit">
               <Btn to='/Login'>Signup</Btn>
             </Button>
           </Form>
