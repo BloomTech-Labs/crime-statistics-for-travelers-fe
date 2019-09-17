@@ -1,0 +1,34 @@
+html, body, #root, #app>div {
+  height: 100%
+}
+
+.col-container {
+  grid-template-columns: 30% auto;
+  grid-template-rows: auto
+  
+}
+
+.col1{
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  padding: 16px;
+  height: 100%;
+  text-align: center;
+  background-color: grey
+}
+
+.col2{
+  position: absolute;
+  left: 30%;
+  padding: 16px;
+  height: 100%;
+  width: 70%;
+  text-align: center;
+}
+
+
+.heading{
+  font-size: 2rem;
+  padding: 20px;
+}

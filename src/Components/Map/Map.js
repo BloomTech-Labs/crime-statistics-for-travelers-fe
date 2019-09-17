@@ -22,17 +22,17 @@ class Map extends Component {
         super(props);
         //Within state define your map center
         this.state = {
-          lng: 5,
-          lat: 34,
-          zoom: 1.5
+          lng: -96,
+          lat: 37,
+          zoom: 3.5
         };
       }
     //Setting bounds in our mount allows our map to exlusively show only the united states.
       componentDidMount() {
         const { lng, lat, zoom } = this.state;
         const bounds = [
-            [-170, 9], // Southwest coordinates
-            [-24, 75] 
+            [-174, 10], // Southwest coordinates
+            [-34, 72] 
         ]
 
         //Generating our map
@@ -45,13 +45,13 @@ class Map extends Component {
         });
 
         
-        map.addControl(new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
-            mapboxgl: mapboxgl
-            }));
+        // map.addControl(new MapboxGeocoder({
+        //     accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
+        //     mapboxgl: mapboxgl
+        //     }));
             
         // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
 
         map.on('move', () => {
@@ -60,7 +60,7 @@ class Map extends Component {
           this.setState({
             lng: lng.toFixed(4),
             lat: lat.toFixed(4),
-            zoom: map.getZoom().toFixed(2)
+            zoom: map.getZoom().toFixed(1)
           });
         });
       }
@@ -70,10 +70,10 @@ class Map extends Component {
     
     return (
       <div>
-        <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
+        <div className="inline-block absolute left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
           <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
         </div>
-        <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+        <div ref={el => this.mapContainer = el} className="absolute top right left bottom"></div> 
       </div>
     );
   }

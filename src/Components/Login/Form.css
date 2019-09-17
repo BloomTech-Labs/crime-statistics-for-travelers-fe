@@ -1,0 +1,12 @@
+html, body, #app, #app>div {
+  height: 100%
+}
+
+.col-container {
+  display: flex;
+  width: 100%;
+}
+.col {
+  flex: 1;
+  padding: 16px;
+}

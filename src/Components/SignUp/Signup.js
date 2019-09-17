@@ -6,18 +6,14 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import styled from "styled-components";
-import "../../App.css"
+import './Form.css'
 // import posed from "react-pose";
 
 const H5 = styled.h5`
   color: #b22222;
-  
-`;
-
-const FormContainer = styled.div`
-  
 
 `;
+
 const BTN =styled.button`
  
 `;
@@ -38,10 +34,17 @@ function Signup({ touched, errors }) {
 
 
   return (
-    <div>
-      <Form className="form">
-        <FormContainer>
+    <div className="col-container">
+      <div className="col1">
+        <h1 className="heading">Where to next?</h1>
+        <p>Welcome Back!</p>
+        <p>Please sign in </p>
+        <p>with your info.</p>
+      </div>
+      <div className="col2">
 
+        <Form className="form">
+          <h1 className="heading">Create an account.</h1>
           <Field
             id="name"
             type="name"
@@ -71,8 +74,8 @@ function Signup({ touched, errors }) {
           <BTN  className="formBTN" type="submit">
             <Btn to='/Login'>Signup</Btn>
           </BTN>
-        </FormContainer>
-      </Form>
+        </Form>
+      </div>
     </div>
   );
 }
