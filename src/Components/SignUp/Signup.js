@@ -7,6 +7,12 @@ import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import styled from "styled-components";
 import './Form.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import {Button} from '@chakra-ui/core'
+import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
+
+
 // import posed from "react-pose";
 
 const H5 = styled.h5`
@@ -29,9 +35,6 @@ const Btn = styled(Link)`
 // `;
 
 function Signup({ touched, errors }) {
- 
-
-
 
   return (
     <div className="col-container">
@@ -40,41 +43,51 @@ function Signup({ touched, errors }) {
         <p>Welcome Back!</p>
         <p>Please sign in </p>
         <p>with your info.</p>
+        <FontAwesomeIcon icon={ faThumbsUp }/>
+        <Button variantColor="green">Button</Button>
       </div>
+
+
       <div className="col2">
+        <Box p={5} shadow="lg" borderWidth="2px" rounded="lg" className="form-container">
+          <Form className="form">
+            <h1 className="heading">Create an account.</h1>
+            <Field
+              className="form-input"
+              id="name"
+              type="name"
+              autoComplete="off"
+              name="name"
+              placeholder="Name"
+            />
+            <H5>{touched.name && errors.name}</H5>
+      
+            <Field
+              className="form-input"
+              id="email"
+              type="email"
+              autoComplete="off"
+              placeholder="email"
+              name="email"
+       
+              
+            />
+            <H5>{touched.email && errors.email}</H5>
 
-        <Form className="form">
-          <h1 className="heading">Create an account.</h1>
-          <Field
-            id="name"
-            type="name"
-            autoComplete="off"
-            placeholder="name"
-            name="name"
-          />
-          <H5>{touched.name && errors.name}</H5>
-    
-          <Field
-            id="email"
-            type="email"
-            autoComplete="off"
-            placeholder="email"
-            name="email"
-          />
-          <H5>{touched.email && errors.email}</H5>
-
-          <Field
-            id="password"
-            type="password"
-            autoComplete="off"
-            placeholder="password"
-            name="password"
-          />
-          <H5>{touched.password && errors.password}</H5> 
-          <BTN  className="formBTN" type="submit">
-            <Btn to='/Login'>Signup</Btn>
-          </BTN>
-        </Form>
+            <Field
+              className="form-input"
+              id="password"
+              type="password"
+              autoComplete="off"
+              placeholder="password"
+              name="password"
+            />
+            <H5>{touched.password && errors.password}</H5> 
+            <Button  className="formBTN" type="submit">
+              <Btn to='/Login'>Signup</Btn>
+            </Button>
+          </Form>
+        </Box>
       </div>
     </div>
   );

@@ -3,9 +3,6 @@ html, body, #root, #app>div {
 }
 
 .col-container {
-  grid-template-columns: 30% auto;
-  grid-template-rows: auto
-  
 }
 
 .col1{
@@ -25,10 +22,37 @@ html, body, #root, #app>div {
   height: 100%;
   width: 70%;
   text-align: center;
+  background-color: #d6d3d3
 }
 
 
 .heading{
   font-size: 2rem;
   padding: 20px;
+}
+
+.form-container{
+  position: relative;
+  top:35%;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #ffffff
+
+}
+
+input:focus {
+  border-color: #007eff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 0 3px rgba(0, 126, 255, 0.1);
+  outline: none;
+}
+
+.form-input{
+  height: 40px;
+  margin: 5px auto;
+  width: 75%;
+  border: none; /* <-- This thing here */
+      border:solid 1px #ccc;
+      border-radius: 10px;
+  /* border-radius: 1px; */
 }

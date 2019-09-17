@@ -7,6 +7,7 @@ import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import styled from "styled-components";
 import "../../App.css"
+import { Box, Heading, Text, Stack, Feature,} from '@chakra-ui/core'
 // import posed from "react-pose";
 
 const H5 = styled.h5`
@@ -34,34 +35,61 @@ function Login({ touched, errors }) {
     return <Redirect to="/" />;
   }
 
+
+
+  function Feature({ title, desc, ...rest }) {
+    return (
+      <Box p={5} shadow="md" borderWidth="1px" {...rest}>
+        <Heading fontSize="xl">{title}</Heading>
+        <Text mt={4}>{desc}</Text>
+      </Box>
+    );
+  }
+  
+  function StackEx() {
+    return (
+      <Stack spacing={8}>
+        <Feature
+          title="Plan Money"
+          desc="The future can be even brighter but a goal without a plan is just a wish"
+        />
+        <Feature
+          title="Save Money"
+          desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+        />
+      </Stack>
+    );
+  }
+  
   return (
-    <Form className="form">
-      <FormContainer>
-   
-        <Field
-          id="email"
-          type="email"
-          autoComplete="off"
-          placeholder="email"
-          name="email"
-        />
-        <H5>{touched.username && errors.username}</H5>
-        <Label htmlFor="password">Password</Label>
-        <Field
-          id="password"
-          type="password"
-          autoComplete="off"
-          placeholder="password"
-          name="password"
-        />
-        <H5>{touched.password && errors.password}</H5> 
-        <BTN className="formBTN" type="submit">
-          <Btn to = "/">Login</Btn>
-        </BTN>
-      </FormContainer>
-    </Form>
-  );
-}
+    <StackEx />
+    );
+  }
+  // <Form className="form">
+  //   <FormContainer>
+ 
+  //     <Field
+  //       id="email"
+  //       type="email"
+  //       autoComplete="off"
+  //       placeholder="email"
+  //       name="email"
+  //     />
+  //     <H5>{touched.username && errors.username}</H5>
+  //     <Label htmlFor="password">Password</Label>
+  //     <Field
+  //       id="password"
+  //       type="password"
+  //       autoComplete="off"
+  //       placeholder="password"
+  //       name="password"
+  //     />
+  //     <H5>{touched.password && errors.password}</H5> 
+  //     <BTN className="formBTN" type="submit">
+  //       <Btn to = "/">Login</Btn>
+  //     </BTN>
+  //   </FormContainer>
+  // </Form>
 
 export default withFormik({
   mapPropsToValues() {
