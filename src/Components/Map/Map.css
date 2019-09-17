@@ -14,11 +14,14 @@
   
 
 p {
+  color:white;
   font-size: 0.85em;
   margin: 10px;
   text-align: left;
 }
-
+/* .map.mapboxgl-map{
+  margin-top:100px;
+} */
 /**
 * Create a position for the map
 * on the page */
@@ -34,12 +37,12 @@ p {
 * (information box and legend) will be displayed
 * on the page. */
 .map-overlay {
-  margin-top:25px;
+  margin-top:100px;
   position: absolute;
   bottom: 0;
   right: 0;
   color:white;
-  background:#0c0c0c;
+  background:#1E2F40;
   margin-right: 20px;
   font-family: Arial, sans-serif;
   overflow: auto;
@@ -47,6 +50,7 @@ p {
 }
 
 #features {
+  color:white;
   margin-top:25px;
   top: 0;
   height: 100px;
@@ -55,7 +59,7 @@ p {
 }
 
 #legend {
-  margin-top:25px;
+  margin-top:100px;
   margin-right:10px;
   padding: 10px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);

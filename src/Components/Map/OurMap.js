@@ -39,7 +39,7 @@ class OurMap extends Component {
         //Generating our map======================================================================
         const map = new mapboxgl.Map({
           container: this.mapContainer,
-          style: 'mapbox://styles/bsoghigian/ck0mpsnuq44ji1clmsruozhdc',//Dynamic Style URL for our map style
+         style:'mapbox://styles/bsoghigian/ck0mpsnuq44ji1clmsruozhdc/draft',//Dynamic Style URL for our map style
           center: [lng, lat],//Center of where the mapbox map 
           zoom:zoom,//State value that allows you to set a default application zoom.
           maxBounds: bounds//it takes the SW coordinates and the NE coorinates and sets teh map in place
@@ -105,9 +105,11 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         </div>
        
         
-        <div ref={el => this.mapContainer = el} className="absolute top right left bottom" id="map"/>
-        <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
-        <div class='map-overlay' id='legend'></div>
+        <div ref={el => this.mapContainer = el}
+        //  className="absolute top right left bottom"
+          id="map" className='map'/>
+        <div className='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        <div className='map-overlay' id='legend'></div>
       </div>
     );
   }
