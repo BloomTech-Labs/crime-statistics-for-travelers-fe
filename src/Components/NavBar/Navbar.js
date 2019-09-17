@@ -38,8 +38,8 @@ const Navbar = () => {
    
     </NavbarContainer>
     <Route exact path ="/" />
-    <Route exact path = 'data'/>
-    <Route exact path ="Login" render={Login} />
+    <Route exact path = '/data'/>
+    <Route exact path ="/Login" render={Login} />
     </div>
   )
 }

@@ -36,7 +36,7 @@ class OurMap extends Component {
             [-24, 75] 
         ]
 
-        //Generating our map
+        //Generating our map======================================================================
         const map = new mapboxgl.Map({
           container: this.mapContainer,
           style: 'mapbox://styles/bsoghigian/ck0mpsnuq44ji1clmsruozhdc',//Dynamic Style URL for our map style
@@ -45,12 +45,40 @@ class OurMap extends Component {
           maxBounds: bounds//it takes the SW coordinates and the NE coorinates and sets teh map in place
         });
 
-        
+        //GeoLocation =========================================================================================
         map.addControl(new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
             mapboxgl: mapboxgl
             }));
-            
+       //Adding Overlay=========================================================================
+       map.on('load', function() {
+        // the rest of the code will go in here
+      });
+      
+      const onLoad = () => {
+var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
+var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
+      }
+
+      map.on(onLoad, function() {
+        var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
+        var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
+        // the rest of the code will go in here
+        for (let i = 0; i < layers.length; i++) {
+          var layer = layers[i];
+          var color = colors[i];
+          var item = document.createElement('div');
+          var key = document.createElement('span');
+          key.className = 'legend-key';
+          key.style.backgroundColor = color;
+        
+          var value = document.createElement('span');
+          value.innerHTML = layer;
+          item.appendChild(key);
+          item.appendChild(value);
+          // legend.appendChild(item);
+        }
+      });
         // Add zoom and rotation controls to the map.
         map.addControl(new mapboxgl.NavigationControl());
 
@@ -75,7 +103,10 @@ class OurMap extends Component {
         {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold"> */}
           {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div> */}
         </div>
+       
+        <div class='map-overlay' id='legend'></div>
         <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+        <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
       </div>
     );
   }

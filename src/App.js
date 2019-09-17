@@ -11,16 +11,10 @@ import OurMap from './Components/Map/OurMap';
 export default function App() {
 //Styles
 //===========================================================================
-const AppContainer = styled.div`
+const Container = styled.div`
 
 `
-const MapboxContainer = styled.div`
-margin-top:100px;
-`
-const NavContainer = styled.div`
 
-
-`
 //Gets Token from local storage.
 const [token,setToken] = useState(false);
 useEffect(() => {
@@ -32,11 +26,15 @@ useEffect(() => {
   return ( 
     <div>
       <TokenContext.Provider value={{token, setToken}}>
-        <NavContainer>
+<Container>
+       
         <Navbar /> 
-        </NavContainer>
+
+       
         <OurMap/>
-  
+
+
+</Container> 
       </TokenContext.Provider>
     </div>
   )
