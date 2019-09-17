@@ -1,0 +1,10 @@
+.App {
+    text-align: center;
+  }
+  .mapboxgl-canvas {
+    margin-top: 50px;
+    /* position: fixed !important; */
+    /* height: 100% !important; */
+  }
+  
+  
