@@ -104,9 +104,10 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
           {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div> */}
         </div>
        
-        <div class='map-overlay' id='legend'></div>
-        <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+        
+        <div ref={el => this.mapContainer = el} className="absolute top right left bottom" id="map"/>
         <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        <div class='map-overlay' id='legend'></div>
       </div>
     );
   }
