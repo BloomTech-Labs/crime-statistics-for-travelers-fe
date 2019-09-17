@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import {Button} from '@chakra-ui/core'
+import {Button, PseudoBox} from '@chakra-ui/core'
 import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
 
 import './LoginForm.css'
@@ -25,10 +25,6 @@ const Btn = styled(Link)`
 
 `;
 
-// const Label = styled.label`
-//   color: #f3e367;
-//   font-size: 2.5em;
-// `;
 
 function Login({ touched, errors }) {
 
@@ -65,7 +61,7 @@ function Login({ touched, errors }) {
               id="email"
               type="email"
               autoComplete="off"
-              placeholder="email"
+              placeholder="Email"
               name="email"
        
               
@@ -77,11 +73,11 @@ function Login({ touched, errors }) {
               id="password"
               type="password"
               autoComplete="off"
-              placeholder="password"
+              placeholder="Password"
               name="password"
             />
             <H5>{touched.password && errors.password}</H5> 
-            <Button variantColor="green" className="formBTN" type="submit">
+            <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
               <Btn to='/'>Login</Btn>
             </Button>
           </Form>
@@ -95,6 +91,36 @@ function Login({ touched, errors }) {
           <p>Please Create a </p>
           <p>new user account.</p>
           </strong>
+          <Link to="/signup">
+
+            <PseudoBox
+                as="button"
+                height="44px"
+                width="100%"
+                lineHeight="1.2"
+                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                // border="1px"
+                px="8px"
+                rounded="22px"
+                fontSize="14px"
+                fontWeight="semibold"
+                bg="#111111"
+                // borderColor="#ccd0d5"
+                color="#ffffff"
+                // _hover={{ bg: "#ebedf0" }}
+                _active={{
+                  bg: "#dddfe2",
+                  transform: "scale(0.98)",
+                  borderColor: "#bec3c9",
+                }}
+                _focus={{
+                  boxShadow:
+                    "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                }}
+              >
+                Sign Up
+              </PseudoBox>
+          </Link>
         </div>
       </div>
     </div>

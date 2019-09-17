@@ -9,7 +9,7 @@ import styled from "styled-components";
 import './Form.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import {Button} from '@chakra-ui/core'
+import {Button, PseudoBox} from '@chakra-ui/core'
 import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
 
 
@@ -44,6 +44,36 @@ function Signup({ touched, errors }) {
           <p>Please sign in </p>
           <p>with your info.</p>
           </strong>
+          <Link to="/login">
+
+            <PseudoBox
+                as="button"
+                height="44px"
+                width="100%"
+                lineHeight="1.2"
+                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                // border="1px"
+                px="8px"
+                rounded="22px"
+                fontSize="14px"
+                fontWeight="semibold"
+                bg="#111111"
+                // borderColor="#ccd0d5"
+                color="#ffffff"
+                // _hover={{ bg: "#ebedf0" }}
+                _active={{
+                  bg: "#dddfe2",
+                  transform: "scale(0.98)",
+                  borderColor: "#bec3c9",
+                }}
+                _focus={{
+                  boxShadow:
+                    "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                }}
+              >
+                Sign In
+              </PseudoBox>
+          </Link>
         </div>
       </div>
 
@@ -58,7 +88,6 @@ function Signup({ touched, errors }) {
               <div className="auth-link">
                 <FontAwesomeIcon icon={ faThumbsUp }/>    
               </div>
-
             </div>
           <Form className="form"> 
             
@@ -68,7 +97,7 @@ function Signup({ touched, errors }) {
               type="name"
               autoComplete="off"
               name="name"
-              placeholder="Name"
+              placeholder="Your Name"
             />
             <H5>{touched.name && errors.name}</H5>
       
@@ -77,7 +106,7 @@ function Signup({ touched, errors }) {
               id="email"
               type="email"
               autoComplete="off"
-              placeholder="email"
+              placeholder="Email address"
               name="email"
        
               
@@ -89,11 +118,11 @@ function Signup({ touched, errors }) {
               id="password"
               type="password"
               autoComplete="off"
-              placeholder="password"
+              placeholder="New Password"
               name="password"
             />
             <H5>{touched.password && errors.password}</H5> 
-            <Button variantColor="green" className="formBTN" type="submit">
+            <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
               <Btn to='/Login'>Signup</Btn>
             </Button>
           </Form>
