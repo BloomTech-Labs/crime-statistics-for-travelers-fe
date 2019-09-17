@@ -25,6 +25,11 @@ p {
 /**
 * Create a position for the map
 * on the page */
+@media(max-width:500px){
+  .map.mapboxgl-map{
+    width:75%;
+  }
+}
 #map {
   position: absolute;
   top: 0;
