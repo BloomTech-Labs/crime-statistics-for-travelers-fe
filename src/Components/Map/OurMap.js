@@ -54,7 +54,17 @@ class OurMap extends Component {
        map.on('load', function() {
         // the rest of the code will go in here
       });
+      map.on('mousemove', function(e) {
+        var states = map.queryRenderedFeatures(e.point, {
+          layers: ['statedata']
+        });
       
+        if (states.length > 0) {
+          document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.density + '</strong> people per square mile</em></p>';
+        } else {
+          document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
+        }
+      });
       const onLoad = () => {
 var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
 var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
@@ -79,6 +89,9 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
           // legend.appendChild(item);
         }
       });
+
+
+
         // Add zoom and rotation controls to the map.
         map.addControl(new mapboxgl.NavigationControl());
 

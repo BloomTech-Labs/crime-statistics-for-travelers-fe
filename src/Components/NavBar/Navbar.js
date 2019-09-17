@@ -11,6 +11,9 @@ align-items:center;
   height: 60px;
   width: 100%;
   background-color:#1E2F40;
+  @media(max-width:500px){
+    
+  }
 `
 const NavItem = styled(Link)`
 text-decoration:none;
@@ -18,6 +21,9 @@ margin:5px;
 color:whitesmoke;
 :hover{
   color:78c6e6;
+}
+@media(max-width:500px){
+  margin:2px;
 }
 `
 
