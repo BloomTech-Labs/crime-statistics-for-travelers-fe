@@ -54,6 +54,7 @@ class OurMap extends Component {
        map.on('load', function() {
         // the rest of the code will go in here
       });
+      //Passes
       map.on('mousemove', function(e) {
         var states = map.queryRenderedFeatures(e.point, {
           layers: ['statedata']
