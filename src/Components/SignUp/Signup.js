@@ -11,6 +11,7 @@ import "../../App.css"
 
 const H5 = styled.h5`
   color: #b22222;
+  
 `;
 
 const FormContainer = styled.div`
@@ -19,8 +20,12 @@ const FormContainer = styled.div`
 `;
 const BTN =styled.button`
  
-`
-const Btn = styled(Link)``
+`;
+
+const Btn = styled(Link)`
+
+
+`;
 
 // const Label = styled.label`
 //   color: #f3e367;
@@ -33,40 +38,42 @@ function Signup({ touched, errors }) {
 
 
   return (
-    <Form className="form">
-      <FormContainer>
+    <div>
+      <Form className="form">
+        <FormContainer>
 
-        <Field
-          id="name"
-          type="name"
-          autoComplete="off"
-          placeholder="name"
-          name="name"
-        />
-        <H5>{touched.name && errors.name}</H5>
-  
-        <Field
-          id="email"
-          type="email"
-          autoComplete="off"
-          placeholder="email"
-          name="email"
-        />
-        <H5>{touched.email && errors.email}</H5>
+          <Field
+            id="name"
+            type="name"
+            autoComplete="off"
+            placeholder="name"
+            name="name"
+          />
+          <H5>{touched.name && errors.name}</H5>
+    
+          <Field
+            id="email"
+            type="email"
+            autoComplete="off"
+            placeholder="email"
+            name="email"
+          />
+          <H5>{touched.email && errors.email}</H5>
 
-        <Field
-          id="password"
-          type="password"
-          autoComplete="off"
-          placeholder="password"
-          name="password"
-        />
-        <H5>{touched.password && errors.password}</H5> 
-        <BTN  className="formBTN" type="submit">
-          <Btn to='/Login'>Signup</Btn>
-        </BTN>
-      </FormContainer>
-    </Form>
+          <Field
+            id="password"
+            type="password"
+            autoComplete="off"
+            placeholder="password"
+            name="password"
+          />
+          <H5>{touched.password && errors.password}</H5> 
+          <BTN  className="formBTN" type="submit">
+            <Btn to='/Login'>Signup</Btn>
+          </BTN>
+        </FormContainer>
+      </Form>
+    </div>
   );
 }
 
