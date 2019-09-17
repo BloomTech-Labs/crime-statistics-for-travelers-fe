@@ -36,10 +36,7 @@ useEffect(() => {
         <Navbar /> 
         </NavContainer>
         <OurMap/>
-         {/* <MapboxContainer>
-         <MapContainer />
-         </MapboxContainer> */}
-        
+  
       </TokenContext.Provider>
     </div>
   )
