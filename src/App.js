@@ -4,8 +4,10 @@ import {Route,Link} from 'react-router-dom';
 import Map from './Components/Map';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
+import Demographics from "./Components/Demographics/Demographics";
 
 export default function App() {
+//Gets Token from local storage.
 const [token,setToken] = useState(false);
 useEffect(() => {
     setToken(localStorage.getItem("token"));
@@ -15,12 +17,15 @@ useEffect(() => {
 
 return (
   
-    <div>
-        <TokenContext.Provider value={{token, setToken}}>
-          <Route exact path="/" component={Map}/>
-          <Route path="/login" component={Login}/>
-          <Route path='/signup' component={Signup}/>  
-        </TokenContext.Provider>
-    </div>
+
+  <div>
+    <TokenContext.Provider value={{token, setToken}}>
+      <Route exact path="/" component={Map}/>
+      <Route path="/login"  component={Login}/>
+      <Route path="/signup" component={Signup}/> 
+      <Route path="/demo" component={Demographics}/>
+    </TokenContext.Provider>
+  </div>
+
     )
 }
