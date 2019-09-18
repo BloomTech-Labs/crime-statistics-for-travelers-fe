@@ -98,7 +98,7 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
 
 
         // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
 
 
         map.on('move', () => {
