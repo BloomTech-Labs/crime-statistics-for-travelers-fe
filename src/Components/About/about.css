@@ -91,3 +91,23 @@ a {
 	}
 
 }
+
+/* .mainMap {
+	border: 1px solid blue;
+	position: absolute;
+} */
+
+.search {
+	margin-left: 299px;
+    margin-top: -378px;
+}
+
+.searchText {
+	font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 43px;
+    line-height: 68px;
+    color: #FFFFFF;
+    margin-left: 52px;
+}
