@@ -27,9 +27,9 @@ useEffect(() => {
   return ( 
     <ThemeProvider>
       <TokenContext.Provider value={{token, setToken}}>
+
         <Navbar/>
         <Switch>
-        
         <Route exact path="/map" component={OurMap}/>
         <Route exact path="/login"  component={Login}/>
 
