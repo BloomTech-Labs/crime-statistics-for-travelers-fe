@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {Link,Route} from 'react-router-dom';
+import {NavLink,Route} from 'react-router-dom';
 import OurMap from '../Map/OurMap';
 import MapContainer from '../Map/MapContainer'
 import Login from '../Login/Login'
@@ -17,12 +17,14 @@ align-items:center;
     
   }
 `
-const NavLink = styled(Link)`
+
+const NavItem = styled(NavLink)`
+
 text-decoration:none;
 margin:5px;
 color:whitesmoke;
 :hover{
-  color:78c6e6;
+  color:#78c6e6;
 }
 @media(max-width:500px){
   margin:2px;
@@ -32,17 +34,24 @@ color:whitesmoke;
 const Navbar = () => {
   return (
     <div>
-      <NavbarContainer>
-        <NavLink to="/map" component={OurMap}>
-          Map
-        </NavLink>
-        <NavLink to="/login" component={Login}>
-          Login
-        </NavLink>
-        <NavLink to="/data">
-          About the data
-        </NavLink>    
-      </NavbarContainer>
+
+    <NavbarContainer>
+    <NavItem to="/map" component={OurMap}>
+      Map
+    </NavItem>
+    <NavItem to="/login" component={Login}>
+      Login
+      </NavItem>
+      <NavItem to="/data">
+      About the data
+    </NavItem>
+   
+   
+    </NavbarContainer>
+
+    
+   
+
     </div>
   )
 }
