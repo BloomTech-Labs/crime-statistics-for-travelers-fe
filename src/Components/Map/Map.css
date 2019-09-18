@@ -6,7 +6,7 @@
      top:0;
       bottom:0;
        width:100%;
-    margin-top:60px;
+   top:-60px;
     /* position: fixed !important; */
      height: 100% !important;
   }
@@ -27,10 +27,9 @@ p {
 .geocoder {
   position:absolute;
   z-index:1;
-  width:50%;
-  left:50%;
-  margin-left:-25%;
-  top:20px;
+ top:50%;
+ left:40%;
+ right:70%;
   }
 
   .mapboxgl-ctrl-geocoder { min-width:100%; }
