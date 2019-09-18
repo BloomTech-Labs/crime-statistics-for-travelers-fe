@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <div>
     <NavbarContainer>
-    <NavItem to="/map" component={OurMap}>
+    <NavItem to="/" component={OurMap}>
       Map
     </NavItem>
     <NavItem to="/login" component={Login}>
