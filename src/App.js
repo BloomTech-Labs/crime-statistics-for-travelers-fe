@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react'
 import styled from 'styled-components';
 import {TokenContext} from './Components/Context/Contexts';
 import {Route,Link,Switch} from 'react-router-dom';
-import MapContainer from './Components/Map/MapContainer';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";
