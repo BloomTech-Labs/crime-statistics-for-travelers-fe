@@ -1,90 +1,55 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
+import { withFormik, Form, Field, Formik } from "formik";
+import * as Yup from "yup";
 
-const Demogrphics= props => {
 
-    const [age, setAge] = useState({selectedOption:'18-24'})
-    const [sex, setSex] = useState({selectedOption:'Male'})
-    const [race, setRace] = useState({selectedOption:'White'})
+const Demogrphics= () => (
 
-    const ageHandler = e => {
-        e.persist();
-        setAge({
-            selectedOption: e.target.value
-        });
-    }
-    const sexHandler = e => {
-        e.persist();
-        setSex({
-            selectedOption: e.target.value
-        });
-    }
-    const raceHandler = e => {
-        e.persist();
-        setRace({
-            selectedOption: e.target.value
-        });
-    }
+            <div className="formContainer">
+                <Formik
+                    initialValues={{
+                        age: "18-24",
+                        sex: "Male",
+                        race: "White"
+                    }}
+                    validationSchema={Yup.object().shape({
+                       age: Yup.string(),
+                       sex: Yup.string(),
+                       race: Yup.string(),
+                    })}
+                    onSubmit={(values, actions) => {
+                        setTimeout(() => {
+                            actions.setSubmitting(false);
+                        }, 500)
+                    }}
+                    render={(props: FormikProps<Values>) => (
+                        <Form onSubmit={props.handleSubmit}>
+                            <Field component="select" name="age">
+                                <option value="18-24">18-24</option>
+                                <option value="25-30">25-30</option>
+                                <option value="31-55">31-55</option>
+                                <option value="55+">55+</option>
+                            </Field>
+                            <Field component="select" name="sex">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </Field>
+                            <Field component="select" name="race">
+                                <option value="White">White</option>
+                                <option value="Black">Black</option>
+                                <option value="Hispanic">Hispanic</option>
+                                <option value="Asian">Asian</option>
+                            </Field>
+                            <button type='submit'>Submit</button>
+                        </Form>
+                    )}
+                    />
+                    
+                        
+            </div>
     
+)
 
-
-    return (
-        <div className="DemoForm">
-            <div className="ageField">
-                <h2>Age</h2>
-                    <label>
-                        <input type="radio" value="18-24" checked={age.selectedOption === '18-24'} onChange={ageHandler} />
-                        18-24
-                    </label>
-                    <label>
-                        <input type="radio" value="25-30" checked={age.selectedOption === '25-30'} onChange={ageHandler} />
-                        25-30
-                    </label>
-                    <label>
-                        <input type="radio" value="31-55" checked={age.selectedOption === '31-55'} onChange={ageHandler} />
-                        31-55
-                    </label>
-                    <label>
-                        <input type="radio" value="55 +" checked={age.selectedOption === '55 +'} onChange={ageHandler} />
-                        55 +
-                    </label>
-            </div>
-            <div className="sexField">
-                <h2>Sex</h2>
-                    <label>
-                        <input type="radio" value="Male" checked={sex.selectedOption === 'Male'} onChange={sexHandler} />
-                        Male
-                    </label>
-                    <label>
-                        <input type="radio" value="Female" checked={sex.selectedOption === 'Female'} onChange={sexHandler} />
-                        Female
-                    </label>
-                    <label>
-                        <input type="radio" value="Other" checked={sex.selectedOption === 'Other'} onChange={sexHandler} />
-                        Other
-                    </label>
-            </div>
-            <div className="raceField">
-                <h2>Race</h2>
-                    <lable>
-                        <input type="radio" value="White" checked={race.selectedOption === 'White'} onChange={raceHandler} />
-                        White
-                    </lable>
-                    <lable>
-                        <input type="radio" value="Black" checked={race.selectedOption === 'Black'} onChange={raceHandler} />
-                        Black
-                    </lable>
-                    <lable>
-                        <input type="radio" value="Hispanic" checked={race.selectedOption === 'Hispanic'} onChange={raceHandler} />
-                        Hispanic
-                    </lable>
-                    <lable>
-                        <input type="radio" value="Asian" checked={race.selectedOption === 'Asian'} onChange={raceHandler} />
-                        Asian
-                    </lable>
-            </div>
-        </div>
-    )
-}
-
-export default Demogrphics;
+export default (Demogrphics);
