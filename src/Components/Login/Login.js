@@ -22,7 +22,6 @@ const H5 = styled.h5`
 
 const Btn = styled(Link)`
 
-
 `;
 
 
@@ -78,7 +77,7 @@ function Login({ touched, errors }) {
             />
             <H5>{touched.password && errors.password}</H5> 
             <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
-              <Btn to='/'>Login</Btn>
+
             </Button>
           </Form>
         </Box>
@@ -137,6 +136,7 @@ export default withFormik({
       // rememberPassword: false
     };
   },
+
   validationSchema: Yup.object().shape({
     username: Yup.string()
       .min(3, "Must be 3 characters or more")

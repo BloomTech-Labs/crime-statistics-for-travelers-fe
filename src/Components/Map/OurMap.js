@@ -23,9 +23,9 @@ class OurMap extends Component {
         super(props);
         //Within state define your map center
         this.state = {
-          lng: 5,
-          lat: 34,
-          zoom: 1.5
+          lng: -96,
+          lat: 37,
+          zoom: 3.5
         };
       }
     //Setting bounds in our mount allows our map to exlusively show only the united states.
