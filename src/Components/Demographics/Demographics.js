@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import { withFormik, Form, Field, Formik } from "formik";
 import * as Yup from "yup";
+import styled from "styled-components";
+
+const BTN = styled.button`
+border: 2px solid black;
+background: #3fa2f7;
+color: white;
+`;
 
 
 const Demogrphics= () => (
@@ -25,6 +32,7 @@ const Demogrphics= () => (
                     }}
                     render={(props: FormikProps<Values>) => (
                         <Form onSubmit={props.handleSubmit}>
+                            <Field type="name" name="name" placeholder="name" />
                             <Field component="select" name="age">
                                 <option value="18-24">18-24</option>
                                 <option value="25-30">25-30</option>
@@ -42,7 +50,7 @@ const Demogrphics= () => (
                                 <option value="Hispanic">Hispanic</option>
                                 <option value="Asian">Asian</option>
                             </Field>
-                            <button type='submit'>Submit</button>
+                            <BTN type='submit'>Let's Travel</BTN>
                         </Form>
                     )}
                     />
