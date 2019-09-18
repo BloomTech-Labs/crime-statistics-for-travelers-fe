@@ -30,7 +30,8 @@ useEffect(() => {
         <Navbar/>
         <Switch>
 
-        <Route exact path="/map" component={OurMap}/>
+        
+        <Route exact path="/" component={OurMap}/>
         <Route exact path="/login"  component={Login}/>
 
         <Route exact path="/signup" component={Signup}/>
