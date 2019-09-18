@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import styled from 'styled-components';
 import {TokenContext} from './Components/Context/Contexts';
-import {Route,Link} from 'react-router-dom';
+import {Route,Link,Switch} from 'react-router-dom';
 import MapContainer from './Components/Map/MapContainer';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
@@ -28,10 +28,14 @@ useEffect(() => {
   return ( 
     <ThemeProvider>
       <TokenContext.Provider value={{token, setToken}}>
-        <Route exact path="/" component={Navbar}/>
-        <Route exact path="/" component={MapContainer}/>
+        <Navbar/>
+        <Switch>
+        
+        <Route exact path="/map" component={OurMap}/>
         <Route exact path="/login"  component={Login}/>
         <Route exact path="/signup" component={Signup}/>  
+        <Route exact path = '/data'/>
+        </Switch>
       </TokenContext.Provider>
     </ThemeProvider>
   )
