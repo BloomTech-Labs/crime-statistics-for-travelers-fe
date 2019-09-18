@@ -19,8 +19,28 @@ p {
   margin: 10px;
   text-align: left;
 }
-/* .map.mapboxgl-map{
-  margin-top:100px;
+.map.mapboxgl-map{
+  margin-top:60px;
+ 
+}
+
+.geocoder {
+  position:absolute;
+  z-index:1;
+  width:50%;
+  left:50%;
+  margin-left:-25%;
+  top:20px;
+  }
+
+  .mapboxgl-ctrl-geocoder { min-width:100%; }
+/* .mapboxgl-ctrl-geocoder{
+
+  display:flex;
+}
+.mapboxgl-ctrl-geocoder--input{
+    justify-content: center;
+  align-items:center;
 } */
 /**
 * Create a position for the map

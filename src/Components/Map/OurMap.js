@@ -46,10 +46,15 @@ class OurMap extends Component {
         });
 
         //GeoLocation =========================================================================================
-        map.addControl(new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
-            mapboxgl: mapboxgl
-            }));
+        // map.addControl(new MapboxGeocoder({
+        //     accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
+        //     mapboxgl: mapboxgl
+        //     }));
+        var geocoder = new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl
+          });
+          document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
        //Adding Overlay=========================================================================
        map.on('load', function() {
         // the rest of the code will go in here
@@ -121,6 +126,7 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         <div ref={el => this.mapContainer = el}
         //  className="absolute top right left bottom"
           id="map" className='map'/>
+          <div id='geocoder' class='geocoder'></div>
         <div className='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
         <div className='map-overlay' id='legend'></div>
       </div>
