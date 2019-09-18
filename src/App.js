@@ -12,7 +12,7 @@ import OurMap from './Components/Map/OurMap';
 
 export default function App() {
 //Styles
-const Container = styled.div`
+const Container = styled.div``;
 
 //Gets Token from local storage.
 const [token,setToken] = useState(false);
