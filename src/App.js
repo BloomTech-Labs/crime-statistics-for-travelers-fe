@@ -6,6 +6,7 @@ import MapContainer from './Components/Map/MapContainer';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Navbar from './Components/NavBar/Navbar'
+import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
 
 export default function App() {
@@ -25,18 +26,13 @@ useEffect(() => {
 
 //Return===========================================================
   return ( 
-    <div>
+    <ThemeProvider>
       <TokenContext.Provider value={{token, setToken}}>
-<Container>
-       
-        <Navbar /> 
-
-       
-        <OurMap/>
-
-
-</Container> 
+        <Route exact path="/" component={Navbar}/>
+        <Route exact path="/" component={MapContainer}/>
+        <Route exact path="/login"  component={Login}/>
+        <Route exact path="/signup" component={Signup}/>  
       </TokenContext.Provider>
-    </div>
+    </ThemeProvider>
   )
 }

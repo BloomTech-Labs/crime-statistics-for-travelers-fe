@@ -6,21 +6,20 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import styled from "styled-components";
-import "../../App.css"
+import './Form.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import {Button, PseudoBox} from '@chakra-ui/core'
+import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
+
+
 // import posed from "react-pose";
 
 const H5 = styled.h5`
   color: #b22222;
-  
-`;
-
-const FormContainer = styled.div`
-  
 
 `;
-const BTN =styled.button`
- 
-`;
+
 
 const Btn = styled(Link)`
 
@@ -33,46 +32,102 @@ const Btn = styled(Link)`
 // `;
 
 function Signup({ touched, errors }) {
- 
-
-
 
   return (
-    <div>
-      <Form className="form">
-        <FormContainer>
+    <div className="col-container">
+      <div className="col1">
+        <div className="heading-container">
 
-          <Field
-            id="name"
-            type="name"
-            autoComplete="off"
-            placeholder="name"
-            name="name"
-          />
-          <H5>{touched.name && errors.name}</H5>
-    
-          <Field
-            id="email"
-            type="email"
-            autoComplete="off"
-            placeholder="email"
-            name="email"
-          />
-          <H5>{touched.email && errors.email}</H5>
+          <Heading as='h1'>Where to next?</Heading>
+          <strong>
+          <p>Welcome Back!</p>
+          <p>Please sign in </p>
+          <p>with your info.</p>
+          </strong>
+          <Link to="/login">
 
-          <Field
-            id="password"
-            type="password"
-            autoComplete="off"
-            placeholder="password"
-            name="password"
-          />
-          <H5>{touched.password && errors.password}</H5> 
-          <BTN  className="formBTN" type="submit">
-            <Btn to='/Login'>Signup</Btn>
-          </BTN>
-        </FormContainer>
-      </Form>
+            <PseudoBox
+                as="button"
+                height="44px"
+                width="100%"
+                lineHeight="1.2"
+                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                // border="1px"
+                px="8px"
+                rounded="22px"
+                fontSize="14px"
+                fontWeight="semibold"
+                bg="#111111"
+                // borderColor="#ccd0d5"
+                color="#ffffff"
+                // _hover={{ bg: "#ebedf0" }}
+                _active={{
+                  bg: "#dddfe2",
+                  transform: "scale(0.98)",
+                  borderColor: "#bec3c9",
+                }}
+                _focus={{
+                  boxShadow:
+                    "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                }}
+              >
+                Sign In
+              </PseudoBox>
+          </Link>
+        </div>
+      </div>
+
+
+      <div className="col2">
+        <Box p={5} shadow="lg" borderWidth="2px" rounded="lg" className="form-container">
+            <h1 className="heading">Create an account.</h1>
+            <div className="auth-links">
+              <div className="auth-link">
+              <FontAwesomeIcon icon={ faThumbsUp }/>                    
+              </div>
+              <div className="auth-link">
+                <FontAwesomeIcon icon={ faThumbsUp }/>    
+              </div>
+            </div>
+          <Form className="form"> 
+            
+            <Field
+              className="form-input"
+              id="name"
+              type="name"
+              autoComplete="off"
+              name="name"
+              placeholder="Your Name"
+            />
+            <H5>{touched.name && errors.name}</H5>
+      
+            <Field
+              className="form-input"
+              id="email"
+              type="email"
+              autoComplete="off"
+              placeholder="Email address"
+              name="email"
+       
+              
+            />
+            <H5>{touched.email && errors.email}</H5>
+
+            <Field
+              className="form-input"
+              id="password"
+              type="password"
+              autoComplete="off"
+              placeholder="New Password"
+              name="password"
+            />
+            <H5>{touched.password && errors.password}</H5> 
+            <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
+              <Btn to='/Login'>Signup</Btn>
+            </Button>
+          </Form>
+        </Box>
+      </div>
     </div>
   );
 }

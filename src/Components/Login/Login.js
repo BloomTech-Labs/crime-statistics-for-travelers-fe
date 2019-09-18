@@ -1,80 +1,149 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-import {Link} from 'react-router-dom'
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import styled from "styled-components";
-import "../../App.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import {Button, PseudoBox} from '@chakra-ui/core'
+import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
+
+import './LoginForm.css'
 // import posed from "react-pose";
 
 const H5 = styled.h5`
   color: #b22222;
-`;
-
-const FormContainer = styled.div`
-  
 
 `;
-const BTN =styled.button`
- 
-`
-const Btn=styled(Link)``
 
-const Label = styled.label`
-  color: #f3e367;
-  font-size: 2.5em;
+
+const Btn = styled(Link)`
+
+
 `;
+
 
 function Login({ touched, errors }) {
-  const token = localStorage.getItem("token");
-
-  if (token) {
-    return <Redirect to="/" />;
-  }
 
   return (
-    <Form className="form">
-      <FormContainer>
-   
-        <Field
-          id="email"
-          type="email"
-          autoComplete="off"
-          placeholder="email"
-          name="email"
-        />
-        <H5>{touched.username && errors.username}</H5>
-        <Label htmlFor="password">Password</Label>
-        <Field
-          id="password"
-          type="password"
-          autoComplete="off"
-          placeholder="password"
-          name="password"
-        />
-        <H5>{touched.password && errors.password}</H5> 
-        <BTN className="formBTN" type="submit">
-          <Btn to = "/">Login</Btn>
-        </BTN>
-      </FormContainer>
-    </Form>
+    <div className="col-container">
+
+
+      <div className="col3">
+        <Box p={5} shadow="lg" borderWidth="2px" rounded="lg" className="form-container">
+            <h1 className="heading">Log in to your account.</h1>
+            <div className="auth-links">
+              <div className="auth-link">
+              <FontAwesomeIcon icon={ faThumbsUp }/>                    
+              </div>
+              <div className="auth-link">
+                <FontAwesomeIcon icon={ faThumbsUp }/>    
+              </div>
+
+            </div>
+          <Form className="form"> 
+            
+            <Field
+              className="form-input"
+              id="name"
+              type="name"
+              autoComplete="off"
+              name="name"
+              placeholder="Name"
+            />
+            <H5>{touched.name && errors.name}</H5>
+      
+            <Field
+              className="form-input"
+              id="email"
+              type="email"
+              autoComplete="off"
+              placeholder="Email"
+              name="email"
+       
+              
+            />
+            <H5>{touched.email && errors.email}</H5>
+
+            <Field
+              className="form-input"
+              id="password"
+              type="password"
+              autoComplete="off"
+              placeholder="Password"
+              name="password"
+            />
+            <H5>{touched.password && errors.password}</H5> 
+            <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
+              <Btn to='/'>Login</Btn>
+            </Button>
+          </Form>
+        </Box>
+      </div>
+      <div className="col4">
+        <div className="heading-container">
+
+          <Heading as='h1'>New around here?</Heading>
+          <strong>
+          <p>Please Create a </p>
+          <p>new user account.</p>
+          </strong>
+          <Link to="/signup">
+
+            <PseudoBox
+                as="button"
+                height="44px"
+                width="100%"
+                lineHeight="1.2"
+                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                // border="1px"
+                px="8px"
+                rounded="22px"
+                fontSize="14px"
+                fontWeight="semibold"
+                bg="#111111"
+                // borderColor="#ccd0d5"
+                color="#ffffff"
+                // _hover={{ bg: "#ebedf0" }}
+                _active={{
+                  bg: "#dddfe2",
+                  transform: "scale(0.98)",
+                  borderColor: "#bec3c9",
+                }}
+                _focus={{
+                  boxShadow:
+                    "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                }}
+              >
+                Sign Up
+              </PseudoBox>
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 
 export default withFormik({
   mapPropsToValues() {
     return {
-      email: "",
+      name: "",
+      email:"",
       password: ""
+      // confirmPassword: "",
+      // rememberPassword: false
     };
   },
   validationSchema: Yup.object().shape({
-    email: Yup.string()
+    username: Yup.string()
       .min(3, "Must be 3 characters or more")
       .max(20, "Must be less than 20 characters")
       .required("This field is required"),
+      email: Yup.string()
+      .required("please enter an email to continue"),
     password: Yup.string()
       .min(2, "Must be 3 characters or more")
       .max(100, "Must be less than 100 characters")
@@ -85,7 +154,7 @@ export default withFormik({
   handleSubmit(values, formikBag) {
     console.log(values,"Login values")
     axios
-      .post(`https://usemytechstuff.herokuapp.com/api/auth/login/`, values)
+      .post(`https://usemytechstuff.herokuapp.com/api/auth/Login/`, values)
       .then((response) => {
         localStorage.setItem('token', response.data.payload);
         console.log('does token data exist:', response.data.payload)
@@ -107,7 +176,7 @@ export default withFormik({
         Swal.fire({
             position: 'center',
             type: 'success',
-            title: 'Welcome to your next Adventure',
+            title: 'Registering User...',
             showConfirmButton: false,
             timer: 2500
           })
