@@ -5,16 +5,14 @@ import {Route,Link,Switch} from 'react-router-dom';
 import MapContainer from './Components/Map/MapContainer';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
+import Demographics from "./Components/Demographics/Demographics";
 import Navbar from './Components/NavBar/Navbar'
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
 
 export default function App() {
 //Styles
-//===========================================================================
-const Container = styled.div`
-
-`
+const Container = styled.div``;
 
 //Gets Token from local storage.
 const [token,setToken] = useState(false);
@@ -34,9 +32,13 @@ useEffect(() => {
         <Route exact path="/map" component={OurMap}/>
         <Route exact path="/login"  component={Login}/>
         <Route exact path="/signup" component={Signup}/>  
-        <Route exact path = '/data'/>
+        <Route path="/demo" component={Demographics}/>
         </Switch>
+
+        
+
       </TokenContext.Provider>
     </ThemeProvider>
   )
+
 }
