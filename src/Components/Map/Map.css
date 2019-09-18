@@ -4,15 +4,20 @@
   .mapboxgl-canvas {
     position:absolute;
      top:0;
-      bottom:0;
+      bottom:-60px;
        width:100%;
+    
    top:-60px;
     /* position: fixed !important; */
      height: 100% !important;
   }
+  .map-overlay h2{
+    color:white;
+  }
   
-  
-
+.map-overlay #pd p{
+  color:white;
+}
 p {
   color:white;
   font-size: 0.85em;
@@ -21,7 +26,7 @@ p {
 }
 .map.mapboxgl-map{
   margin-top:60px;
- 
+ margin-bottom:-60px;
 }
 
 .geocoder {
