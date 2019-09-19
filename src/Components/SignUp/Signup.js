@@ -49,7 +49,7 @@ function Signup({ touched, errors }) {
             <PseudoBox
                 as="button"
                 height="44px"
-                width="100%"
+                width="60%"
                 lineHeight="1.2"
                 transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
                 // border="1px"
@@ -57,7 +57,7 @@ function Signup({ touched, errors }) {
                 rounded="22px"
                 fontSize="14px"
                 fontWeight="semibold"
-                bg="#111111"
+                bg="#3182ce"
                 // borderColor="#ccd0d5"
                 color="#ffffff"
                 // _hover={{ bg: "#ebedf0" }}
@@ -122,8 +122,8 @@ function Signup({ touched, errors }) {
               name="password"
             />
             <H5>{touched.password && errors.password}</H5> 
-            <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
-              <Btn to='/Login'>Signup</Btn>
+            <Button variantColor="blue" className="formBTN" width="50%" rounded="22px" type="submit">
+              Sign Up
             </Button>
           </Form>
         </Box>
@@ -159,7 +159,7 @@ export default withFormik({
   handleSubmit(values, formikBag) {
     console.log(values,"Login values")
     axios
-      .post(`https://backend-for-production.herokuapp.com//api/auth/register`, values)
+      .post(`https://backend-for-production.herokuapp.com/api/auth/register`, values)
       .then((response) => {
         localStorage.setItem('token', response.data.payload);
         console.log('does token data exist:', response.data.payload)
