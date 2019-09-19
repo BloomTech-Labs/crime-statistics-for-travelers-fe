@@ -11,7 +11,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import {Button, PseudoBox} from '@chakra-ui/core'
 import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
-
+import google from '../../assets/web/1x/btn_google_signin_light_normal_web.png'
+import fb from '../../assets/web/1x/login-facebook.png'
 
 // import posed from "react-pose";
 
@@ -83,10 +84,10 @@ function Signup({ touched, errors }) {
             <h1 className="heading">Create an account.</h1>
             <div className="auth-links">
               <div className="auth-link">
-              <FontAwesomeIcon icon={ faThumbsUp }/>                    
+              <img src={google}/>                    
               </div>
               <div className="auth-link">
-                <FontAwesomeIcon icon={ faThumbsUp }/>    
+              <img src={fb}/>    
               </div>
             </div>
           <Form className="form"> 

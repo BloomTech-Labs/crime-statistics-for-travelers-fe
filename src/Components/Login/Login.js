@@ -20,6 +20,9 @@ import {
   Box, 
   Heading, 
   Text} from '@chakra-ui/core'
+import google from '../../assets/web/1x/btn_google_signin_light_normal_web.png'
+import fb from '../../assets/web/1x/login-facebook.png'
+
 
 import './LoginForm.css'
 // import posed from "react-pose";
@@ -48,10 +51,10 @@ function Login({ touched, errors }) {
             <h1 className="heading">Log in to your account.</h1>
             <div className="auth-links">
               <div className="auth-link">
-              <FontAwesomeIcon icon={ faThumbsUp }/>                    
+              <img src={google}/>
               </div>
               <div className="auth-link">
-                <FontAwesomeIcon icon={ faThumbsUp }/>    
+              <img src={fb}/>
               </div>
 
             </div>
