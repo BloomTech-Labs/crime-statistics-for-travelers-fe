@@ -65,7 +65,7 @@ class OurMap extends Component {
         });
       
         if (states.length > 0) {
-          document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.density + '</strong> people per square mile</em></p>';
+          document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.density + '</strong> Crime Rate per 100k</em></p>';
         } else {
           document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
         }
@@ -127,7 +127,7 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         //  className="absolute top right left bottom"
           id="map" className='map'/>
           <div id='geocoder' class='geocoder'></div>
-        <div className='map-overlay' id='features'><h2>Crime Per State Per 100k</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div></div>
         <div className='map-overlay' id='legend'></div>
       </div>
     );
