@@ -15,6 +15,7 @@ const Demogrphics= props => {
 
     return(
 
+
             <div className="formContainer">
                 <Formik
                     initialValues={{
@@ -67,11 +68,11 @@ const Demogrphics= props => {
                         </Form>
                     )}
                     />
-                    
-                        
+
             </div>
     
     )
 }
+
 
 export default (Demogrphics);
