@@ -218,3 +218,59 @@ a {
     top: 1473px;
 }
 
+.middleContent3 {
+	display: flex;
+}
+
+.header3 {
+	position: absolute;
+	width: 418px;
+	height: 68px;
+	left: 540px;
+	top: 2000px;
+	font-family: Libre Franklin;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 56px;
+	line-height: 68px;
+	text-align: center;
+	color: #1F8EFA;
+}
+
+.header3Text {
+	position: absolute;
+    width: 1319px;
+    height: 132px;
+    left: 95px;
+    top: 2080px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+}
+
+.middleContent4 {
+	display: flex;
+}
+
+.robberPic {
+    position: absolute;
+    width: 311px;
+    height: 162px;
+    left: 776px;
+    top: 2161px;
+}
+
+.robberMap {
+	position: absolute;
+    width: 1200px;
+    height: 528px;
+    left: 149px;
+    top: 2308px;
+}
+
+
+

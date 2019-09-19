@@ -4,6 +4,8 @@ import map from '../../assets/web/about/map.png'
 import travelglobe from '../../assets/web/about/travelglobe.png';
 import movers from '../../assets/web/about/movers.png';
 import travel from '../../assets/web/about/travel.png';
+import robber from '../../assets/web/about/robber.png';
+import robbermap from '../../assets/web/about/robbermap.png';
 
 function About() {
     return(
@@ -62,6 +64,24 @@ function About() {
             </div>
             <div className='travelPic'>
                 <img alt="" src={travel} /> 
+            </div>
+        </div>
+        <div className='middleContent3'>
+            <div className='header3'>
+                Why It Matters
+            </div>
+            <div className ='header3Text'>
+            Crime is unfortunately a part of life. And it can be a very dangerous part of life, especially if you don't know it's close.<br/> 
+            Furthermore, some people are at higher risk for certain crimes than others. Staying informed can mean staying safe, and TS<br/> 
+            seeks to help people stay informed about crime.
+            </div>
+        </div>
+        <div className='middleContent4'>
+            <div className='robberPic'>
+                <img alt="" src={robber} /> 
+            </div>
+            <div className='robberMap'>
+                <img alt="" src={robbermap} /> 
             </div>
         </div>
     </>
