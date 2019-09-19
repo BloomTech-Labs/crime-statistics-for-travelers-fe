@@ -88,8 +88,8 @@ function Login({ touched, errors }) {
               name="password"
             />
             <H5>{touched.password && errors.password}</H5> 
-            <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
-
+            <Button variantColor="blue" className="formBTN" width="50%" rounded="22px" type="submit">
+              Sign In
             </Button>
           </Form>
         </Box>
@@ -107,7 +107,7 @@ function Login({ touched, errors }) {
             <PseudoBox
                 as="button"
                 height="44px"
-                width="100%"
+                width="60%"
                 lineHeight="1.2"
                 transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
                 // border="1px"
@@ -115,7 +115,7 @@ function Login({ touched, errors }) {
                 rounded="22px"
                 fontSize="14px"
                 fontWeight="semibold"
-                bg="#111111"
+                bg="#3182ce"
                 // borderColor="#ccd0d5"
                 color="#ffffff"
                 // _hover={{ bg: "#ebedf0" }}

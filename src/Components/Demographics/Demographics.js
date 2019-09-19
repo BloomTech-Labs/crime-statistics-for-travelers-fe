@@ -12,7 +12,6 @@ color: white;
 
 
 const Demogrphics= () => (
-
             <div className="formContainer">
                 <Formik
                     initialValues={{
@@ -54,10 +53,8 @@ const Demogrphics= () => (
                         </Form>
                     )}
                     />
-                    
-                        
+
             </div>
-    
 )
 
 export default (Demogrphics);
