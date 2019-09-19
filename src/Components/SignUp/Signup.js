@@ -12,9 +12,6 @@ import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import {Button, PseudoBox} from '@chakra-ui/core'
 import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
 
-
-// import posed from "react-pose";
-
 const H5 = styled.h5`
   color: #b22222;
 
@@ -26,10 +23,7 @@ const Btn = styled(Link)`
 
 `;
 
-// const Label = styled.label`
-//   color: #f3e367;
-//   font-size: 2.5em;
-// `;
+
 
 function Signup({ touched, errors }) {
 
@@ -122,9 +116,10 @@ function Signup({ touched, errors }) {
               name="password"
             />
             <H5>{touched.password && errors.password}</H5> 
-            <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
-              <Btn to='/Login'>Signup</Btn>
-            </Button>
+            {/* <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit"> */}
+              
+            {/* </Button> */}
+            <button type='submit'>Test</button>
           </Form>
         </Box>
       </div>
@@ -133,7 +128,7 @@ function Signup({ touched, errors }) {
 }
 
 export default withFormik({
-  mapPropsToValues() {
+  mapPropsToValues({name,email,password}) {
     return {
       name: "",
       email:"",
@@ -159,7 +154,7 @@ export default withFormik({
   handleSubmit(values, formikBag) {
     console.log(values,"Login values")
     axios
-      .post(`https://backend-for-production.herokuapp.com//api/auth/register`, values)
+      .post(`https://backend-for-production.herokuapp.com/api/auth/register`, values)
       .then((response) => {
         localStorage.setItem('token', response.data.payload);
         console.log('does token data exist:', response.data.payload)
@@ -169,15 +164,7 @@ export default withFormik({
       .catch((e) => {
         // console.log(e.response.data && response.data);
       });
-    //   {if(token === null){
-    //     Swal.fire({
-    //         position: 'center',
-    //         type: 'error',
-    //         title: 'Try Again!',
-    //         showConfirmButton: false,
-    //         timer: 2500
-    //       })
-    //   }else{
+  
         Swal.fire({
             position: 'center',
             type: 'success',
@@ -185,7 +172,7 @@ export default withFormik({
             showConfirmButton: false,
             timer: 2500
           })
-    //   }}
+
 
   }
 
