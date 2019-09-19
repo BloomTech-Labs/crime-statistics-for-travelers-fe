@@ -32,12 +32,14 @@ const Demogrphics= props => {
                         gender: "Male",
                         race: "White"
                     }}
+                    // this handles form validation
                     validationSchema={Yup.object().shape({
                        name: Yup.string(),
                        age: Yup.string(),
                        gender: Yup.string(),
                        race: Yup.string(),
                     })}
+                    // equivilent of submitHandler
                     onSubmit={(values, actions) => {
                         setTimeout(() => {
                             alert(JSON.stringify(values, null, 2));
