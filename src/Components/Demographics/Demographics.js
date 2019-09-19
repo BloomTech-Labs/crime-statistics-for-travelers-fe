@@ -43,10 +43,10 @@ const Demogrphics= props => {
                             alert(JSON.stringify(values, null, 2));
                             actions.setSubmitting(false);
                         }, 500)
+                        console.log("Search", values);
                         axiosWithAuth()
                             .put(`https://backend-for-production.herokuapp.com//api/auth/register`, values)
                             .then(res => {
-                                console.log(res.data);
                                 props.history.push('/');
                             })
                             .catch(err => console.log(err.response));
