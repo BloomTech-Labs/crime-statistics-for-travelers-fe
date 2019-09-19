@@ -1,41 +1,136 @@
-// import React from "react";
-// import {Link} from 'react-router-dom'
-// import { withFormik, Form, Field } from "formik";
-// import * as Yup from "yup";
-// import axios from "axios";
-// import { Redirect } from "react-router-dom";
-// import Swal from "sweetalert2";
-// import styled from "styled-components";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-// import {
-//   Button,
-//   PseudoBox} from '@chakra-ui/core'
-// import {
-//   FormLabel, 
-//   FormControl, 
-//   FormErrorMessage, 
-//   Input, 
-//   Stack, 
-//   Box, 
-//   Heading, 
-//   Text} from '@chakra-ui/core'
+import React, {useState} from "react";
+import {Link} from 'react-router-dom'
+import { withFormik, Form, Field } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
+import Swal from "sweetalert2";
+import styled from "styled-components";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import {
+  Button,
+  PseudoBox} from '@chakra-ui/core'
+import {
+  FormLabel, 
+  FormControl, 
+  FormErrorMessage, 
+  Input, 
+  Stack, 
+  Box, 
+  Heading, 
+  Text} from '@chakra-ui/core'
 
-// import './LoginForm.css'
-// // import posed from "react-pose";
+import './LoginForm.css'
 
-// const H5 = styled.h5`
-//   color: #b22222;
+const Login = (props) => {
+  // const [userId, setUserId] = useState({
+  //   "userid": null,
+  //   "username": "",
+  //   "profile": null
+  // })
+  const [input, setInput] = useState({
+    username: '',
+    password: ''
+  })
+  const token = window.localStorage.getItem('token')
+  console.log('state',input)
+  
+  const handleChange = e => {
+    console.log('login input change', e.target.value)
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value
+    });
+  }
+  
+  const handleLoginSubmit = e => {
+    e.preventDefault();
+    axios
+    .post('https://backend-for-production.herokuapp.com/api/auth/login', input)
+    .then(res => {
+      console.log('login submit results', res)
+      // window.localStorage.setItem('token', JSON.stringify(res.data.access_token))
+      props.history.push('/map')
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  }
+  
+  if(token){
+    return <Redirect to="/experiences"/>
+  }
+  return (   
+    <div className="col-container">
+    <div className="col3">
 
-// `;
+      <Box p={5} shadow="lg" borderWidth="2px" rounded="lg" className="form-container">
+            <form onSubmit={handleLoginSubmit}>
+                <input
 
+                  placeholder='Username' 
+                  onChange={handleChange}
+                  name="username"
+                  value={input.username}
+                />
+                <input
+                  placeholder='Password'
+                  name='password'
+                  value={input.password}
+                  onChange={handleChange}
+                  type='password'
+                />
+                <button color='teal' fluid size='large' onClick={handleLoginSubmit}>
+                  Login
+                </button>
+            </form>
+        </Box>
+      </div>
+      <div className="col4">
+         <div className="heading-container">
 
-// const Btn = styled(Link)`
+           <Heading as='h1'>New around here?</Heading>
+           <strong>
+           <p>Please Create a </p>
+           <p>new user account.</p>
+           </strong>
+           <Link to="/signup">
 
-// `;
-// const Wrapper = styled.button`
+             <PseudoBox
+                as="button"
+                height="44px"
+                width="100%"
+                lineHeight="1.2"
+                transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                // border="1px"
+                px="8px"
+                rounded="22px"
+                fontSize="14px"
+                fontWeight="semibold"
+                bg="#111111"
+                // borderColor="#ccd0d5"
+                color="#ffffff"
+                // _hover={{ bg: "#ebedf0" }}
+                _active={{
+                  bg: "#dddfe2",
+                  transform: "scale(0.98)",
+                  borderColor: "#bec3c9",
+                }}
+                _focus={{
+                  boxShadow:
+                    "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+                }}
+              >
+                Sign Up
+              </PseudoBox>
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-// `
 
 // function Login({ touched, errors }) {
 
@@ -197,104 +292,20 @@
 //   }
 
 // })(Login);
-import React from 'react';
-import { withFormik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import axios from 'axios';
-import { Redirect } from 'react-router-dom';
-import Swal from 'sweetalert2'
-import styled from 'styled-components'
+// import React from 'react';
+// import { withFormik, Form, Field } from 'formik';
+// import * as Yup from 'yup';
+// import axios from 'axios';
+// import { Redirect } from 'react-router-dom';
+// import Swal from 'sweetalert2'
+// import styled from 'styled-components'
 
 
-const H5 = styled.h5`
-color:	#B22222;
-`
+// const H5 = styled.h5`
+// color:	#B22222;
+// `
 
 
-function Login({ touched, errors }) {
-  const token = localStorage.getItem('token');
 
-  if (token) {
-    return <Redirect to="/" />;
-  }
 
-  return (
-    <Form>
-    <label htmlFor = "username">username</label>
-    <Field id="username" type="username" autocomplete="off" placeholder="username" name = "username"/>
-     <H5>{touched.username && errors.username}</H5>
-    <label htmlFor = "password">password</label>
-    <Field id="password" type="password" autocomplete="off" placeholder="password" name= "password"/>
-    <H5>{touched.password && errors.password}</H5>
-    <Field id="email" type="email" placeholder="email" name="email"/>
-    {/* <label htmlFor = "confirmPassword">Confirm your password</label>
-    <Field id="passwordConfirmation" type="password" placeholder="passwordConfirmation" name="passwordConfirmation"/>
-   <H5>{touched.passwordConfirmation && errors.passwordConfirmation}</H5>
-   <label htmlFor = "rememberPassword">Let us remember your password?</label>
-    <Field id="rememberPassword" type="checkbox" name="rememberPassword"/>
-    <H5>{touched.rememberPassword && errors.rememberPassword}</H5> */}
-    <button type="submit">Login</button>
- </Form> 
-
-  );
-}
-
-export default withFormik({
-  mapPropsToValues() {
-    return {
-        username: '',
-        password: '',
-        email:''
-        // confirmPassword: "",
-        // rememberPassword: false
-    };
-  },
-  validationSchema: Yup.object().shape({
-    username: Yup.string()
-    .min(3, "Must be 3 characters or more")
-    .max(20, "Must be less than 20 characters")
-    .required("This field is required"),
-    email: Yup.string()
-    .required("Enter an email to continue"),
-  password: Yup.string()
-    .min(3, "Must be 3 characters or more")
-    .max(100, "Must be less than 100 characters")
-    .required("Enter a password to continue"),
-    // passwordConfirmation: Yup.string()
-    // .oneOf([Yup.ref('password'), null], 'Passwords must match'),
-  }),
-  handleSubmit(values, formikBag) {
-    console.log("values",values)
-    axios
-      .post(`https://backend-for-production.herokuapp.com/api/auth/login`, values)
-  
-      .then((response) => {
-        
-        localStorage.setItem('token', response.data.payload);
-        console.log('does token data exist:', response.data.payload)
-        formikBag.props.history.push('/');
-        formikBag.props.setToken(response.data.payload)
-      })
-      .catch((e) => {
-        // console.log(e.response.data && response.data);
-      });
-    //   {if(token === null){
-    //     Swal.fire({
-    //         position: 'center',
-    //         type: 'error',
-    //         title: 'Try Again!',
-    //         showConfirmButton: false,
-    //         timer: 2500
-    //       })
-    //   }else{
-        Swal.fire({
-            position: 'center',
-            type: 'success',
-            title: 'Welcome!',
-            showConfirmButton: false,
-            timer: 2500
-          })
-    //   }}
-
-  }
-})(Login);
+export default Login
