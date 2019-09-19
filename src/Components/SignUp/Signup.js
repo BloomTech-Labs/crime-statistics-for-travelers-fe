@@ -212,7 +212,7 @@ function Signup({ touched, errors }) {
    <label htmlFor = "rememberPassword">Let us remember your password?</label>
     <Field id="rememberPassword" type="checkbox" name="rememberPassword"/>
     <H5>{touched.rememberPassword && errors.rememberPassword}</H5> */}
-    <button type="submit">Login</button>
+    <button type="submit">Signup</button>
  </Form> 
   );
 }
@@ -240,7 +240,7 @@ export default withFormik({
   }),
   handleSubmit(values, formikBag) {
     axios
-      .post(`http://localhost:4000/api/register`, values)
+      .post(`https://backend-for-production.herokuapp.com/api/auth/register`, values)
       .then((response) => {
         localStorage.setItem('token', response.data.payload);
         console.log('does token data exist:', response.data.payload)

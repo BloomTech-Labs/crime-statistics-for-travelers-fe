@@ -266,7 +266,7 @@ export default withFormik({
   handleSubmit(values, formikBag) {
     console.log("values",values)
     axios
-      .post(`http://localhost:4000/api/register`, values)
+      .post(`https://backend-for-production.herokuapp.com/api/auth/login`, values)
   
       .then((response) => {
         
