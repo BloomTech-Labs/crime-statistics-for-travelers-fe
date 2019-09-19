@@ -8,8 +8,18 @@ import Swal from "sweetalert2";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import {Button, PseudoBox} from '@chakra-ui/core'
-import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
+import {
+  Button,
+  PseudoBox} from '@chakra-ui/core'
+import {
+  FormLabel, 
+  FormControl, 
+  FormErrorMessage, 
+  Input, 
+  Stack, 
+  Box, 
+  Heading, 
+  Text} from '@chakra-ui/core'
 
 import './LoginForm.css'
 // import posed from "react-pose";

@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react'
 import styled from 'styled-components';
 import {TokenContext} from './Components/Context/Contexts';
 import {Route,Link,Switch} from 'react-router-dom';
-
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";
@@ -30,6 +29,7 @@ useEffect(() => {
 
         <Navbar/>
         <Switch>
+
         
         <Route exact path="/" component={OurMap}/>
         <Route exact path="/login"  component={Login}/>
