@@ -9,6 +9,7 @@ import Login from '../Login/Login'
 const NavbarContainer = styled.header`
 display:flex;
 justify-content:flex-start;
+z-index:4;
 align-items:center;
   height: 60px;
   width: 100%;

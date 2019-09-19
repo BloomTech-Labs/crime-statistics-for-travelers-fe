@@ -22,9 +22,6 @@
 
 
 // `;
-
-
-
 // function Signup({ touched, errors }) {
 
 //   return (
@@ -71,7 +68,6 @@
 //         </div>
 //       </div>
 
-
 //       <div className="col2">
 //         <Box p={5} shadow="lg" borderWidth="2px" rounded="lg" className="form-container">
 //             <h1 className="heading">Create an account.</h1>
@@ -84,6 +80,7 @@
 //               </div>
 //             </div>
 //           <Form className="form"> 
+
             
 //             <Field
 //               className="form-input"
@@ -101,9 +98,7 @@
 //               type="email"
 //               autoComplete="off"
 //               placeholder="Email address"
-//               name="email"
-       
-              
+//               name="email"      
 //             />
 //             <H5>{touched.email && errors.email}</H5>
 
@@ -214,6 +209,7 @@ function Signup({ touched, errors }) {
     <H5>{touched.rememberPassword && errors.rememberPassword}</H5> */}
     <button type="submit">Signup</button>
  </Form> 
+
   );
 }
 

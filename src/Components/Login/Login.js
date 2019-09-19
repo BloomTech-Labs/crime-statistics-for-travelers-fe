@@ -75,7 +75,6 @@
 //               placeholder="Email"
 //               name="email"
        
-              
 //             />
 //             <H5>{touched.email && errors.email}</H5>
 
@@ -236,6 +235,7 @@ function Login({ touched, errors }) {
     <H5>{touched.rememberPassword && errors.rememberPassword}</H5> */}
     <button type="submit">Login</button>
  </Form> 
+
   );
 }
 
