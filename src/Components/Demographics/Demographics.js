@@ -13,16 +13,6 @@ color: white;
 
 const Demogrphics= props => {
 
-    // const [demo, setDemo] =useState({initialValues})
-
-    // const handleSubmit = e => {
-    //     console.log(demo);
-    //     e.preventDefault();
-    //     const id = props.match.params.id;
-    //     axiosWithAuth()
-    //         .put(`https://backend-for-production.herokuapp.com//api/auth/register`)
-    // }
-    
     return(
 
             <div className="formContainer">
