@@ -107,3 +107,37 @@ a {
     color: #FFFFFF;
     margin-left: 52px;
 }
+
+.middleContent {
+	display: flex;
+    margin-top: 305px;
+    margin-left: 28px;
+}
+
+.middleText {
+	color: #1F8EFA;
+    font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 38px;
+    line-height: 40px;
+    margin-top: 89px;
+    margin-left: 120px;
+}
+
+.middleText1 {
+	font-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-top: 229px;
+    margin-left: -318px;	
+}
+
+.travelGlobe {
+    width: 473px;
+    margin-left: 180px;
+    margin-right: -35px;
+}
