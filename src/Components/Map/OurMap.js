@@ -127,7 +127,7 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         //  className="absolute top right left bottom"
           id="map" className='map'/>
           <div id='geocoder' class='geocoder'></div>
-        <div className='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        <div className='map-overlay' id='features'><h2>Crime Per State Per 100k</h2><div id='pd'><p>Hover over a state!</p></div></div>
         <div className='map-overlay' id='legend'></div>
       </div>
     );

@@ -107,3 +107,166 @@ a {
     color: #FFFFFF;
     margin-left: 52px;
 }
+
+.middleContent {
+	display: flex;
+    margin-top: 305px;
+    margin-left: 28px;
+}
+
+.middleText {
+	color: #1F8EFA;
+    font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 38px;
+    line-height: 40px;
+    margin-top: 89px;
+    margin-left: 120px;
+}
+
+.middleText1 {
+	font-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-top: 229px;
+    margin-left: -318px;	
+}
+
+.travelGlobe {
+    width: 473px;
+    margin-left: 201px;
+    margin-right: -35px;
+}
+
+.middleContent2 {
+	display: flex;
+}
+
+.movers {
+	position: absolute;
+    width: 569px;
+    height: 490px;
+    left: 140px;
+    top: 1171px;
+    z-index: 1;
+}
+
+.greyBox {
+	position: absolute;
+    width: 967px;
+    height: 676px;
+    left: 532px;
+    top: 1100px;
+    background: #5A6F80;
+    opacity: 0.7;
+}
+
+.greyHeader {
+	position: absolute;
+	width: 220px;
+	height: 68px;
+	left: 187px;
+    top: 9px;
+	font-family: Libre Franklin;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 56px;
+	line-height: 68px;
+	color: #011bd6;
+}
+
+.greyHeader2 {
+	font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+    margin-top: 94px;
+    margin-left: 84px;
+}
+
+.greyText {
+	position: absolute;
+    width: 842px;
+    height: 310px;
+    left: 100px;
+    top: 153px;
+    font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    color: #000000;
+
+}
+
+.travelPic {
+	position: absolute;
+    width: 629px;
+    height: 541px;
+    left: 669px;
+    top: 1473px;
+}
+
+.middleContent3 {
+	display: flex;
+}
+
+.header3 {
+	position: absolute;
+	width: 418px;
+	height: 68px;
+	left: 540px;
+	top: 2000px;
+	font-family: Libre Franklin;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 56px;
+	line-height: 68px;
+	text-align: center;
+	color: #1F8EFA;
+}
+
+.header3Text {
+	position: absolute;
+    width: 1319px;
+    height: 132px;
+    left: 95px;
+    top: 2080px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+}
+
+.middleContent4 {
+	display: flex;
+}
+
+.robberPic {
+    position: absolute;
+    width: 311px;
+    height: 162px;
+    left: 776px;
+    top: 2161px;
+}
+
+.robberMap {
+	position: absolute;
+    width: 1200px;
+    height: 528px;
+    left: 149px;
+    top: 2308px;
+}
+
+
+
