@@ -32,6 +32,10 @@ html, body, #root, #app>div {
   margin: 0 auto;
 }
 
+.heading-container p {
+  text-align: center;
+}
+
 .auth-links{
   width: 60%;
   margin: 0 auto;

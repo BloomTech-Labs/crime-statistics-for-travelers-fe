@@ -23,9 +23,9 @@ class OurMap extends Component {
         super(props);
         //Within state define your map center
         this.state = {
-          lng: 5,
-          lat: 34,
-          zoom: 1.5
+          lng: -96,
+          lat: 37,
+          zoom: 3.5
         };
       }
     //Setting bounds in our mount allows our map to exlusively show only the united states.
@@ -98,7 +98,7 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
 
 
         // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
 
 
         map.on('move', () => {

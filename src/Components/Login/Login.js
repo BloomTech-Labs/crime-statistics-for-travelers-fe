@@ -8,8 +8,18 @@ import Swal from "sweetalert2";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import {Button, PseudoBox} from '@chakra-ui/core'
-import {FormLabel, FormControl, FormErrorMessage, Input, Stack, Box, Heading, Text} from '@chakra-ui/core'
+import {
+  Button,
+  PseudoBox} from '@chakra-ui/core'
+import {
+  FormLabel, 
+  FormControl, 
+  FormErrorMessage, 
+  Input, 
+  Stack, 
+  Box, 
+  Heading, 
+  Text} from '@chakra-ui/core'
 
 import './LoginForm.css'
 // import posed from "react-pose";
@@ -21,7 +31,6 @@ const H5 = styled.h5`
 
 
 const Btn = styled(Link)`
-
 
 `;
 const Wrapper = styled.button`
@@ -80,7 +89,7 @@ function Login({ touched, errors }) {
             />
             <H5>{touched.password && errors.password}</H5> 
             <Button variantColor="green" className="formBTN" width="50%" rounded="22px" type="submit">
-              <Btn to='/'>Login</Btn>
+
             </Button>
           </Form>
         </Box>
@@ -139,6 +148,7 @@ export default withFormik({
       // rememberPassword: false
     };
   },
+
   validationSchema: Yup.object().shape({
     username: Yup.string()
       .min(3, "Must be 3 characters or more")
