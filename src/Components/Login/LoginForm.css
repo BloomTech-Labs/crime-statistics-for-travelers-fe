@@ -72,6 +72,10 @@ input:focus {
   outline: none;
 }
 
+input, input[palceholder] {
+ text-align: center;
+}
+
 .form-input{
   height: 40px;
   margin: 5px auto;
@@ -84,4 +88,5 @@ input:focus {
 .login-form{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }

@@ -11,6 +11,9 @@ ul {
   list-style: none;
 }
 
+#root{
+    width: 100%
+}
 
 h2,
 h3,

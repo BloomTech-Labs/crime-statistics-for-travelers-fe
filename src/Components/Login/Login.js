@@ -20,6 +20,9 @@ import {
   Box, 
   Heading, 
   Text} from '@chakra-ui/core'
+  import google from '../../assets/web/1x/btn_google_signin_light_normal_web.png'
+  import fb from '../../assets/web/1x/login-facebook.png'
+
 
 import './LoginForm.css'
 
@@ -64,30 +67,31 @@ const Login = (props) => {
           <h1 className="heading">Log in to your account.</h1>
              <div className="auth-links">
                <div className="auth-link">
-               <FontAwesomeIcon icon={ faThumbsUp }/>                    
+               <img src={google}/>                    
                </div>
                <div className="auth-link">
-                 <FontAwesomeIcon icon={ faThumbsUp }/>    
+                 <img src={fb}/>    
                </div>
              </div>
             <form onSubmit={handleLoginSubmit} className="login-form">
                 <input
-
+                  className="form-input"
                   placeholder='Username' 
                   onChange={handleChange}
                   name="username"
                   value={input.username}
                 />
                 <input
+                  className="form-input"
                   placeholder='Password'
                   name='password'
                   value={input.password}
                   onChange={handleChange}
                   type='password'
                 />
-                <button color='teal' fluid size='large' onClick={handleLoginSubmit}>
+                <Button variantColor='blue' width="60%" rounded="20px" onClick={handleLoginSubmit}>
                   Login
-                </button>
+                </Button>
             </form>
         </Box>
       </div>
@@ -104,7 +108,7 @@ const Login = (props) => {
              <PseudoBox
                 as="button"
                 height="44px"
-                width="100%"
+                width="80%"
                 lineHeight="1.2"
                 transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
                 // border="1px"
@@ -112,7 +116,7 @@ const Login = (props) => {
                 rounded="22px"
                 fontSize="14px"
                 fontWeight="semibold"
-                bg="#111111"
+                bg="#3182ce"
                 // borderColor="#ccd0d5"
                 color="#ffffff"
                 // _hover={{ bg: "#ebedf0" }}
