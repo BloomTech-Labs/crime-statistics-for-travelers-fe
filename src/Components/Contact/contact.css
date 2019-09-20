@@ -1,0 +1,140 @@
+.mainContent {
+    display: flex;  
+}
+
+.mainHeader {
+    position: absolute;
+    width: 710px;
+    height: 68px;
+    left: 40px;
+    top: 126px;
+    font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 68px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #1F8EFA;
+}
+
+.mainText {
+    position: absolute;
+    width: 1395px;
+    height: 340px;
+    left: 52px;
+    top: 216px;
+    font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 68px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.mainForms {
+    display: flex;
+}
+
+.nameForm {
+    position: absolute;
+    left: 222px;
+    right: 468px;
+    top: 665px;
+    bottom: 46.96%;
+    background: #1F8EFA;
+    height: 24px;
+}
+
+.inputName {
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 564px;
+    margin-left: 222px;
+}
+
+.phoneForm {
+    position: absolute;
+    left: 223px;
+    right: 467px;
+    top: 719px;
+    bottom: 46.96%;
+    background: #1F8EFA;
+    height: 24px;
+}
+
+.inputPhone {
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 618px;
+    margin-left: -892px;  
+}
+
+.titleForm {
+    position: absolute;
+    left: 223px;
+    right: 467px;
+    top: 770px;
+    bottom: 46.96%;
+    background: #1F8EFA;
+    height: 24px;
+}
+
+.inputTitle {
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 669px;
+    margin-left: -892px;  
+}
+
+.emailForm {
+    position: absolute;
+    left: 223px;
+    right: 467px;
+    top: 820px;
+    bottom: 46.96%;
+    background: #1F8EFA;
+    height: 24px;
+}
+
+.inputEmail {
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 719px;
+    margin-left: -892px;  
+}
+
+.blueForm {
+    position: absolute;
+    left: 223px;
+    right: 467px;
+    top: 891px;
+    bottom: 46.96%;
+    background: #1F8EFA;
+    height: 30px;
+}
+
+.inputContact {
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 796px;
+    margin-left: -892px;  
+}
+
+.submitButton {
+    height: 27px;
+    background: #05C985;
+    color: white;
+    margin-top: 1148px;
+    width: 118px;
+    padding-left: 31px;
+    margin-left: -896px;
+}
+
+.spaceArea {
+    margin-top: 1215px
+} 
