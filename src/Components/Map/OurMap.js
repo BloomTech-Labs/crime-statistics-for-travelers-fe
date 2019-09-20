@@ -95,7 +95,76 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
           // legend.appendChild(item);
         }
       });
-
+//=======================================================================================================
+//Adding Icons to Popular Hotspots
+map.on('load', function () {
+  // Add a symbol layer.
+  map.addLayer({
+  "id": "symbols",
+  "type": "symbol",
+  "source": {
+  "type": "geojson",
+  "data": {
+  "type": "FeatureCollection",
+  "features": [
+  {
+  "type": "Feature",
+  "properties": {},
+  "geometry": {
+  "type": "Point",
+  "coordinates": [
+  -118.34033203125,
+  -34.34033203125
+   //-118 34
+  ]
+  }
+  },
+  {
+  "type": "Feature",
+  "properties": {},
+  "geometry": {
+  "type": "Point",
+  "coordinates": [
+  -115.34033203125,
+  -36.34033203125
+  ]
+  }
+  },
+  {
+  "type": "Feature",
+  "properties": {},
+  "geometry": {
+  "type": "Point",
+  "coordinates": [
+  -87.34033203125,
+  41.01647949196029245
+  ]
+  }
+  }
+  ]
+  }
+  },
+  "layout": {
+  "icon-image": "rocket-15"
+  }
+  });
+   
+  // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+  map.on('click', 'symbols', function (e) {
+  map.flyTo({center: e.features[0].geometry.coordinates});
+  });
+   
+  // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+  map.on('mouseenter', 'symbols', function () {
+  map.getCanvas().style.cursor = 'pointer';
+  });
+   
+  // Change it back to a pointer when it leaves.
+  map.on('mouseleave', 'symbols', function () {
+  map.getCanvas().style.cursor = '';
+  });
+  });
+  //===========================================================================================================
 
 
         // Add zoom and rotation controls to the map.
@@ -119,8 +188,8 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
     return (
       <div>
         <div>
-        {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold"> */}
-          {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div> */}
+        <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
+          <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div> 
         </div>
        
         
@@ -133,8 +202,10 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         <div className='map-overlay' id='legend'></div>
         <UScrime/>
       </div>
+      </div>
     );
   }
 }
+
 
 export default OurMap; 
