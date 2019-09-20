@@ -85,3 +85,8 @@ input:focus {
   text-align: center;
   margin-top: 20px;
 }
+
+.signup-form{
+  display: flex;
+  flex-direction: column;
+}

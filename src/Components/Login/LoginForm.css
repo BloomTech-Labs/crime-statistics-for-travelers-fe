@@ -80,3 +80,8 @@ input:focus {
   border:solid 1px #ccc;
   border-radius: 10px;
 }
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+}

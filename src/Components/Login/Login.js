@@ -70,7 +70,7 @@ const Login = (props) => {
                  <FontAwesomeIcon icon={ faThumbsUp }/>    
                </div>
              </div>
-            <form onSubmit={handleLoginSubmit}>
+            <form onSubmit={handleLoginSubmit} className="login-form">
                 <input
 
                   placeholder='Username' 

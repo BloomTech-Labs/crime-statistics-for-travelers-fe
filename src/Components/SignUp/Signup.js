@@ -102,7 +102,7 @@ const Signup = (props) => {
                  <FontAwesomeIcon icon={ faThumbsUp }/>    
                </div>
              </div>
-            <form onSubmit={handleLoginSubmit}>
+            <form onSubmit={handleLoginSubmit} className="signup-form">
                 <input
 
                   placeholder='Username' 
