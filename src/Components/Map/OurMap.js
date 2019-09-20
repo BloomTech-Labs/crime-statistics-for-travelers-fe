@@ -39,7 +39,7 @@ class OurMap extends Component {
         //Generating our map======================================================================
         const map = new mapboxgl.Map({
           container: this.mapContainer,
-         style:'mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8/draft',//Dynamic Style URL for our map style
+         style:'mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8',//Dynamic Style URL for our map style
           center: [lng, lat],//Center of where the mapbox map 
           zoom:zoom,//State value that allows you to set a default application zoom.
           maxBounds: bounds//it takes the SW coordinates and the NE coorinates and sets teh map in place
