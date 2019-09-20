@@ -6,6 +6,7 @@ import movers from '../../assets/web/about/movers.png';
 import travel from '../../assets/web/about/travel.png';
 import robber from '../../assets/web/about/robber.png';
 import robbermap from '../../assets/web/about/robbermap.png';
+import email from '../../assets/web/about/email.png';
 
 function About() {
     return(
@@ -82,6 +83,28 @@ function About() {
             </div>
             <div className='robberMap'>
                 <img alt="" src={robbermap} /> 
+            </div>
+        </div>
+        <div className='middleContent5'>
+            <div className='greyArea'>
+                <div className='header4'>
+                    We're Here to Help!
+                </div>
+                <div className='header4Text'>
+                    If you have any questions about how TS works, or how we could improve our application, we'd love to hear from you! You<br/> 
+                    can email our team at teamcsft@gmail.com
+                    <div className='emailIcon'>
+                        <img alt="" src={email} /> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className='footer'>
+            <div className="footerLinks">
+               <a href="#">Map</a>
+               <a href="#">About The Data</a>
+               <a href="#">Who We Serve</a>
+               <a href="#">Contact</a>
             </div>
         </div>
     </>
