@@ -71,12 +71,12 @@ class OurMap extends Component {
           document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
         }
       });
-      const onLoad = () => {
-var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
-var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
-      }
+//       const onLoad = () => {
+// var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
+// var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
+//       }
 
-      map.on(onLoad, function() {
+      map.on('load', function() {
         var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
         var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         // the rest of the code will go in here
@@ -188,8 +188,8 @@ map.on('load', function () {
     return (
       <div>
         <div>
-        <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
-          <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div> 
+        {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">*/}
+         {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>  */}
         </div>
        
         
@@ -202,7 +202,7 @@ map.on('load', function () {
         <div className='map-overlay' id='legend'></div>
         <UScrime/>
       </div>
-      </div>
+      // </div>
     );
   }
 }
