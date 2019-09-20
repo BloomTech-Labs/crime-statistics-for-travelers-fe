@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import styled from 'styled-components';
+import UScrime from './UScrime';
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
@@ -98,7 +99,7 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
 
 
         // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
+        map.addControl(new mapboxgl.NavigationControl(), "top-left");
 
 
         map.on('move', () => {
@@ -128,7 +129,9 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
           id="map" className='map'/>
           <div id='geocoder' class='geocoder'></div>
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        
         <div className='map-overlay' id='legend'></div>
+        <UScrime/>
       </div>
     );
   }
