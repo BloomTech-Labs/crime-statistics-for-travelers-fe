@@ -10,20 +10,20 @@ html, body, #root, #app>div {
   height: 100%;
   width: 30%;
   padding: 16px;
-  height: 100%;
+  height: 93%;
   text-align: center;
-  background-color: grey;
+  background-color: #3E6385;
 }
 
 .col2{
   position: absolute;
   left: 30%;
   padding: 16px;
-  height: 100%;
+  height: 93%;
   width: 70%;
   text-align: center;
   background-color: #d6d3d3;
-  box-shadow: -10px 0px 10px 1px #6d6b6b;
+  box-shadow: -10px 0px 10px -8px #363636;
 }
 .heading-container{
   position: relative;
@@ -52,6 +52,10 @@ html, body, #root, #app>div {
   padding: 20px;
 }
 
+.form button{
+  color: white
+}
+
 .form-container{
   position: relative;
   top:30%;
@@ -68,6 +72,10 @@ input:focus {
   outline: none;
 }
 
+input, input[palceholder] {
+  text-align: center;
+ }
+
 .form-input{
   height: 40px;
   margin: 5px auto;
@@ -80,4 +88,10 @@ input:focus {
 .heading-container button{
   text-align: center;
   margin-top: 20px;
+}
+
+.signup-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

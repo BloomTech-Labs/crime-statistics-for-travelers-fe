@@ -34,8 +34,10 @@ export default function UScrime() {
             <h3>U.S.A Crime Rate</h3>
             if(total===undefined){
                 <p>Loading...</p>
+            }else{
+<p>{total}</p>
             }
-            <p>{total}</p>
+            
         </div>
     )
 }
