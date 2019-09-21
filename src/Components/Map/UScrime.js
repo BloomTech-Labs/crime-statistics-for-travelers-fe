@@ -32,6 +32,9 @@ export default function UScrime() {
     return (
         <div className='map-overlay' id='total'>
             <h3>U.S.A Crime Rate</h3>
+            if(total===undefined){
+                <p>Loading...</p>
+            }
             <p>{total}</p>
         </div>
     )
