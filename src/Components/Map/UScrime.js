@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+// import WebGL from 'webgl'
 import Axios from 'axios'
 import './Map.css'
 
@@ -29,15 +30,19 @@ export default function UScrime() {
             console.log(err,'local')
         })
     }, [])
+    if(total===undefined){
+        return(
+            <div className='map-overlay' id='total'>
+             <h3>U.S.A Crime Rate</h3>
+             <p>Loading...</p>   
+            </div>
+        )
+    }else{
     return (
         <div className='map-overlay' id='total'>
             <h3>U.S.A Crime Rate</h3>
-            if(total===undefined){
-                <p>Loading...</p>
-            }else{
-<p>{total}</p>
-            }
+            <p>{total}</p>
             
         </div>
-    )
+    )}
 }

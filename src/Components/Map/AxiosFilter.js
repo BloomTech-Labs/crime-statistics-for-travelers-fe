@@ -1,15 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import Axios from 'axios';
 export default function AxiosFilter() {
-    const [cityCrime,setCityCrime] = useState();
-    const [arson, setArson] = useState();
-    const [violentCrime,setViolentCrime] = useState();
-    const [homicide, setHomicide] = useState();
-    const [rape, setRape] =useState();
-    const [robbery,setRobbery] = useState();
-    const [property, setProperty]=useState();
-    const [aggroAssault,setAggroAssault] = useState();
-    const [burglary,setBurglary] = useState();
+//Steps
+//Query City
+//Display City Data
+const [cityCrime,setCityCrime] = useState();
+const [selected,setSelected]=useState();
 //Crime
 useEffect(() => {
 Axios.get("cityCrimeRating")
@@ -22,6 +18,22 @@ setCityCrime(obj.data)
 
     return (
         <div>
+    if(cityCrime===undefined){
+        <p>Loading...</p>
+    }else{
+        <p>{cityCrime}</p>
+    }
+    if(selected===true){
+        <div className="parent">
+        <p>{cityCrime.arson}</p>
+        <p>{cityCrime.rape}</p>
+        <p>{cityCrime.homicide}</p>
+        <p>{cityCrime.robbery}</p>
+        <p>{cityCrime.property}</p>
+        <p>{cityCrime.burglary}</p>
+        </div>
+    }
+
             
         </div>
     )

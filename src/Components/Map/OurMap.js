@@ -150,8 +150,7 @@ map.on('load', function () {
   });
    
   // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
-  map.on('click', 'symbols', function (e) {
-  map.flyTo({center: e.features[0].geometry.coordinates});
+  map.on('click', 'symbols', function (e) {  map.flyTo({center: e.features[0].geometry.coordinates});
   });
    
   // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
@@ -199,7 +198,7 @@ map.on('load', function () {
           <div id='geocoder' class='geocoder'></div>
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div></div>
         
-        <div className='map-overlay' id='legend'></div>
+        {/* <div className='map-overlay' id='legend'></div> */}
         <UScrime/>
       </div>
       // </div>
