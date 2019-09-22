@@ -1,0 +1,18 @@
+.Nav-Div{
+    display:flex;
+}
+
+.btn #btn{
+    background: none;
+    color: #78c6e6;
+    border: 2px solid #78c6e6;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    transition: all 200ms ease-out;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500; 
+}

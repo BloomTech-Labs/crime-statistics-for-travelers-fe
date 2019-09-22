@@ -54,6 +54,14 @@ const Login = (props) => {
     .catch(err => {
       console.error(err)
     })
+    //Sweet alert 
+    Swal.fire({
+      position: 'center',
+      type: 'success',
+      title: 'Welcome Back!',
+      showConfirmButton: false,
+      timer: 2500
+    })
   }
   
   if(token){
