@@ -1,35 +1,28 @@
 import React,{useEffect,useState} from 'react'
 // import WebGL from 'webgl'
-import Axios from 'axios'
+import axios from 'axios'
 import './Map.css'
 
 export default function UScrime() {
-    const [total,setTotal] = useState();
-    const [local,setLocal]=useState();
-    
-    
-    // Added a useEffect that will query the total crime in the US endpoint
-    // We don't want it active until we get real data because otherwise it will throw a 
-   //Crime Total US
-    useEffect(() => {
-      Axios.get("endpoint")
-      .then(obj =>{
-          setTotal(obj.data)
-      })
-      .catch(err =>{
-          console.log(err)
-      })
-    }, [])
-    //Crime In Called State
-    useEffect(() => {
-        Axios.get("endpoint")
-        .then(obj => {
-            setLocal(obj.data)
-        }).catch(err =>{
-            console.log(err,'local')
-        })
-    }, [])
-    if(total===undefined){
+
+   const [crimeData,setCrimeData] = useState([])
+
+   const fetchData = () => {
+     axios.get("https://backend-for-production.herokuapp.com/api/total/")
+     .then(res => {
+       console.log(res.data);
+       console.log(res.data[0].total)
+       setCrimeData(res.data[0].total);
+     })
+     .catch(err => {
+       console.log(err);
+     })
+   }
+ 
+   useEffect(fetchData, []);
+ 
+ 
+    if(crimeData===undefined){
         return(
             <div className='map-overlay' id='total'>
              <h3>U.S.A Crime Rate</h3>
@@ -40,7 +33,7 @@ export default function UScrime() {
     return (
         <div className='map-overlay' id='total'>
             <h3>U.S.A Crime Rate</h3>
-            <p>{total}</p>
+            <p>{crimeData}</p>
             
         </div>
     )}
