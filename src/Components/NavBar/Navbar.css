@@ -19,7 +19,7 @@
 
 }
 
-button::hover{
+button:hover{
     background:#78c6e6;
     color:white;
 }

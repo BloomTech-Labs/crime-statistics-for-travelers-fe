@@ -73,57 +73,33 @@ const Navbar = () => {
     setToken(localStorage.getItem("token"));
     console.log("test");
   }, [token]);
-  if(token===false){
-    return(
-      <div className="Nav-Div">
-
-      <NavbarContainer>
-      <NavItem to="/" component={OurMap}>
-        Map
-      </NavItem>
-      <NavItem to="/login" component={Login}>
-        Login
-        </NavItem>
-        <NavItem to="/data">
-        About the data
-      </NavItem>
-      </NavbarContainer>
-      </div>
-    )
-  }else{
   return (
-    <div className="Nav-Div">
-
     <NavbarContainer>
     <NavItem to="/" component={OurMap}>
       Map
     </NavItem>
-    <NavItem to="/login" component={Login}>
-      Login
-      </NavItem>
+
       <NavItem to="/data">
       About the data
     </NavItem>
-  
     <button
-    className="btn"
-    id="btn"
-    type="submit"
-    onClick={() => {
-      localStorage.removeItem("token");
-      setToken();
-Swal.fire({
-position: 'center',
-type: 'success',
-title: 'Logged Out',
-showConfirmButton: false,
-timer: 2500
-}) 
-    }}
-  >
-    Logout
-  </button>
-   
+                className="btn"
+                id="btn"
+                type="submit"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  setToken();
+                  Swal.fire({
+                    position: 'center',
+                    type: 'success',
+                    title: 'Logged Out',
+                    showConfirmButton: false,
+                    timer: 2500
+                  }) 
+                }}
+              >
+                Logout
+              </button>
 
     </NavbarContainer>
 
@@ -131,9 +107,9 @@ timer: 2500
     
    
 
-    </div>
-  )
-}}
+    
+  
+          )}
 
 
 export default Navbar;
