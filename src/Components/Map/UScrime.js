@@ -5,8 +5,7 @@ import './Map.css'
 
 export default function UScrime() {
     const [total,setTotal] = useState();
-    const [local,setLocal]=useState()
-    
+    const [local,setLocal]=useState();
     
     
     // Added a useEffect that will query the total crime in the US endpoint

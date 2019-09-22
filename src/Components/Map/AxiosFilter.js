@@ -31,6 +31,11 @@ setCityCrime(obj.data)
         <p>{cityCrime.robbery}</p>
         <p>{cityCrime.property}</p>
         <p>{cityCrime.burglary}</p>
+        <p>{cityCrime.aggroAssault}</p>
+        <p>{cityCrime.larceny}</p>
+        <p>{cityCrime.motor_vehicle}</p>
+        <p>{cityCrime.crimeTotals}</p>
+        
         </div>
     }
 
