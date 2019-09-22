@@ -2,8 +2,8 @@
     display:flex;
 }
 
-.btn #btn{
-    background: none;
+#btn{
+    background:#1E2F40;
     color: #78c6e6;
     border: 2px solid #78c6e6;
     padding: 0.8rem 1.5rem;
@@ -14,5 +14,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 500; 
+    font-weight: 500;
+     
+
+}
+
+button::hover{
+    background:#78c6e6;
+    color:white;
 }
