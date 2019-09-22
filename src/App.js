@@ -7,6 +7,7 @@ import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";
 import Navbar from './Components/NavBar/Navbar'
 import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
 
@@ -37,6 +38,7 @@ useEffect(() => {
         <Route exact path="/signup" component={Signup}/>
         <Route exact path="/about" component={About}/>
         {/* <Route exact path="/contact" component={Contact}/> */}
+
       
         <Route path="/demo" component={Demographics}/>
         </Switch>
