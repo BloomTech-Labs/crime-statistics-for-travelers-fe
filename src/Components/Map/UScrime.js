@@ -25,15 +25,15 @@ export default function UScrime() {
     if(crimeData===undefined){
         return(
             <div className='map-overlay' id='total'>
-             <h3>U.S.A Crime Rate</h3>
+             <h3>Total Crimes in 2017</h3>
              <p>Loading...</p>   
             </div>
         )
     }else{
     return (
         <div className='map-overlay' id='total'>
-            <h3>U.S.A Crime Rate</h3>
-            <p>{crimeData}</p>
+            <h3>Total Crimes in 2017</h3>
+            <p>{crimeData} commited</p>
             
         </div>
     )}
