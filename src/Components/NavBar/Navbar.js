@@ -4,6 +4,7 @@ import {NavLink,Route} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './Navbar.css'
 import OurMap from '../Map/OurMap';
+import About from '../About/About'
 
 import Login from '../Login/Login'
 
@@ -78,7 +79,10 @@ const Navbar = () => {
     <NavItem to="/" component={OurMap}>
       Map
     </NavItem>
-
+<NavItem to='/about' component={About}>
+  About
+</NavItem>
+{/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
       <NavItem to="/data">
       About the data
     </NavItem>
