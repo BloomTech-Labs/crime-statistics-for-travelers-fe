@@ -69,7 +69,7 @@ color:whitesmoke;
 `
 
 const Navbar = () => {
-  const [token,setToken] =useState(false)
+  const [token,setToken] =useState()
   useEffect(() => {
     setToken(localStorage.getItem("token"));
     console.log("test");
@@ -86,24 +86,32 @@ const Navbar = () => {
       <NavItem to="/data">
       About the data
     </NavItem>
-    <button
-                className="btn"
-                id="btn"
-                type="submit"
-                onClick={() => {
-                  localStorage.removeItem("token");
-                  setToken();
-                  Swal.fire({
-                    position: 'center',
-                    type: 'success',
-                    title: 'Logged Out',
-                    showConfirmButton: false,
-                    timer: 2500
-                  }) 
-                }}
-              >
-                Logout
-              </button>
+    {token!==null?(
+        <button
+        className="btn"
+        id="btn"
+        type="submit"
+        onClick={() => {
+          localStorage.removeItem("token");
+          setToken();
+          Swal.fire({
+            position: 'center',
+            type: 'success',
+            title: 'Logged Out',
+            showConfirmButton: false,
+            timer: 2500
+          }) 
+        }}
+      >
+        Logout
+      </button>
+      ) : (
+        <NavItem to='/login' component={Login}>
+          Login
+          </NavItem>
+      ) 
+    }}
+
 
     </NavbarContainer>
 

@@ -10,7 +10,6 @@ export default function UScrime() {
    const fetchData = () => {
      axios.get("https://backend-for-production.herokuapp.com/api/total/")
      .then(res => {
-       console.log(res.data);
        console.log(res.data[0].total)
        setCrimeData(res.data[0].total);
      })
