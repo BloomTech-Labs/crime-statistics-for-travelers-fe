@@ -11,6 +11,9 @@ ul {
   list-style: none;
 }
 
+#root{
+    width: 100%
+}
 
 h2,
 h3,
@@ -268,5 +271,72 @@ a {
     top: 2308px;
 }
 
+.middleContent5 {
+	display: flex;
+}
 
+.greyArea {
+	position: absolute;
+    width: 1583px;
+    height: 276px;
+    left: 0px;
+    top: 2823px;
+    background: #ACB7BF;
+}
 
+.header4 {
+	position: absolute;
+    width: 755px;
+    height: 64px;
+    left: 140px;
+    top: 14px;
+    font-family: Libre Franklin;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 56px;
+    line-height: 68px;
+    color: #1F8EFA;
+}
+
+.header4Text {
+	position: absolute;
+    width: 1319px;
+    height: 99px;
+    left: 178px;
+    top: 113px;
+    ont-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.emailIcon {
+	position: absolute;
+    left: 64.33%;
+    right: 8.33%;
+    top: 63.67%;
+    bottom: 17.67%;
+}
+
+.footer {
+	display: flex;
+	margin-top: 2259px;
+    background: white;
+}
+
+.footerLinks {
+	display: flex;
+    justify-content: space-between;
+    width: 384px;
+    margin-left: 549px;
+}
+
+.footerLinks a {
+	color: #3E6385;
+}
+
+.footerLinks a:hover {
+	color: rgba(128, 128, 128, 0.527);
+}
