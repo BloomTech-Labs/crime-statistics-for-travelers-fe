@@ -53,7 +53,7 @@ const Signup = (props) => {
       console.error(err)
     })
   }
-  
+    
   if(token){
     return <Redirect to="/experiences"/>
   }
