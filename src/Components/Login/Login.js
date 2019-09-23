@@ -49,15 +49,23 @@ const Login = (props) => {
     .then(res => {
       console.log('login submit results', res)
       // window.localStorage.setItem('token', JSON.stringify(res.data.access_token))
-      props.history.push('/map')
+      props.history.push('/')
     })
     .catch(err => {
       console.error(err)
     })
+    //Sweet alert 
+    Swal.fire({
+      position: 'center',
+      type: 'success',
+      title: 'Welcome Back!',
+      showConfirmButton: false,
+      timer: 2500
+    })
   }
   
   if(token){
-    return <Redirect to="/experiences"/>
+    return <Redirect to="/"/>
   }
   return (   
     <div className="col-container">

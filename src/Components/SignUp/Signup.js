@@ -52,6 +52,13 @@ const Signup = (props) => {
     .catch(err => {
       console.error(err)
     })
+    Swal.fire({
+      position: 'center',
+      type: 'success',
+      title: 'Welcome Back!',
+      showConfirmButton: false,
+      timer: 2500
+    })
   }
     
   if(token){
