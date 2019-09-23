@@ -8,10 +8,11 @@ export default function UScrime() {
    const [crimeData,setCrimeData] = useState([])
 
    const fetchData = () => {
-     axios.get("https://backend-for-production.herokuapp.com/api/total/")
+     axios.get("http://18.216.216.249/")
      .then(res => {
-       console.log(res.data[0].total)
-       setCrimeData(res.data[0].total);
+       console.log(res.data)
+      //  console.log(res.data.number)
+       setCrimeData(res.data);
      })
      .catch(err => {
        console.log(err);
@@ -31,8 +32,8 @@ export default function UScrime() {
     }else{
     return (
         <div className='map-overlay' id='total'>
-            <h3>Total Crimes in 2017</h3>
-            <p>{crimeData} commited</p>
+            <h3>US Crime Rate 2017</h3>
+            <p>{crimeData.number} per 100k</p>
             
         </div>
     )}
