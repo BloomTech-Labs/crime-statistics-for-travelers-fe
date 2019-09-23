@@ -71,10 +71,7 @@ class OurMap extends Component {
           document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
         }
       });
-//       const onLoad = () => {
-// var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
-// var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
-//       }
+
 
       map.on('load', function() {
         var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
