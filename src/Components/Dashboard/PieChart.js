@@ -10,7 +10,7 @@ const data = [
   { name: 'Group D', value: 200 },
 ];
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#0088FE', '#228b22', '#FFBB28', '#FF8042'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -32,6 +32,7 @@ export default class Example extends PureComponent {
 
   render() {
     return (
+      
       <PieChart width={400} height={400}>
         <Pie
           data={data}
