@@ -17,13 +17,23 @@ margin-top:45px;
 }
 
 `
+const Item = styled.div`
+/* display:flex;
+justify-content:center; */
+`
 
 
 export default function MainDashboard() {
+    const city = "Ames";
     return (
         <Container>
+            <Item>
+                <h1>Crime rates for {city}</h1>
             <PieChart/>
+            </Item>
+            <Item>
             <LineChart/>
+            </Item>
         </Container>
     )
 }

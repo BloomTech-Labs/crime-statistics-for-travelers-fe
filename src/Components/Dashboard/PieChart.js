@@ -4,10 +4,10 @@ import {
 } from 'recharts';
 
 const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
+  { name: 'Arson', value: 400 },
+  { name: 'Robbery', value: 300 },
+  { name: 'Rape', value: 300 },
+  { name: 'Assault', value: 200 },
 ];
 
 const COLORS = ['#0088FE', '#228b22', '#FFBB28', '#FF8042'];
@@ -34,6 +34,7 @@ export default class Example extends PureComponent {
     return (
       
       <PieChart width={400} height={400}>
+        
         <Pie
           data={data}
           cx={200}
@@ -48,6 +49,7 @@ export default class Example extends PureComponent {
             data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
           }
         </Pie>
+        
       </PieChart>
     );
   }
