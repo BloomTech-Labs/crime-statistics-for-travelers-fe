@@ -48,6 +48,13 @@ a {
 	display: block;
 }
 
+
+.logo{
+	margin-top: 20px;
+	margin-left: 9px;
+    width: 2000px;
+}
+
 .main-nav a {
 	color: #1F8EFA;
 	font-size: 16px;
@@ -71,6 +78,7 @@ a {
 	.header,
 	.main-nav {
 		display: flex;
+		width: 1500px;
 	}
 	.header {
 		

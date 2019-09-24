@@ -7,21 +7,25 @@ import travel from '../../assets/web/about/travel.png';
 import robber from '../../assets/web/about/robber.png';
 import robbermap from '../../assets/web/about/robbermap.png';
 import email from '../../assets/web/about/email.png';
+import logo from '../../assets/web/about/logo.png';
 
 function About() {
     return(
         <>
         <header class="header">
+            <div className='logo'> 
+                <img alt="logo" src={logo} /> 
+            </div>
             <ul class="main-nav">
                 <li><a href="#">MAP</a></li>
                 <li><a href="#">ABOUT THE DATA</a></li>
                 <li><a href="#">WHO WE SERVE</a></li>
                 <li className='login'><a href="#">LOGIN</a></li>
-            </ul>
+            </ul>    
         </header>
         <div className='mainMap'>
         <div className='image'>
-            <img width={1500} height={500} alt="" src={map} /> 
+            <img width={1500} height={500} alt="map" src={map} /> 
         </div>
             <div className='search'>
                 <div className='searchText'>
