@@ -7,6 +7,7 @@ import OurMap from '../Map/OurMap';
 import About from '../About/About'
 
 import Login from '../Login/Login'
+import MainDashboard from '../Dashboard/MainDashboard';
 
 
 const NavbarContainer = styled.header`
@@ -81,6 +82,9 @@ const Navbar = () => {
     </NavItem>
 <NavItem to='/about' component={About}>
   About
+</NavItem>
+<NavItem to="/Dashboard" component={MainDashboard}>
+  Dashboard
 </NavItem>
 {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
       <NavItem to="/data">
