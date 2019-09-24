@@ -12,7 +12,7 @@ background-image:linear-gradient(100deg, rgba(79, 79, 79, 0.07) 0%, rgba(79, 79,
 display:flex;
 align-items:center;
 justify-content:space-evenly;
-margin-top:45px;
+/* margin-top:45px; */
 @media(max-width: 500px){
     flex-direction:column;
 }

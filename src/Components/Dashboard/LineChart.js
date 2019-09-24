@@ -46,13 +46,14 @@ export default class Example extends PureComponent {
           top: 5, right: 30, left: 20, bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <CartesianGrid strokeDasharray="3 3" stroke="#30EAEA"/>
+        <XAxis dataKey="name"stroke="#0DD9D9"  />
+        <YAxis stroke="#39ff14"/>
         <Tooltip />
+        {/* #0DD9D9 */}
         <Legend />
         <Line type="monotone" dataKey="pv" stroke="#39ff14" activeDot={{ r: 8 }} />
-        <Line type="monotone" dataKey="uv" stroke="#FFC0CB" />
+        <Line type="monotone" dataKey="uv" stroke="#0DD9D9" />
       </LineChart>
     );
   }
