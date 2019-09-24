@@ -51,6 +51,13 @@ a {
 	display: block;
 }
 
+
+.logo{
+	margin-top: 20px;
+	margin-left: -198px;
+    width: 2000px;
+}
+
 .main-nav a {
 	color: #1F8EFA;
 	font-size: 16px;
@@ -74,6 +81,8 @@ a {
 	.header,
 	.main-nav {
 		display: flex;
+		width: 1363px;
+		margin-left: 192px;
 	}
 	.header {
 		align-items: center;

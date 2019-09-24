@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Contact/contact.css';
 import axios from 'axios';
-
+import logo from '../../assets/web/about/logo.png';
 class Contact extends React.Component {
     constructor(props) {
       super(props)
@@ -38,6 +38,9 @@ render() {
     return(
         <>
         <header class="header">
+            <div className='logo'> 
+                <img alt="logo" src={logo} /> 
+            </div>
          <ul class="main-nav">
              <li><a href="#">HOME</a></li>
              <li><a href="#">MAP</a></li>
