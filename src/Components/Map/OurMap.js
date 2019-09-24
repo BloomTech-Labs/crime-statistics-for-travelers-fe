@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import styled from 'styled-components';
+import UScrime from './UScrime';
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
@@ -39,7 +40,7 @@ class OurMap extends Component {
         //Generating our map======================================================================
         const map = new mapboxgl.Map({
           container: this.mapContainer,
-         style:'mapbox://styles/bsoghigian/ck0mpsnuq44ji1clmsruozhdc/draft',//Dynamic Style URL for our map style
+         style:'mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8',//Dynamic Style URL for our map style
           center: [lng, lat],//Center of where the mapbox map 
           zoom:zoom,//State value that allows you to set a default application zoom.
           maxBounds: bounds//it takes the SW coordinates and the NE coorinates and sets teh map in place
@@ -65,17 +66,14 @@ class OurMap extends Component {
         });
       
         if (states.length > 0) {
-          document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.density + '</strong> people per square mile</em></p>';
+          document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.density + '</strong> Crime Rate per 100k</em></p>';
         } else {
           document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
         }
       });
-      const onLoad = () => {
-var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
-var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
-      }
 
-      map.on(onLoad, function() {
+
+      map.on('load', function() {
         var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
         var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         // the rest of the code will go in here
@@ -94,11 +92,79 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
           // legend.appendChild(item);
         }
       });
-
+//=======================================================================================================
+//Adding Icons to Popular Hotspots
+map.on('load', function () {
+  // Add a symbol layer.
+  map.addLayer({
+  "id": "symbols",
+  "type": "symbol",
+  "source": {
+  "type": "geojson",
+  "data": {
+  "type": "FeatureCollection",
+  "features": [
+  {
+  "type": "Feature",
+  "properties": {},
+  "geometry": {
+  "type": "Point",
+  "coordinates": [
+  -118.34033203125,
+  -34.34033203125
+   //-118 34
+  ]
+  }
+  },
+  {
+  "type": "Feature",
+  "properties": {},
+  "geometry": {
+  "type": "Point",
+  "coordinates": [
+  -115.34033203125,
+  -36.34033203125
+  ]
+  }
+  },
+  {
+  "type": "Feature",
+  "properties": {},
+  "geometry": {
+  "type": "Point",
+  "coordinates": [
+  -87.34033203125,
+  41.01647949196029245
+  ]
+  }
+  }
+  ]
+  }
+  },
+  "layout": {
+  "icon-image": "rocket-15"
+  }
+  });
+   
+  // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+  map.on('click', 'symbols', function (e) {  map.flyTo({center: e.features[0].geometry.coordinates});
+  });
+   
+  // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+  map.on('mouseenter', 'symbols', function () {
+  map.getCanvas().style.cursor = 'pointer';
+  });
+   
+  // Change it back to a pointer when it leaves.
+  map.on('mouseleave', 'symbols', function () {
+  map.getCanvas().style.cursor = '';
+  });
+  });
+  //===========================================================================================================
 
 
         // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
+        map.addControl(new mapboxgl.NavigationControl(), "top-left");
 
 
         map.on('move', () => {
@@ -118,8 +184,8 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
     return (
       <div>
         <div>
-        {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold"> */}
-          {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div> */}
+        {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">*/}
+         {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>  */}
         </div>
        
         
@@ -127,11 +193,15 @@ var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
         //  className="absolute top right left bottom"
           id="map" className='map'/>
           <div id='geocoder' class='geocoder'></div>
-        <div className='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
-        <div className='map-overlay' id='legend'></div>
+        <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        
+        {/* <div className='map-overlay' id='legend'></div> */}
+        <UScrime/>
       </div>
+      // </div>
     );
   }
 }
+
 
 export default OurMap; 

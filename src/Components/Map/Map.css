@@ -14,7 +14,12 @@
   .map-overlay h2{
     color:white;
   }
+  /* <div className='map-overlay' id='total'> */
+
   
+  .map-overlay h3{
+    color:white;
+  }
 .map-overlay #pd p{
   color:white;
 }
@@ -87,6 +92,13 @@ p {
   width: 250px;
 }
 
+#total {
+  width:165px;
+  top:70%;
+  left:2%;
+  margin-bottom:20px;
+  
+}
 #legend {
 
   margin-right:10px;

@@ -11,6 +11,9 @@ ul {
   list-style: none;
 }
 
+#root{
+    width: 100%
+}
 
 h2,
 h3,
@@ -81,15 +84,11 @@ a {
 		width: 1500px;
 	}
 	.header {
-		
 		align-items: center;
-    	.header{
 		width: 80%;
 		margin: 0 auto;
 		max-width: 1150px;
 	}
-	}
-
 }
 
 @media (min-width: 1025px) {
