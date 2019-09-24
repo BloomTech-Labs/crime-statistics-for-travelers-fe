@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import LineChart from './LineChart';
 import PieChart from './PieChart';
-
+const H1 =styled.h1`
+color:#0DD9D9;
+text-shadow: 2px 2px black;
+`
 const Container = styled.div`
 width:100%;
 height:100%;
@@ -29,7 +32,7 @@ export default function MainDashboard() {
     return (
         <Container>
             <Item>
-                <h1>Crime rates for {city}</h1>
+                <H1>Crime rates for {city}</H1>
             <PieChart/>
             </Item>
             <Item>
