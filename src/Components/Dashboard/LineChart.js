@@ -51,8 +51,8 @@ export default class Example extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="pv" stroke="#FF0000" activeDot={{ r: 8 }} />
-        <Line type="monotone" dataKey="uv" stroke="#228b22" />
+        <Line type="monotone" dataKey="pv" stroke="#39ff14" activeDot={{ r: 8 }} />
+        <Line type="monotone" dataKey="uv" stroke="#FFC0CB" />
       </LineChart>
     );
   }
