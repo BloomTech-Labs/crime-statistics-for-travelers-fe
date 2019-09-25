@@ -23,3 +23,8 @@ button:hover{
     background:#78c6e6;
     color:white;
 }
+
+.main-logo {
+    position: absolute;
+    margin-left: -1453px;
+}

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {NavLink,Route} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './Navbar.css'
+import logo from '../../assets/web/about/logo.png';
 import OurMap from '../Map/OurMap';
 import About from '../About/About'
 
@@ -14,9 +15,9 @@ display:flex;
 justify-content:flex-end;
 z-index:4;
 align-items:center;
-  height: 60px;
+  height: 58px;
   width: 100%;
-  background-color:#1E2F40;
+  background-color: white;
   @media(max-width:500px){
     
   }
@@ -59,12 +60,23 @@ const NavItem = styled(NavLink)`
 
 text-decoration:none;
 margin:5px;
-color:whitesmoke;
+color: #1F8EFA;
+font-size: 16px;
 :hover{
-  color:#78c6e6;
+  background-color: white;
+  color: rgba(0, 0, 255, 0.281);
+  border: 2px solid rgba(0, 0, 255, 0.281);
+  border-radius: 2px;
 }
 @media(max-width:500px){
   margin:2px;
+}
+`
+
+const LoginHover = styled.div`
+:hover{
+  color: white
+  background-color: #05C985;
 }
 `
 
@@ -75,16 +87,21 @@ const Navbar = () => {
     console.log("test");
   }, [token]);
   return (
+    <>
+      
     <NavbarContainer>
+    <div className='main-logo'> 
+        <img alt="logo" src={logo} /> 
+      </div>
     <NavItem to="/" component={OurMap}>
-      Map
+      MAP
     </NavItem>
 <NavItem to='/about' component={About}>
-  About
+  ABOUT THE DATA
 </NavItem>
 {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
       <NavItem to="/data">
-      About the data
+      WHO WE SERVE
     </NavItem>
     {token!==null?(
         <button
@@ -107,21 +124,14 @@ const Navbar = () => {
       </button>
       ) : (
         <NavItem to='/login' component={Login}>
-          Login
+          <LoginHover>LOGIN</LoginHover>
           </NavItem>
       ) 
-    }}
+    }
+</NavbarContainer>
 
-
-    </NavbarContainer>
-
-
-    
-   
-
-    
-  
-          )}
+</>
+)}
 
 
 export default Navbar;
