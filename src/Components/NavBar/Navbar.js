@@ -9,14 +9,15 @@ import About from '../About/About'
 import Login from '../Login/Login'
 
 
-const NavbarContainer = styled.header`
+const NavbarContainer = styled.div`
 display:flex;
 justify-content:flex-end;
 z-index:4;
 align-items:center;
   height: 60px;
   width: 100%;
-background-image:linear-gradient(45deg,rgb(81, 240, 237), rgb(43, 33, 93));
+
+  background-image:linear-gradient(45deg, rgb(11, 45, 126) 0%, rgb(11, 45, 126) 44%,rgb(21, 87, 153) 44%, rgb(21, 87, 153) 45%,rgb(30, 129, 181) 45%, rgb(30, 129, 181) 61%,rgb(40, 170, 208) 61%, rgb(40, 170, 208) 67%,rgb(49, 212, 235) 67%, rgb(49, 212, 235) 100%)
 
 `
 // const Logout = styled.button`
@@ -54,7 +55,17 @@ background-image:linear-gradient(45deg,rgb(81, 240, 237), rgb(43, 33, 93));
 // `
 
 const NavItem = styled(NavLink)`
-
+  text-decoration:none;
+  margin:5px;
+  ${'' /* color:whitesmoke; */}
+  :hover{
+    color:#78c6e6;
+  }
+  @media(max-width:500px){
+    margin:2px;
+  }
+`
+const Logout = styled.button`
 text-decoration:none;
 margin:5px;
 color:whitesmoke;
@@ -68,9 +79,7 @@ color:whitesmoke;
 margin:2px;
 }
 `
-const Logout = styled.button`
 
-`
 const token = localStorage.getItem('token')
 
 const Navbar = ({history}) => {
@@ -86,9 +95,11 @@ const Navbar = ({history}) => {
       <NavItem to="/">
         Map
       </NavItem>
+
       <NavItem to="/Dashboard">
       Dashboard
       </NavItem>
+
       <NavItem to='/about'>
         About
       </NavItem>
@@ -96,6 +107,9 @@ const Navbar = ({history}) => {
       {/* <NavItem to="/data">
         About the data
        </NavItem> */}
+      <NavItem to="/data">
+        About the data
+       </NavItem>
        {token === null ? (
             <NavItem to="/login" activeClassName="active-cta">
               Login

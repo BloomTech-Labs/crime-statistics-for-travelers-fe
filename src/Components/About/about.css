@@ -1,4 +1,4 @@
-
+/* 
 body {
 	font-family: 'Montserrat', sans-serif;
 	line-height: 1.6;
@@ -51,6 +51,13 @@ a {
 	display: block;
 }
 
+
+.logo{
+	margin-top: 20px;
+	margin-left: -198px;
+    width: 2000px;
+}
+
 .main-nav a {
 	color: #1F8EFA;
 	font-size: 16px;
@@ -60,7 +67,7 @@ a {
 	padding-top: .5em;
 	padding-bottom: .5em;
 	justify-content: flex-end;	
-}
+} */
 
 
 /* ================================= 
@@ -70,10 +77,12 @@ a {
 
 
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
 	.header,
 	.main-nav {
 		display: flex;
+		width: 1363px;
+		margin-left: 192px;
 	}
 	.header {
 		align-items: center;
@@ -89,14 +98,14 @@ a {
 		
 	}
 
-}
+} */
 
 /* .mainMap {
 	border: 1px solid blue;
 	position: absolute;
 } */
 
-.search {
+/* .search {
 	margin-left: 299px;
     margin-top: -378px;
 }
@@ -339,4 +348,5 @@ a {
 
 .footerLinks a:hover {
 	color: rgba(128, 128, 128, 0.527);
-}
+} 
+*/
