@@ -88,7 +88,7 @@ p {
 
 #features {
   color:white;
-  top: 0;
+  top: 70%;
   height: 100px;
   margin-top: 85px;
   margin-right:35px;
@@ -119,4 +119,16 @@ p {
   width: 10px;
   height: 10px;
   margin-right: 5px;
+}
+
+.left-drawer div button{
+  z-index:6
+}
+
+
+.right-drawer div button{
+  z-index:6;
+  position: absolute;
+  right: 0%;
+  top: 9%
 }
