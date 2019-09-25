@@ -11,6 +11,7 @@ import {
   TabPanel, 
   TabList
 } from "@chakra-ui/core";
+import MainDashboard from "../Dashboard/MainDashboard";
 
 const RightDrawer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -31,13 +32,13 @@ const RightDrawer = () => {
         <DrawerBody>
           <Tabs isFitted variant="enclosed">
             <TabList mb="1em">
-              <Tab>One</Tab>
-              <Tab>Two</Tab>
-              <Tab>Three</Tab>
+              <Tab>Dashboard</Tab>
+              <Tab>Trends</Tab>
+              <Tab>MetaData</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
-                <p>one!</p>
+                <MainDashboard/>
               </TabPanel>
               <TabPanel>
                 <p>two!</p>
