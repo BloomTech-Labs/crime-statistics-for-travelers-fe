@@ -201,12 +201,12 @@ map.on('load', function () {
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
-        <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
         
         {/* <div className='map-overlay' id='legend'></div> */}
         <UScrime/>
       </div>
-      // </div>
+//       </div>
     );
   }
 }

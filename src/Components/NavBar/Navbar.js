@@ -16,7 +16,9 @@ z-index:4;
 align-items:center;
   height: 60px;
   width: 100%;
+
   background-image:linear-gradient(45deg, rgb(11, 45, 126) 0%, rgb(11, 45, 126) 44%,rgb(21, 87, 153) 44%, rgb(21, 87, 153) 45%,rgb(30, 129, 181) 45%, rgb(30, 129, 181) 61%,rgb(40, 170, 208) 61%, rgb(40, 170, 208) 67%,rgb(49, 212, 235) 67%, rgb(49, 212, 235) 100%)
+
 `
 // const Logout = styled.button`
 // flex-direction:end;
@@ -64,8 +66,20 @@ const NavItem = styled(NavLink)`
   }
 `
 const Logout = styled.button`
-
+text-decoration:none;
+margin:5px;
+color:whitesmoke;
+-webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+:hover{
+  text-shadow: 2px 3px  black;
+}
+@media(max-width:500px){
+margin:2px;
+}
 `
+
 const token = localStorage.getItem('token')
 
 const Navbar = ({history}) => {
@@ -81,10 +95,18 @@ const Navbar = ({history}) => {
       <NavItem to="/">
         Map
       </NavItem>
+
+      <NavItem to="/Dashboard">
+      Dashboard
+      </NavItem>
+
       <NavItem to='/about'>
         About
       </NavItem>
       {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
+      {/* <NavItem to="/data">
+        About the data
+       </NavItem> */}
       <NavItem to="/data">
         About the data
        </NavItem>
