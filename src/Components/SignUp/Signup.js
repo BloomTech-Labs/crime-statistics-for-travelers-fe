@@ -60,7 +60,7 @@ const Signup = (props) => {
       timer: 2500
     })
   }
-  
+    
   if(token){
     return <Redirect to="/experiences"/>
   }

@@ -9,17 +9,14 @@ import About from '../About/About'
 import Login from '../Login/Login'
 
 
-const NavbarContainer = styled.header`
+const NavbarContainer = styled.div`
 display:flex;
 justify-content:flex-end;
 z-index:4;
 align-items:center;
   height: 60px;
   width: 100%;
-  background-color:#1E2F40;
-  @media(max-width:500px){
-    
-  }
+  background-image:linear-gradient(45deg, rgb(11, 45, 126) 0%, rgb(11, 45, 126) 44%,rgb(21, 87, 153) 44%, rgb(21, 87, 153) 45%,rgb(30, 129, 181) 45%, rgb(30, 129, 181) 61%,rgb(40, 170, 208) 61%, rgb(40, 170, 208) 67%,rgb(49, 212, 235) 67%, rgb(49, 212, 235) 100%)
 `
 // const Logout = styled.button`
 // flex-direction:end;
@@ -56,72 +53,69 @@ align-items:center;
 // `
 
 const NavItem = styled(NavLink)`
-
-text-decoration:none;
-margin:5px;
-color:whitesmoke;
-:hover{
-  color:#78c6e6;
-}
-@media(max-width:500px){
-  margin:2px;
-}
+  text-decoration:none;
+  margin:5px;
+  ${'' /* color:whitesmoke; */}
+  :hover{
+    color:#78c6e6;
+  }
+  @media(max-width:500px){
+    margin:2px;
+  }
 `
+const Logout = styled.button`
 
-const Navbar = () => {
-  const [token,setToken] =useState()
+`
+const token = localStorage.getItem('token')
+
+const Navbar = ({history}) => {
+  const [tokenVal,setToken] =useState()
+
   useEffect(() => {
     setToken(localStorage.getItem("token"));
     console.log("test");
   }, [token]);
-  return (
+
+    return (
     <NavbarContainer>
-    <NavItem to="/" component={OurMap}>
-      Map
-    </NavItem>
-<NavItem to='/about' component={About}>
-  About
-</NavItem>
-{/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
+      <NavItem to="/">
+        Map
+      </NavItem>
+      <NavItem to='/about'>
+        About
+      </NavItem>
+      {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
       <NavItem to="/data">
-      About the data
-    </NavItem>
-    {token!==null?(
-        <button
-        className="btn"
-        id="btn"
-        type="submit"
-        onClick={() => {
-          localStorage.removeItem("token");
-          setToken();
-          Swal.fire({
-            position: 'center',
-            type: 'success',
-            title: 'Logged Out',
-            showConfirmButton: false,
-            timer: 2500
-          }) 
-        }}
-      >
-        Logout
-      </button>
-      ) : (
-        <NavItem to='/login' component={Login}>
-          Login
-          </NavItem>
-      ) 
-    }}
-
-
-    </NavbarContainer>
-
-
-    
-   
-
-    
-  
+        About the data
+       </NavItem>
+       {token === null ? (
+            <NavItem to="/login" activeClassName="active-cta">
+              Login
+            </NavItem>
+          ) : (
+            <NavItem to="/login" activeClassName="active-cta">
+              <Logout
+                className="btn"
+                type="submit"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  setToken();
+                }}
+              >
+                Logout
+              </Logout>
+              </NavItem>
           )}
+      {/* {token 
+      ? <NavItem to="/" onClick={() => {
+          localStorage.removeItem('token')
+          history.push('/')
+          }}>Log Out</NavItem>
+      : <NavItem to="/login">Log In</NavItem>
+      }  */}
+    </NavbarContainer>
+  )
+}
 
 
 export default Navbar;
