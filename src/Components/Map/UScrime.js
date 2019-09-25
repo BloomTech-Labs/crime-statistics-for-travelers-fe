@@ -8,7 +8,7 @@ export default function UScrime() {
    const [crimeData,setCrimeData] = useState([])
 
    const fetchData = () => {
-     axios.get("http://3.84.232.85/")
+     axios.get("https://test3ts.tk/")
      .then(res => {
        console.log(res.data)
       //  console.log(res.data.number)
