@@ -20,46 +20,15 @@ align-items:center;
   background-image:linear-gradient(45deg, rgb(11, 45, 126) 0%, rgb(11, 45, 126) 44%,rgb(21, 87, 153) 44%, rgb(21, 87, 153) 45%,rgb(30, 129, 181) 45%, rgb(30, 129, 181) 61%,rgb(40, 170, 208) 61%, rgb(40, 170, 208) 67%,rgb(49, 212, 235) 67%, rgb(49, 212, 235) 100%)
 
 `
-// const Logout = styled.button`
-// flex-direction:end;
-// background:none;
-// color: #f3e367;
-//   border: 2px solid #f3e367;
-//   padding: 0.8rem 1.5rem;
-//   font-size: 1.5rem;
-//   border-radius: 10px;
-//   transition: all 200ms ease-out;
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-//   font-family: 'Ubuntu', sans-serif;
-//   font-weight: 500;
-//   :hover {
-//     cursor: pointer;
-//     background: #f3e367;
-//     color: black;
-//   }
-//   :focus {
-//       outline: none;
-//   }
-//   @media (max-width: 800px) {
-//     font-size: 1.3rem;
-//     padding: 0.8rem 1.2rem;
-//     border-width: 1px;
-//   }
-//   @media (max-width: 600px) {
-//     font-size: 1rem;
-//     padding: 0.5rem 1rem;
-//     border-width: 1px;
-//   }
-// `
+
 
 const NavItem = styled(NavLink)`
   text-decoration:none;
   margin:5px;
+  color:white;
   ${'' /* color:whitesmoke; */}
   :hover{
-    color:#78c6e6;
+  text-shadow: 2px 2px black
   }
   @media(max-width:500px){
     margin:2px;
@@ -96,9 +65,9 @@ const Navbar = ({history}) => {
         Map
       </NavItem>
 
-      <NavItem to="/Dashboard">
+      /* <NavItem to="/Dashboard">
       Dashboard
-      </NavItem>
+      </NavItem> */
 
       <NavItem to='/about'>
         About

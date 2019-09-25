@@ -96,10 +96,12 @@ p {
 }
 
 #total {
-  width:165px;
-  top:70%;
+  width:90%;
+  display:flex;
+  flex-direction: column;
+  /* top:70%;
   left:2%;
-  margin-bottom:20px;
+  margin-bottom:20px; */
   
 }
 #legend {
