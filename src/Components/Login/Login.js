@@ -31,11 +31,13 @@ const Login = (props) => {
     username: '',
     password: ''
   })
+
+  
   const token = window.localStorage.getItem('token')
-  console.log('state',input)
+ 
   
   const handleChange = e => {
-    console.log('login input change', e.target.value)
+    
     setInput({
       ...input,
       [e.target.name]: e.target.value
@@ -48,7 +50,7 @@ const Login = (props) => {
     .post('https://backend-for-production.herokuapp.com/api/auth/login', input)
     .then(res => {
       console.log('login submit results', res)
-      // window.localStorage.setItem('token', JSON.stringify(res.data.access_token))
+      window.localStorage.setItem('token', JSON.stringify(res.data.access_token))
       props.history.push('/')
     })
     .catch(err => {

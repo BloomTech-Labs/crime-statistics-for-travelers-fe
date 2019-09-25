@@ -10,7 +10,7 @@ import About from '../About/About'
 import Login from '../Login/Login'
 
 
-const NavbarContainer = styled.header`
+const NavbarContainer = styled.div`
 display:flex;
 justify-content:flex-end;
 z-index:4;
@@ -57,7 +57,17 @@ align-items:center;
 // `
 
 const NavItem = styled(NavLink)`
-
+  text-decoration:none;
+  margin:5px;
+  ${'' /* color:whitesmoke; */}
+  :hover{
+    color:#78c6e6;
+  }
+  @media(max-width:500px){
+    margin:2px;
+  }
+`
+const Logout = styled.button`
 text-decoration:none;
 margin:5px;
 color: #1F8EFA;
@@ -69,7 +79,7 @@ font-size: 16px;
   border-radius: 2px;
 }
 @media(max-width:500px){
-  margin:2px;
+margin:2px;
 }
 `
 
