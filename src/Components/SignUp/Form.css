@@ -1,0 +1,97 @@
+html, body, #root, #app>div {
+  height: 100%
+}
+
+.col-container {
+}
+
+.col1{
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  padding: 16px;
+  height: 93%;
+  text-align: center;
+  background-color: #3E6385;
+}
+
+.col2{
+  position: absolute;
+  left: 30%;
+  padding: 16px;
+  height: 93%;
+  width: 70%;
+  text-align: center;
+  background-color: #d6d3d3;
+  box-shadow: -10px 0px 10px -8px #363636;
+}
+.heading-container{
+  position: relative;
+  top:35%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.heading-container p {
+  text-align: center;
+}
+
+.auth-links{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.auth-link{
+  width: 49%;
+  padding: 1rem;
+}
+
+.heading{
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.form button{
+  color: white
+}
+
+.form-container{
+  position: relative;
+  top:30%;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #ffffff
+
+}
+
+input:focus {
+  border-color: #007eff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 0 3px rgba(0, 126, 255, 0.1);
+  outline: none;
+}
+
+input, input[palceholder] {
+  text-align: center;
+ }
+
+.form-input{
+  height: 40px;
+  margin: 5px auto;
+  width: 75%;
+  border: none;
+  border:solid 1px #ccc;
+  border-radius: 10px;
+}
+
+.heading-container button{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
