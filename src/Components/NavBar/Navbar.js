@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {NavLink,Route} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import './Navbar.css'
+import logo from '../../assets/web/about/logo.png';
 import OurMap from '../Map/OurMap';
 import About from '../About/About'
 
@@ -14,11 +15,12 @@ display:flex;
 justify-content:flex-end;
 z-index:4;
 align-items:center;
-  height: 60px;
+  height: 58px;
   width: 100%;
-
-  background-image:linear-gradient(45deg, rgb(11, 45, 126) 0%, rgb(11, 45, 126) 44%,rgb(21, 87, 153) 44%, rgb(21, 87, 153) 45%,rgb(30, 129, 181) 45%, rgb(30, 129, 181) 61%,rgb(40, 170, 208) 61%, rgb(40, 170, 208) 67%,rgb(49, 212, 235) 67%, rgb(49, 212, 235) 100%)
-
+  background-color: white;
+  @media(max-width:500px){
+    
+  }
 `
 // const Logout = styled.button`
 // flex-direction:end;
@@ -68,76 +70,78 @@ const NavItem = styled(NavLink)`
 const Logout = styled.button`
 text-decoration:none;
 margin:5px;
-color:whitesmoke;
--webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+color: #1F8EFA;
+font-size: 16px;
 :hover{
-  text-shadow: 2px 3px  black;
+  background-color: white;
+  color: rgba(0, 0, 255, 0.281);
+  border: 2px solid rgba(0, 0, 255, 0.281);
+  border-radius: 2px;
 }
 @media(max-width:500px){
 margin:2px;
 }
 `
 
-const token = localStorage.getItem('token')
+const LoginHover = styled.div`
+:hover{
+  color: white
+  background-color: #05C985;
+}
+`
 
-const Navbar = ({history}) => {
-  const [tokenVal,setToken] =useState()
-
+const Navbar = () => {
+  const [token,setToken] =useState()
   useEffect(() => {
     setToken(localStorage.getItem("token"));
     console.log("test");
   }, [token]);
-
-    return (
+  return (
+    <>
+      
     <NavbarContainer>
-      <NavItem to="/">
-        Map
-      </NavItem>
-
-      <NavItem to="/Dashboard">
-      Dashboard
-      </NavItem>
-
-      <NavItem to='/about'>
-        About
-      </NavItem>
-      {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
-      {/* <NavItem to="/data">
-        About the data
-       </NavItem> */}
+    <div className='main-logo'> 
+        <img alt="logo" src={logo} /> 
+      </div>
+    <NavItem to="/" component={OurMap}>
+      MAP
+    </NavItem>
+<NavItem to='/about' component={About}>
+  ABOUT THE DATA
+</NavItem>
+{/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
       <NavItem to="/data">
-        About the data
-       </NavItem>
-       {token === null ? (
-            <NavItem to="/login" activeClassName="active-cta">
-              Login
-            </NavItem>
-          ) : (
-            <NavItem to="/login" activeClassName="active-cta">
-              <Logout
-                className="btn"
-                type="submit"
-                onClick={() => {
-                  localStorage.removeItem("token");
-                  setToken();
-                }}
-              >
-                Logout
-              </Logout>
-              </NavItem>
-          )}
-      {/* {token 
-      ? <NavItem to="/" onClick={() => {
-          localStorage.removeItem('token')
-          history.push('/')
-          }}>Log Out</NavItem>
-      : <NavItem to="/login">Log In</NavItem>
-      }  */}
-    </NavbarContainer>
-  )
-}
+      WHO WE SERVE
+    </NavItem>
+    {token!==null?(
+        <button
+        className="btn"
+        id="btn"
+        type="submit"
+        onClick={() => {
+          localStorage.removeItem("token");
+          setToken();
+          Swal.fire({
+            position: 'center',
+            type: 'success',
+            title: 'Logged Out',
+            showConfirmButton: false,
+            timer: 2500
+          }) 
+        }}
+      >
+        Logout
+      </button>
+      ) : (
+        <NavItem to='/login' component={Login}>
+          <LoginHover>LOGIN</LoginHover>
+          </NavItem>
+      ) 
+    }
+</NavbarContainer>
+
+</>
+)}
 
 
 export default Navbar;

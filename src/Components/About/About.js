@@ -1,5 +1,6 @@
 import React from "react";
-import '../About/about.css';
+import {Link} from 'react-router-dom';
+import './about.css';
 import map from '../../assets/web/about/map.png'
 import travelglobe from '../../assets/web/about/travelglobe.png';
 import movers from '../../assets/web/about/movers.png';
@@ -7,22 +8,11 @@ import travel from '../../assets/web/about/travel.png';
 import robber from '../../assets/web/about/robber.png';
 import robbermap from '../../assets/web/about/robbermap.png';
 import email from '../../assets/web/about/email.png';
-import logo from '../../assets/web/about/logo.png';
+// import logo from '../../assets/web/about/logo.png';
 
 function About() {
     return(
         <>
-        <header class="header">
-            <div className='logo'> 
-                <img alt="logo" src={logo} /> 
-            </div>
-            <ul class="main-nav">
-                <li><a href="#">MAP</a></li>
-                <li><a href="#">ABOUT THE DATA</a></li>
-                <li><a href="#">WHO WE SERVE</a></li>
-                <li className='login'><a href="#">LOGIN</a></li>
-            </ul>    
-        </header>
         <div className='mainMap'>
         <div className='image'>
             <img width={1500} height={500} alt="map" src={map} /> 
@@ -105,10 +95,10 @@ function About() {
         </div>
         <div className='footer'>
             <div className="footerLinks">
-               <a href="#">Map</a>
-               <a href="#">About The Data</a>
-               <a href="#">Who We Serve</a>
-               <a href="#">Contact</a>
+              <Link to='/'><a href>Map</a></Link> 
+               <Link to='/about'><a href>About The Data</a></Link>
+               <Link to='/data'><a href>Who We Serve</a></Link>
+               <Link to='/contact'><a href>Contact</a></Link>
             </div>
         </div>
     </>
