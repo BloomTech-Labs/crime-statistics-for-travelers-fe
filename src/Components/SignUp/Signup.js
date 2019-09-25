@@ -30,10 +30,10 @@ const Signup = (props) => {
     email: '',
   })
   const token = window.localStorage.getItem('token')
-  console.log('state',input)
+  
   
   const handleChange = e => {
-    console.log('login input change', e.target.value)
+   
     setInput({
       ...input,
       [e.target.name]: e.target.value

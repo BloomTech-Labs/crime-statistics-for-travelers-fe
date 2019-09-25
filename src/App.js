@@ -10,6 +10,7 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
+import MainDashboard from './Components/Dashboard/MainDashboard';
 
 export default function App() {
 //Styles
@@ -34,7 +35,7 @@ useEffect(() => {
         
         <Route exact path="/" component={OurMap}/>
         <Route exact path="/login"  component={Login}/>
-
+        <Route exact path="/Dashboard" component={MainDashboard}/>
         <Route exact path="/signup" component={Signup}/>
         <Route exact path="/about" component={About}/>
         {/* <Route exact path="/contact" component={Contact}/> */}

@@ -12,6 +12,7 @@
     "@mapbox/mapbox-gl-geocoder": "^4.4.1",
     "axios": "^0.19.0",
     "chakra-ui": "^0.3.9",
+    "chartjs": "^0.3.24",
     "emotion-theming": "^10.0.19",
     "font-awesome": "^4.7.0",
     "formik": "^1.5.8",
@@ -26,6 +27,8 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "react-test-renderer": "^16.9.0",
+    "rechart": "0.0.1",
+    "recharts": "^1.7.1",
     "styled-components": "^4.3.2",
     "sweetalert2": "^8.17.1",
     "yup": "^0.27.0"

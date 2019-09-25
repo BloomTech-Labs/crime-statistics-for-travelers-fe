@@ -1,6 +1,9 @@
 .App {
     text-align: center;
   }
+  #drawer{
+    color:black;
+  }
   .mapboxgl-canvas {
     position:absolute;
      top:0;
