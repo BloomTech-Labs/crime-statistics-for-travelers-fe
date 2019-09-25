@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import '../About/about.css';
+import './about.css';
 import map from '../../assets/web/about/map.png'
 import travelglobe from '../../assets/web/about/travelglobe.png';
 import movers from '../../assets/web/about/movers.png';
