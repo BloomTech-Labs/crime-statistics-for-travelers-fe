@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   Drawer,
   DrawerHeader,
@@ -31,13 +32,13 @@ const LeftDrawer = () => {
         <DrawerBody>
         <Tabs isFitted variant="enclosed">
           <TabList mb="1em">
-            <Tab>One</Tab>
+            <Tab>Filter</Tab>
             <Tab>Two</Tab>
             <Tab>Three</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
-              <p>one!</p>
+              
             </TabPanel>
             <TabPanel>
               <p>two!</p>

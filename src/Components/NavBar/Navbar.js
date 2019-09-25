@@ -65,9 +65,9 @@ const Navbar = ({history}) => {
         Map
       </NavItem>
 
-      /* <NavItem to="/Dashboard">
+      {/* <NavItem to="/Dashboard">
       Dashboard
-      </NavItem> */
+      </NavItem> */}
 
       <NavItem to='/about'>
         About

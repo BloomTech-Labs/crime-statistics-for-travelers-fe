@@ -50,10 +50,10 @@ class OurMap extends Component {
         });
 
         //GeoLocation =========================================================================================
-        // map.addControl(new MapboxGeocoder({
-        //     accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
-        //     mapboxgl: mapboxgl
-        //     }));
+        map.addControl(new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
+            mapboxgl: mapboxgl
+            }));
         var geocoder = new MapboxGeocoder({
           accessToken: mapboxgl.accessToken,
           mapboxgl: mapboxgl
@@ -199,15 +199,16 @@ map.on('load', function () {
         <div ref={el => this.mapContainer = el}
         //  className="absolute top right left bottom"
           id="map" className='map'/>
-          <div id='geocoder' className='geocoder'></div>
+          {/* <div id='geocoder' className='geocoder'></div> */}
           <div id='zoomControl' className='zoomControl'></div>
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
         
         {/* <div className='map-overlay' id='legend'></div> */}
-        <UScrime/>
-      </div>
-//       </div>
+        {/* <UScrime/> */}
+      </div>  
+           </div>
     );
+
   }
 }
 
