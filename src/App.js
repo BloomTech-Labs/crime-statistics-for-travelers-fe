@@ -35,12 +35,10 @@ useEffect(() => {
         
         <Route exact path="/" component={OurMap}/>
         <Route exact path="/login"  component={Login}/>
-        <Route exact path="/Dashboard" component={MainDashboard}/>
+        {/* <Route exact path="/Dashboard" component={MainDashboard}/> */}
         <Route exact path="/signup" component={Signup}/>
         {/* <Route exact path="/about" component={About}/> */}
         <Route exact path="/contact" component={Contact}/>
-
-      
         <Route path="/demo" component={Demographics}/>
         </Switch>
 

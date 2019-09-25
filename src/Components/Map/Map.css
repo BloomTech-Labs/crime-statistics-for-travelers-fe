@@ -1,9 +1,7 @@
 .App {
     text-align: center;
   }
-  #drawer{
-    color:black;
-  }
+
   .mapboxgl-canvas {
     position:absolute;
      top:0;
@@ -87,19 +85,20 @@ p {
 }
 
 #features {
+  position:absolute;
   color:white;
   top: 70%;
+  left:5%;
   height: 100px;
   margin-top: 85px;
   margin-right:35px;
   width: 250px;
+  box-shadow:5px 5px 5px black;
 }
 
 #total {
-  width:165px;
-  top:70%;
-  left:2%;
-  margin-bottom:20px;
+  width:60%;
+  height:100px;
   
 }
 #legend {

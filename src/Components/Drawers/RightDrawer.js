@@ -12,6 +12,7 @@ import {
   TabList
 } from "@chakra-ui/core";
 import MainDashboard from "../Dashboard/MainDashboard";
+import UScrime from '../Map/UScrime';
 
 const RightDrawer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -29,7 +30,8 @@ const RightDrawer = () => {
         onClose={() => setIsOpen(false)}
       >
         <DrawerHeader borderBottomWidth="1px">Crime Analytics</DrawerHeader>
-        <DrawerBody>
+        <DrawerBody >
+       
           <Tabs isFitted variant="enclosed">
             <TabList mb="1em">
               <Tab>Dashboard</Tab>
@@ -44,10 +46,11 @@ const RightDrawer = () => {
                 <p>two!</p>
               </TabPanel>
               <TabPanel>
-                <p>three!</p>
+                <UScrime/>
               </TabPanel>
             </TabPanels>
           </Tabs>
+         
         </DrawerBody>
       </Drawer>
     </>
