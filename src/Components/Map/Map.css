@@ -118,6 +118,9 @@ p {
   margin-right: 5px;
 }
 
+.p{
+  color: black
+}
 .left-drawer div button{
   z-index:6
 }

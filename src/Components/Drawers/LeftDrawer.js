@@ -31,19 +31,19 @@ const LeftDrawer = () => {
         <DrawerBody>
         <Tabs isFitted variant="enclosed">
           <TabList mb="1em">
-            <Tab>One</Tab>
-            <Tab>Two</Tab>
-            <Tab>Three</Tab>
+            <Tab>Where</Tab>
+            <Tab>When</Tab>
+            <Tab>How</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
-              <p>one!</p>
+              <p className="p">one!</p>
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+              <p className="p">two!</p>
             </TabPanel>
             <TabPanel>
-              <p>three!</p>
+              <p className="p">three!</p>
             </TabPanel>
           </TabPanels>
         </Tabs>
