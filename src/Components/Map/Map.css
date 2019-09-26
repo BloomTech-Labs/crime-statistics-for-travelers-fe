@@ -87,15 +87,24 @@ p {
 #features {
   position:absolute;
   color:white;
-  top: 70%;
-  left:5%;
+  top: 75%;
+  left:2%;
   height: 100px;
   margin-top: 85px;
   margin-right:35px;
   width: 250px;
   box-shadow:5px 5px 5px black;
 }
+#legend-image{
+position:absolute;
+top:78%;
+right:2%;
+box-shadow:1px 2px rgba(0, 0, 0, 0.1);
+line-height: 18px;
+height: 150px;
 
+
+}
 #total {
   width:60%;
   height:100px;

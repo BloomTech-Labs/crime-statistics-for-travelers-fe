@@ -34,6 +34,7 @@ useEffect(() => {
 
         
         <Route exact path="/" component={OurMap}/>
+        <Route exact path="/about" component={About}/>
         <Route exact path="/login"  component={Login}/>
         {/* <Route exact path="/Dashboard" component={MainDashboard}/> */}
         <Route exact path="/signup" component={Signup}/>

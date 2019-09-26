@@ -76,9 +76,7 @@ const Navbar = ({history}) => {
       {/* <NavItem to="/data">
         About the data
        </NavItem> */}
-      <NavItem to="/data">
-        About the data
-       </NavItem>
+
        {token === null ? (
             <NavItem to="/login" activeClassName="active-cta">
               Login
