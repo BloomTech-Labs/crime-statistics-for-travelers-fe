@@ -207,8 +207,10 @@ map.on('load', function () {
         
         {/* <div className='map-overlay' id='legend'></div> */}
         {/* <UScrime/> */}
+
       </div>
       <img src = {image} id="legend-image"/>
+
       </div>
     );
   }

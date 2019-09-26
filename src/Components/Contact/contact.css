@@ -38,6 +38,7 @@
 
 .mainForms {
     display: flex;
+    background: #206880;
 }
 
 .nameForm {
@@ -51,9 +52,9 @@
 }
 
 .inputName {
-    background: #FFFFFF;
+    background: #206880;
     border-radius: 5px;
-    margin-top: 564px;
+    margin-top: 631px;
     margin-left: 222px;
 }
 
@@ -61,16 +62,16 @@
     position: absolute;
     left: 223px;
     right: 467px;
-    top: 719px;
+    top: 735px;
     bottom: 46.96%;
     background: #1F8EFA;
     height: 24px;
 }
 
 .inputPhone {
-    background: #FFFFFF;
+    background: #206880;
     border-radius: 5px;
-    margin-top: 618px;
+    margin-top: 701px;
     margin-left: -892px;  
 }
 
@@ -78,16 +79,16 @@
     position: absolute;
     left: 223px;
     right: 467px;
-    top: 770px;
+    top: 805px;
     bottom: 46.96%;
     background: #1F8EFA;
     height: 24px;
 }
 
 .inputTitle {
-    background: #FFFFFF;
+    background: #206880;
     border-radius: 5px;
-    margin-top: 669px;
+    margin-top: 771px;
     margin-left: -892px;  
 }
 
@@ -95,16 +96,16 @@
     position: absolute;
     left: 223px;
     right: 467px;
-    top: 820px;
+    top: 876px;
     bottom: 46.96%;
     background: #1F8EFA;
     height: 24px;
 }
 
 .inputEmail {
-    background: #FFFFFF;
+    background: #206880;
     border-radius: 5px;
-    margin-top: 719px;
+    margin-top: 842px;
     margin-left: -892px;  
 }
 
@@ -112,16 +113,16 @@
     position: absolute;
     left: 223px;
     right: 467px;
-    top: 891px;
+    top: 951px;
     bottom: 46.96%;
     background: #1F8EFA;
     height: 30px;
 }
 
 .inputContact {
-    background: #FFFFFF;
+    background: #206880;
     border-radius: 5px;
-    margin-top: 796px;
+    margin-top: 923px;
     margin-left: -892px;  
 }
 
@@ -129,12 +130,12 @@
     height: 27px;
     background: #05C985;
     color: white;
-    margin-top: 1148px;
+    margin-top: 1263px;
     width: 118px;
     padding-left: 31px;
     margin-left: -896px;
 }
 
 .spaceArea {
-    margin-top: 1215px
+    margin-top: 1357px
 } 

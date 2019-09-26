@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Contact/contact.css';
 import axios from 'axios';
-import logo from '../../assets/web/about/logo.png';
+// import logo from '../../assets/web/about/logo.png';
 class Contact extends React.Component {
     constructor(props) {
       super(props)
@@ -37,18 +37,6 @@ class Contact extends React.Component {
 render() {
     return(
         <>
-        <header class="header">
-            <div className='logo'> 
-                <img alt="logo" src={logo} /> 
-            </div>
-         <ul class="main-nav">
-             <li><a href="#">HOME</a></li>
-             <li><a href="#">MAP</a></li>
-             <li><a href="#">ABOUT THE DATA</a></li>
-             <li><a href="#">WHO WE SERVE</a></li>
-             <li className='login'><a href="#">LOGIN</a></li>
-         </ul>
-     </header>
      <div className='mainContent'>
          <div className='mainHeader'>
             We Want to Hear From You!
