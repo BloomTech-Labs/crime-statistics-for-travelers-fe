@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import UScrime from './UScrime';
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
+import About from '../About/About';
 
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
@@ -201,10 +202,14 @@ map.on('load', function () {
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
+          <div className='mainAboutCss'>
+            <About />
+          </div>
+         
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
-        
         {/* <div className='map-overlay' id='legend'></div> */}
         {/* <UScrime/> */}
+       
       </div>
 //       </div>
     );
