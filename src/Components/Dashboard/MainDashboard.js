@@ -12,6 +12,7 @@ height:100%;
 
 background-image:linear-gradient(0deg, rgb(61, 103, 216),rgb(65, 80, 170),rgb(53, 69, 115));
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:space-evenly;
 /* margin-top:45px; */

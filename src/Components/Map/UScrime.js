@@ -33,7 +33,7 @@ export default function UScrime() {
     return (
         <div className='map-overlay' id='total'>
             <h3>US Crime Rate 2017</h3>
-            <p>{crimeData.number} per 100k</p>
+            <p>{crimeData.number} per 100,000</p>
             
         </div>
     )}

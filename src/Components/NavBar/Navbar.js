@@ -22,46 +22,16 @@ align-items:center;
     
   }
 `
-// const Logout = styled.button`
-// flex-direction:end;
-// background:none;
-// color: #f3e367;
-//   border: 2px solid #f3e367;
-//   padding: 0.8rem 1.5rem;
-//   font-size: 1.5rem;
-//   border-radius: 10px;
-//   transition: all 200ms ease-out;
-//   text-decoration: none;
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-//   font-family: 'Ubuntu', sans-serif;
-//   font-weight: 500;
-//   :hover {
-//     cursor: pointer;
-//     background: #f3e367;
-//     color: black;
-//   }
-//   :focus {
-//       outline: none;
-//   }
-//   @media (max-width: 800px) {
-//     font-size: 1.3rem;
-//     padding: 0.8rem 1.2rem;
-//     border-width: 1px;
-//   }
-//   @media (max-width: 600px) {
-//     font-size: 1rem;
-//     padding: 0.5rem 1rem;
-//     border-width: 1px;
-//   }
-// `
+
+
 
 const NavItem = styled(NavLink)`
   text-decoration:none;
   margin:5px;
-  ${'' /* color:whitesmoke; */}
+color:white;
+
   :hover{
-    color:#78c6e6;
+    text-shadow:2px 2px black;
   }
   @media(max-width:500px){
     margin:2px;
@@ -100,48 +70,49 @@ const Navbar = () => {
     <>
       
     <NavbarContainer>
-    <div className='main-logo'> 
-        <img alt="logo" src={logo} /> 
-      </div>
-    <NavItem to="/" component={OurMap}>
-      MAP
-    </NavItem>
-<NavItem to='/about' component={About}>
-  ABOUT THE DATA
-</NavItem>
-{/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
-      <NavItem to="/data">
-      WHO WE SERVE
-    </NavItem>
-    {token!==null?(
-        <button
-        className="btn"
-        id="btn"
-        type="submit"
-        onClick={() => {
-          localStorage.removeItem("token");
-          setToken();
-          Swal.fire({
-            position: 'center',
-            type: 'success',
-            title: 'Logged Out',
-            showConfirmButton: false,
-            timer: 2500
-          }) 
-        }}
-      >
-        Logout
-      </button>
-      ) : (
-        <NavItem to='/login' component={Login}>
-          <LoginHover>LOGIN</LoginHover>
-          </NavItem>
-      ) 
-    }
-</NavbarContainer>
 
-</>
-)}
+      <NavItem to="/">
+        MAP
+      </NavItem>
+      <NavItem to="/demo">
+      DEMOGRAPHICS
+      </NavItem>
+     
 
+      <NavItem to='/about'>
+        ABOUT
+      </NavItem>
+      {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
+      {/* <NavItem to="/data">
+        About the data
+       </NavItem> */}
 
+       {token === null ? (
+            <NavItem to="/login" activeClassName="active-cta">
+              LOGIN
+            </NavItem>
+          ) : (
+            <NavItem to="/login" activeClassName="active-cta">
+              <Logout
+                className="btn"
+                type="submit"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  setToken();
+                }}
+              >
+                LOGOUT
+              </Logout>
+              </NavItem>
+          )}
+      {/* {token 
+      ? <NavItem to="/" onClick={() => {
+          localStorage.removeItem('token')
+          history.push('/')
+          }}>Log Out</NavItem>
+      : <NavItem to="/login">Log In</NavItem>
+      }  */}
+    </NavbarContainer>
+  )
+}
 export default Navbar;

@@ -8,6 +8,9 @@ import UScrime from './UScrime';
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
 import About from '../About/About';
+import image from './legend.png';
+
+
 
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
@@ -193,12 +196,10 @@ map.on('load', function () {
           <LeftDrawer />
         </div>    
         <div className="right-drawer">
-        {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">*/}
-         {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>  */}
           <RightDrawer />
         </div> 
         <div ref={el => this.mapContainer = el}
-        //  className="absolute top right left bottom"
+        
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
@@ -207,11 +208,14 @@ map.on('load', function () {
           </div>
          
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
-        {/* <div className='map-overlay' id='legend'></div> */}
-        {/* <UScrime/> */}
-       
+
+          
+     
       </div>
-//       </div>
+      <img src = {image} id="legend-image"/>
+
+
+      </div>
     );
   }
 }
