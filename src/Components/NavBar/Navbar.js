@@ -27,6 +27,7 @@ const NavItem = styled(NavLink)`
   text-decoration:none;
   margin:5px;
 color:white;
+
   :hover{
     text-shadow:2px 2px black;
   }
@@ -62,15 +63,15 @@ const Navbar = ({history}) => {
     return (
     <NavbarContainer>
       <NavItem to="/">
-        Map
+        MAP
       </NavItem>
       <NavItem to="/demo">
-      demographics
+      DEMOGRAPHICS
       </NavItem>
      
 
       <NavItem to='/about'>
-        About
+        ABOUT
       </NavItem>
       {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
       {/* <NavItem to="/data">
@@ -79,7 +80,7 @@ const Navbar = ({history}) => {
 
        {token === null ? (
             <NavItem to="/login" activeClassName="active-cta">
-              Login
+              LOGIN
             </NavItem>
           ) : (
             <NavItem to="/login" activeClassName="active-cta">
@@ -91,7 +92,7 @@ const Navbar = ({history}) => {
                   setToken();
                 }}
               >
-                Logout
+                LOGOUT
               </Logout>
               </NavItem>
           )}

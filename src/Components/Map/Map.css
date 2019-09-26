@@ -87,7 +87,7 @@ p {
 #features {
   position:absolute;
   color:white;
-  top: 75%;
+  top: 65%;
   left:2%;
   height: 100px;
   margin-top: 85px;
@@ -106,7 +106,13 @@ height: 150px;
 
 }
 #total {
-  width:60%;
+  position: absolute;
+  bottom:70%;
+  display:flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+  width:80%;
   height:100px;
   
 }
