@@ -40,8 +40,12 @@ color:white;
 const Logout = styled.button`
 text-decoration:none;
 margin:5px;
-color: #1F8EFA;
+background:white;
+
+color: black;
 font-size: 16px;
+border: 2px solid black;
+  border-radius: 50%;
 :hover{
   background-color: white;
   color: rgba(0, 0, 255, 0.281);
