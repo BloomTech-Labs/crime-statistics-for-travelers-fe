@@ -5,7 +5,7 @@ export default function AxiosFilter() {
 //Query City
 //Display City Data
 const [cityCrime,setCityCrime] = useState();
-const [selected,setSelected]=useState();
+const [selected,setSelected]=useState([cityCrime]);
 //Crime
 useEffect(() => {
 Axios.get("cityCrimeRating")
@@ -15,6 +15,9 @@ setCityCrime(obj.data)
     console.log(err);
 })
 },[])
+
+//Going to try a filter function
+//const filterCrime = setSelected(selected.filter(x => x % 2))
 
     return (
         <div>
