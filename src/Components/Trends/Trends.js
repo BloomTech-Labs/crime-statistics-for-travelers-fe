@@ -31,16 +31,16 @@ export default function Trends() {
      })
         }, [])
         //
+        const listItems = modelData.map((el) =>
+       <span><li key={el.crime}>{el.crime}</li> <li key={el.rating}>{el.rating}</li> </span>
+         
+       );
     return (
         <Div>
-
-       <span><p>{modelData[0].crime}</p><p>#</p><p>{modelData[0].total}</p></span>
-       <span><p>{modelData[1].crime}</p><p>#</p><p>{modelData[1].total}</p></span>
-       <span><p>{modelData[2].crime}</p><p>#</p><p>{modelData[2].total}</p></span>   
-       <span><p>{modelData[3].crime}</p><p>#</p><p>{modelData[3].total}</p></span>
-       <span><p>{modelData[4].crime}</p><p>#</p><p>{modelData[4].total}</p></span>
-       <span><p>{modelData[5].crime}</p><p>#</p><p>{modelData[5].total}</p></span>
-       <span><p>{modelData[6].crime}</p><p>#</p><p>{modelData[6].total}</p></span>
+            <h1>Most Likely Crime you will run into</h1>
+            <ul>
+{listItems}
+        </ul>
         </Div>
     )
 }
