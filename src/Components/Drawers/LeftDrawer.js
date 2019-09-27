@@ -3,7 +3,6 @@ import {
   Drawer,
   DrawerHeader,
   DrawerBody,
-  DrawerFooter,
   Button,
   Tab,
   Tabs, 
@@ -18,7 +17,7 @@ const LeftDrawer = () => {
   return (
     <div className="left-drawer-content">
       <>
-      <Button variantColor="teal" onClick={() => setIsOpen(true)}>
+      <Button variantColor="blue" variant = "solid" onClick={() => setIsOpen(true)}>
         Filter
       </Button>
       <Drawer

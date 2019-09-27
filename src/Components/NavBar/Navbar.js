@@ -1,13 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import styled from 'styled-components';
-import {NavLink,Route} from 'react-router-dom';
-import Swal from 'sweetalert2';
+import {NavLink} from 'react-router-dom';
+import {Button} from '@chakra-ui/core';
 import './Navbar.css'
-import logo from '../../assets/web/about/logo.png';
-import OurMap from '../Map/OurMap';
-import About from '../About/About'
 
-import Login from '../Login/Login'
 
 
 const NavbarContainer = styled.div`
@@ -29,32 +25,11 @@ const NavItem = styled(NavLink)`
   text-decoration:none;
   margin:5px;
 color:white;
+text-shadow:2px 2px black;
 
-  :hover{
-    text-shadow:2px 2px black;
-  }
   @media(max-width:500px){
     margin:2px;
   }
-`
-const Logout = styled.button`
-text-decoration:none;
-margin:5px;
-background:white;
-
-color: black;
-font-size: 16px;
-border: 2px solid black;
-  border-radius: 50%;
-:hover{
-  background-color: white;
-  color: rgba(0, 0, 255, 0.281);
-  border: 2px solid rgba(0, 0, 255, 0.281);
-  border-radius: 2px;
-}
-@media(max-width:500px){
-margin:2px;
-}
 `
 
 
@@ -93,8 +68,9 @@ const Navbar = () => {
             </NavItem>
           ) : (
             <NavItem to="/login" activeClassName="active-cta">
-              <Logout
-                className="btn"
+              <Button
+              variantcolor="black"
+              variant="outline"
                 type="submit"
                 onClick={() => {
                   localStorage.removeItem("token");
@@ -102,7 +78,7 @@ const Navbar = () => {
                 }}
               >
                 LOGOUT
-              </Logout>
+              </Button>
               </NavItem>
           )}
       {/* {token 
