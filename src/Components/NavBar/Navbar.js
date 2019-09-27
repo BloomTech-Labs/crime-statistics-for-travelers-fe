@@ -73,9 +73,7 @@ const Navbar = () => {
       <NavItem to="/">
         MAP
       </NavItem>
-      <NavItem to="/trends">
-        Trends
-      </NavItem>
+
       <NavItem to="/demo">
       DEMOGRAPHICS
       </NavItem>
