@@ -1,14 +1,28 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { display, flex } from 'styled-system';
 const Div = styled.div`
 display:flex;
 flex-direction:column;
+
+
+`
+const H1 = styled.div`
+text-align:center;
+`
+const ListDiv = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+
 
 `
 export default function Trends() {
     
     const [modelData,setModelData]= useState([
+        
+        {crime:"Crime",rating:"rating"},
         {crime:"rape",rating:"1"},
         {crime:"assault",rating:"2"},
         {crime:"larceny",rating:"3"},
@@ -31,16 +45,25 @@ export default function Trends() {
      })
         }, [])
         //
+        const listItems = modelData.map((el) =>
+       <li key={el.crime}>{el.crime}</li>
+         
+       );
+       const listRating = modelData.map((el) =>
+       <li key={el.rating}>{el.rating}</li>
+         
+       );
     return (
         <Div>
-
-       <span><p>{modelData[0].crime}</p><p>#</p><p>{modelData[0].total}</p></span>
-       <span><p>{modelData[1].crime}</p><p>#</p><p>{modelData[1].total}</p></span>
-       <span><p>{modelData[2].crime}</p><p>#</p><p>{modelData[2].total}</p></span>   
-       <span><p>{modelData[3].crime}</p><p>#</p><p>{modelData[3].total}</p></span>
-       <span><p>{modelData[4].crime}</p><p>#</p><p>{modelData[4].total}</p></span>
-       <span><p>{modelData[5].crime}</p><p>#</p><p>{modelData[5].total}</p></span>
-       <span><p>{modelData[6].crime}</p><p>#</p><p>{modelData[6].total}</p></span>
+            <H1>Most Likely Crime you will run into</H1>
+        <ListDiv>
+            <ul>
+{listItems}
+        </ul>
+        <ul>
+            {listRating}
+        </ul>
+        </ListDiv>
         </Div>
     )
 }

@@ -13,9 +13,10 @@ import {
 } from "@chakra-ui/core";
 import MainDashboard from "../Dashboard/MainDashboard";
 import UScrime from '../Map/UScrime';
+import Trends from '../Trends/Trends';
 
 const RightDrawer = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="right-drawer-content">
       <>
@@ -43,7 +44,7 @@ const RightDrawer = () => {
                 <MainDashboard/>
               </TabPanel>
               <TabPanel>
-                <p>two!</p>
+                <Trends/>
               </TabPanel>
               <TabPanel>
                 <UScrime/>

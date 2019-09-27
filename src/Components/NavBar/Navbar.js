@@ -73,6 +73,7 @@ const Navbar = () => {
       <NavItem to="/">
         MAP
       </NavItem>
+
       <NavItem to="/demo">
       DEMOGRAPHICS
       </NavItem>

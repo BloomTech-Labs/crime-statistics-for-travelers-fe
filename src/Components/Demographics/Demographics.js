@@ -33,12 +33,12 @@ const Demogrphics= props => {
                     // equivilent of submitHandler
                     onSubmit={(values, actions) => {
                         setTimeout(() => {
-                            alert(JSON.stringify(values, null, 2));
+                            // alert(JSON.stringify(values, null, 2));
                             actions.setSubmitting(false);
                         }, 500)
                         console.log("Search", values);
                         axiosWithAuth()
-                            .put(`https://backend-for-production.herokuapp.com//api/auth/register`, values)
+                            .put(`https://backend-for-production.herokuapp.com/api/demo/`, values)
                             .then(res => {
                                 props.history.push('/');
                             })
