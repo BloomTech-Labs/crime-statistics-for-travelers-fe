@@ -10,9 +10,7 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
-import MainDashboard from './Components/Dashboard/MainDashboard';
-import Trends from './Components/Trends/Trends';
-
+import './App.css'
 export default function App() {
 //Styles
 const Container = styled.div``;

@@ -14,6 +14,7 @@ import {
 import MainDashboard from "../Dashboard/MainDashboard";
 import UScrime from '../Map/UScrime';
 import Trends from '../Trends/Trends';
+import './Drawer.css'
 
 const RightDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
