@@ -3,7 +3,6 @@ import {
   Drawer,
   DrawerHeader,
   DrawerBody,
-  DrawerFooter,
   Button,
   Tab, 
   Tabs, 
@@ -21,7 +20,7 @@ const RightDrawer = () => {
   return (
     <div className="right-drawer-content">
       <>
-      <Button variantColor="teal" onClick={() => setIsOpen(true)}>
+      <Button variantColor="blue" onClick={() => setIsOpen(true)}>
         Analytics
       </Button>
       <Drawer

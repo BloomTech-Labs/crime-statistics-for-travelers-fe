@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import styled from 'styled-components';
 import {TokenContext} from './Components/Context/Contexts';
-import {Route,Link,Switch} from 'react-router-dom';
+import {Route,Switch} from 'react-router-dom';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";
@@ -13,7 +12,6 @@ import OurMap from './Components/Map/OurMap';
 import './App.css'
 export default function App() {
 //Styles
-const Container = styled.div``;
 
 //Gets Token from local storage.
 const [token,setToken] = useState(false);

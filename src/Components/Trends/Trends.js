@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { display, flex } from 'styled-system';
 const Div = styled.div`
 display:flex;
 flex-direction:column;

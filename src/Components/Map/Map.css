@@ -41,6 +41,9 @@ p {
  top:50%;
  left:40%;
  right:70%;
+ background:#0D73D9;
+ color:white;
+ box-shadow:2px 2px 2px black;
   }
 
   .mapboxgl-ctrl-geocoder { min-width:100%; }
@@ -94,6 +97,7 @@ p {
   margin-right:35px;
   width: 250px;
   box-shadow:5px 5px 5px black;
+  background:#0D73D9;
 }
 #legend-image{
 position:absolute;
