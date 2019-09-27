@@ -1,9 +1,7 @@
 .App {
     text-align: center;
   }
-  #drawer{
-    color:black;
-  }
+
   .mapboxgl-canvas {
     position:absolute;
      top:0;
@@ -87,19 +85,35 @@ p {
 }
 
 #features {
+  position:absolute;
   color:white;
-  top: 70%;
+  top: 65%;
+  left:2%;
   height: 100px;
   margin-top: 85px;
   margin-right:35px;
   width: 250px;
+  box-shadow:5px 5px 5px black;
 }
+#legend-image{
+position:absolute;
+top:78%;
+right:2%;
+box-shadow:1px 2px rgba(0, 0, 0, 0.1);
+line-height: 18px;
+height: 150px;
 
+
+}
 #total {
-  width:165px;
-  top:70%;
-  left:2%;
-  margin-bottom:20px;
+  position: absolute;
+  bottom:70%;
+  display:flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+  width:80%;
+  height:100px;
   
 }
 #legend {
@@ -131,4 +145,8 @@ p {
   position: absolute;
   right: 0%;
   top: 9%
+}
+
+.mainAboutCss {
+  margin-top: 164px;
 }
