@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
-import {Button} from 'chakra-ui';
+import {Button} from '@chakra-ui/core';
 import './Navbar.css'
 
 
