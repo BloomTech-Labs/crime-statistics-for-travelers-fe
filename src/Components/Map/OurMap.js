@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl';
-import dotenv from 'dotenv';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import styled from 'styled-components';
-import UScrime from './UScrime';
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
 import About from '../About/About';
@@ -188,7 +185,7 @@ map.on('load', function () {
       }
     
       render() {
-        const { lng, lat, zoom } = this.state;//Deconstucting your state object.
+        // const { lng, lat, zoom } = this.state;//Deconstucting your state object.
     
     return (
       <div>
@@ -212,7 +209,7 @@ map.on('load', function () {
           
      
       </div>
-      <img src = {image} id="legend-image"/>
+      <img src = {image} id="legend-image" alt="legend for the crime overlay"/>
 
 
       </div>

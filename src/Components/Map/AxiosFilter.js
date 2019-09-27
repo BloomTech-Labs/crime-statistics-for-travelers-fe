@@ -5,7 +5,7 @@ export default function AxiosFilter() {
 //Query City
 //Display City Data
 const [cityCrime,setCityCrime] = useState();
-const [selected,setSelected]=useState();
+// const [selected,setSelected]=useState();
 //Crime
 useEffect(() => {
 Axios.get("cityCrimeRating")
