@@ -10,6 +10,7 @@ import {
   TabPanels, 
   TabPanel
 } from "@chakra-ui/core";
+import FilterList from './LeftTabOne';
 
 const LeftDrawer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -30,13 +31,13 @@ const LeftDrawer = () => {
         <DrawerBody>
         <Tabs isFitted variant="enclosed">
           <TabList mb="1em">
-            <Tab>One</Tab>
+            <Tab>Crime Filter</Tab>
             <Tab>Two</Tab>
             <Tab>Three</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
-              <p>one!</p>
+              <FilterList/>
             </TabPanel>
             <TabPanel>
               <p>two!</p>
