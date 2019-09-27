@@ -5,7 +5,13 @@ import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import styled from 'styled-components';
 import UScrime from './UScrime';
-import SizeExample from './Drawer';
+import RightDrawer from '../Drawers/RightDrawer'
+import LeftDrawer from '../Drawers/LeftDrawer'
+import About from '../About/About';
+import image from './legend.png';
+
+
+
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
@@ -164,8 +170,10 @@ map.on('load', function () {
   //===========================================================================================================
 
 
-        // Add zoom and rotation controls to the map.
-        map.addControl(new mapboxgl.NavigationControl(), "top-left");
+        // // Add zoom and rotation controls to the map.
+        // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
+        // document.getElementById('zoomControl').appendChild(zoomControl);
+        
 
 
         map.on('move', () => {
@@ -184,23 +192,30 @@ map.on('load', function () {
     
     return (
       <div>
-        <SizeExample id="drawer"/>
-        <div>
-        {/* <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">*/}
-         {/* <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>  */}
-        </div>
-       
-        
+        <div className="left-drawer">
+          <LeftDrawer />
+        </div>    
+        <div className="right-drawer">
+          <RightDrawer />
+        </div> 
         <div ref={el => this.mapContainer = el}
-        //  className="absolute top right left bottom"
-          id="map" className='map'/>
-          <div id='geocoder' class='geocoder'></div>
-        <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div></div>
         
-        {/* <div className='map-overlay' id='legend'></div> */}
-        <UScrime/>
+          id="map" className='map'/>
+          <div id='geocoder' className='geocoder'></div>
+          <div id='zoomControl' className='zoomControl'></div>
+          <div className='mainAboutCss'>
+            <About />
+          </div>
+         
+        <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
+
+          
+     
       </div>
-      // </div>
+      <img src = {image} id="legend-image"/>
+
+
+      </div>
     );
   }
 }

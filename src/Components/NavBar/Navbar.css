@@ -3,7 +3,7 @@
 }
 
 #btn{
-    background:#1E2F40;
+    background-color:#1E2F40;
     color: #78c6e6;
     border: 2px solid #78c6e6;
     padding: 0.8rem 1.5rem;
@@ -15,11 +15,14 @@
     letter-spacing: 1px;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
-     
-
 }
 
 button:hover{
     background:#78c6e6;
     color:white;
+}
+
+.main-logo {
+    position: absolute;
+    margin-left: -1453px;
 }

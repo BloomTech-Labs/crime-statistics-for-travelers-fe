@@ -11,6 +11,7 @@ import Contact from './Components/Contact/Contact';
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
 import MainDashboard from './Components/Dashboard/MainDashboard';
+import Trends from './Components/Trends/Trends';
 
 export default function App() {
 //Styles
@@ -34,13 +35,12 @@ useEffect(() => {
 
         
         <Route exact path="/" component={OurMap}/>
+        <Route exact path="/about" component={About}/>
         <Route exact path="/login"  component={Login}/>
-        <Route exact path="/Dashboard" component={MainDashboard}/>
+        {/* <Route exact path="/Dashboard" component={MainDashboard}/> */}
         <Route exact path="/signup" component={Signup}/>
         <Route exact path="/about" component={About}/>
-        {/* <Route exact path="/contact" component={Contact}/> */}
-
-      
+        <Route exact path="/contact" component={Contact}/>
         <Route path="/demo" component={Demographics}/>
         </Switch>
 
