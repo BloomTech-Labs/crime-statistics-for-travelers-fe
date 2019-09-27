@@ -44,7 +44,7 @@ const RightDrawer = () => {
               <TabPanel>
                 <MainDashboard/>
               </TabPanel>
-              <TabPanel>
+              <TabPanel className="background-for-tabs">
                 <Trends/>
               </TabPanel>
               <TabPanel>

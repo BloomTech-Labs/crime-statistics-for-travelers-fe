@@ -29,10 +29,8 @@ const NavItem = styled(NavLink)`
   text-decoration:none;
   margin:5px;
 color:white;
+text-shadow:2px 2px black;
 
-  :hover{
-    text-shadow:2px 2px black;
-  }
   @media(max-width:500px){
     margin:2px;
   }
