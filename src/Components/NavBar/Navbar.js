@@ -69,7 +69,7 @@ const Navbar = () => {
           ) : (
             <NavItem to="/login" activeClassName="active-cta">
               <Button
-              variantcolor="black"
+              variantColor="black"
               variant="outline"
                 type="submit"
                 onClick={() => {

@@ -16,12 +16,7 @@ var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 //Public mapbox token used in api documentation. This key is available to everyone.
 mapboxgl.accessToken ='pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
 
-// const styledMap = styled.div`
-//   @media(max-width: 600px){
-//     border: 5px dashed red;
-//   }
 
-// `
 
 class OurMap extends Component {
     constructor(props) {
@@ -29,7 +24,7 @@ class OurMap extends Component {
         //Within state define your map center
         this.state = {
           lng: -96,
-          lat: 37,
+          lat: 40,
           zoom: 3.5
         };
       }
@@ -40,7 +35,7 @@ class OurMap extends Component {
             [-170, 9], // Southwest coordinates
             [-24, 75] 
         ]
-
+   
         //Generating our map======================================================================
         const map = new mapboxgl.Map({
           container: this.mapContainer,
@@ -50,6 +45,14 @@ class OurMap extends Component {
           maxBounds: bounds//it takes the SW coordinates and the NE coorinates and sets teh map in place
         });
 
+             //finds users current location
+             map.addControl(new mapboxgl.GeolocateControl({
+              positionOptions: {
+              enableHighAccuracy: true
+              },
+              trackUserLocation: true
+              }));
+    
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
         //     accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
@@ -57,7 +60,8 @@ class OurMap extends Component {
         //     }));
         var geocoder = new MapboxGeocoder({
           accessToken: mapboxgl.accessToken,
-          mapboxgl: mapboxgl
+          mapboxgl: mapboxgl,
+          countries: 'us',
           });
           document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
        //Adding Overlay=========================================================================
@@ -77,25 +81,25 @@ class OurMap extends Component {
       });
 
 
-      map.on('load', function() {
-        var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
-        var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
-        // the rest of the code will go in here
-        for (let i = 0; i < layers.length; i++) {
-          var layer = layers[i];
-          var color = colors[i];
-          var item = document.createElement('div');
-          var key = document.createElement('span');
-          key.className = 'legend-key';
-          key.style.backgroundColor = color;
+      // map.on('load', function() {
+      //   var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
+      //   var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
+      //   // the rest of the code will go in here
+      //   for (let i = 0; i < layers.length; i++) {
+      //     var layer = layers[i];
+      //     var color = colors[i];
+      //     var item = document.createElement('div');
+      //     var key = document.createElement('span');
+      //     key.className = 'legend-key';
+      //     key.style.backgroundColor = color;
         
-          var value = document.createElement('span');
-          value.innerHTML = layer;
-          item.appendChild(key);
-          item.appendChild(value);
-          // legend.appendChild(item);
-        }
-      });
+      //     var value = document.createElement('span');
+      //     value.innerHTML = layer;
+      //     item.appendChild(key);
+      //     item.appendChild(value);
+      //     // legend.appendChild(item);
+      //   }
+      // });
 //=======================================================================================================
 //Adding Icons to Popular Hotspots
 map.on('load', function () {
