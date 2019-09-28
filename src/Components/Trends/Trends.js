@@ -11,6 +11,7 @@ const H1 = styled.div`
 text-align:center;
 `
 const ListDiv = styled.div`
+height:1000px;
 display:flex;
 flex-direction:row;
 justify-content:center;
