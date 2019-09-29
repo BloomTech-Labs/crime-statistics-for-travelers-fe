@@ -11,9 +11,9 @@ import {
   TabList
 } from "@chakra-ui/core";
 import MainDashboard from "../Dashboard/MainDashboard";
-import UScrime from '../Map/UScrime';
 import Trends from '../Trends/Trends';
 import './Drawer.css'
+import MainMeta from '../Metadata/MainMeta';
 
 const RightDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ const RightDrawer = () => {
                 <Trends/>
               </TabPanel>
               <TabPanel>
-                <UScrime/>
+                <MainMeta/>
               </TabPanel>
             </TabPanels>
           </Tabs>

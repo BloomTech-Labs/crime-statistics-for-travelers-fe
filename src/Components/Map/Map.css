@@ -109,7 +109,7 @@ height: 150px;
 
 
 }
-#total {
+/* #total {
   position: absolute;
   bottom:70%;
   display:flex;
@@ -119,7 +119,7 @@ align-items: center;
   width:80%;
   height:100px;
   
-}
+} */
 #legend {
 
   margin-right:10px;
