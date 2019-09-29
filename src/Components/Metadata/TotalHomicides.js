@@ -26,7 +26,7 @@ export default function TotalHomicides() {
     if(homicides===undefined){
         return(
             <div>
-             <h3>Total Crimes in 2017</h3>
+             <h3>Total Homicides</h3>
              <p>Loading...</p>   
             </div>
         )

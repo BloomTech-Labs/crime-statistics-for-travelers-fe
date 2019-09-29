@@ -26,14 +26,14 @@ export default function TotalRape() {
     if(rape===undefined){
         return(
             <div>
-             <h3>Total Crimes in 2017</h3>
+             <h3>Total Rape in 2017</h3>
              <p>Loading...</p>   
             </div>
         )
     }else{
     return (
         <div>
-            <h3>US Crime Rate 2017</h3>
+            <h3>Total Rape in 2017</h3>
             <p>{rape.rapetotal} instances of rape occur in the US</p>
             
         </div>
