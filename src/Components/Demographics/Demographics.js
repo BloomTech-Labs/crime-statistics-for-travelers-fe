@@ -52,7 +52,7 @@ const Demogrphics= props => {
                             })
                             .catch(err => console.log(err.response));
                     }}
-                    render={(props: FormikProps) => (
+                    render={(props) => (
                         
                         <Form onSubmit={props.handleSubmit}>
                             <Container>
