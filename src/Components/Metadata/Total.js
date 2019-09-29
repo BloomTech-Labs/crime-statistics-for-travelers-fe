@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from 'react'
-// import WebGL from 'webgl'
 import axios from 'axios'
-import './Map.css'
+
 
 export default function UScrime() {
 
@@ -24,14 +23,14 @@ export default function UScrime() {
  
     if(crimeData===undefined){
         return(
-            <div className='map-overlay' id='total'>
+            <div>
              <h3>Total Crimes in 2017</h3>
              <p>Loading...</p>   
             </div>
         )
     }else{
     return (
-        <div className='map-overlay' id='total'>
+        <div>
             <h3>US Crime Rate 2017</h3>
             <p>{crimeData.number} per 100,000</p>
             
