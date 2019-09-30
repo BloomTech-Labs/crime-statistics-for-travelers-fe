@@ -4,6 +4,7 @@ import Total from './Total'
 import ViolentCrime from './ViolentCrime'
 import TotalRape from './TotalRape'
 import TotalHomicides from './TotalHomicides';
+import CountrySafety from './CountrySafety';
 import './Meta.css'
 export default function MainMeta() {
     return (
@@ -14,7 +15,7 @@ export default function MainMeta() {
             <ViolentCrime/>
             <TotalHomicides/>
             <TotalRape/>
-            
+            <CountrySafety />
         </div>
     )
 }
