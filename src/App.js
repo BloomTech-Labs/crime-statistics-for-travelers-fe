@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
-import styled from 'styled-components';
 import {TokenContext} from './Components/Context/Contexts';
-import {Route,Link,Switch} from 'react-router-dom';
+import {Route,Switch} from 'react-router-dom';
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";
@@ -10,12 +9,9 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
-import MainDashboard from './Components/Dashboard/MainDashboard';
-import Trends from './Components/Trends/Trends';
-
+import './App.css'
 export default function App() {
 //Styles
-const Container = styled.div``;
 
 //Gets Token from local storage.
 const [token,setToken] = useState(false);

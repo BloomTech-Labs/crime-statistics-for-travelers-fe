@@ -3,7 +3,6 @@ import {
   Drawer,
   DrawerHeader,
   DrawerBody,
-  DrawerFooter,
   Button,
   Tab, 
   Tabs, 
@@ -12,15 +11,16 @@ import {
   TabList
 } from "@chakra-ui/core";
 import MainDashboard from "../Dashboard/MainDashboard";
-import UScrime from '../Map/UScrime';
 import Trends from '../Trends/Trends';
+import './Drawer.css'
+import MainMeta from '../Metadata/MainMeta';
 
 const RightDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="right-drawer-content">
       <>
-      <Button variantColor="teal" onClick={() => setIsOpen(true)}>
+      <Button variantColor="blue" onClick={() => setIsOpen(true)}>
         Analytics
       </Button>
       <Drawer
@@ -43,11 +43,11 @@ const RightDrawer = () => {
               <TabPanel>
                 <MainDashboard/>
               </TabPanel>
-              <TabPanel>
+              <TabPanel className="background-for-tabs">
                 <Trends/>
               </TabPanel>
               <TabPanel>
-                <UScrime/>
+                <MainMeta/>
               </TabPanel>
             </TabPanels>
           </Tabs>
