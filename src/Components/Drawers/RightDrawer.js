@@ -3,7 +3,6 @@ import {
   Drawer,
   DrawerHeader,
   DrawerBody,
-  DrawerFooter,
   Button,
   Tab, 
   Tabs, 
@@ -11,13 +10,17 @@ import {
   TabPanel, 
   TabList
 } from "@chakra-ui/core";
+import MainDashboard from "../Dashboard/MainDashboard";
+import Trends from '../Trends/Trends';
+import './Drawer.css'
+import MainMeta from '../Metadata/MainMeta';
 
 const RightDrawer = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="right-drawer-content">
       <>
-      <Button variantColor="teal" onClick={() => setIsOpen(true)}>
+      <Button variantColor="blue" onClick={() => setIsOpen(true)}>
         Analytics
       </Button>
       <Drawer
@@ -28,25 +31,27 @@ const RightDrawer = () => {
         onClose={() => setIsOpen(false)}
       >
         <DrawerHeader borderBottomWidth="1px">Crime Analytics</DrawerHeader>
-        <DrawerBody>
+        <DrawerBody >
+       
           <Tabs isFitted variant="enclosed">
             <TabList mb="1em">
-              <Tab>Crime Analytics</Tab>
-              <Tab>Crime Data</Tab>
-              <Tab>Trending Crime</Tab>
+              <Tab>Dashboard</Tab>
+              <Tab>Trends</Tab>
+              <Tab>MetaData</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
-                <p className="p">one!</p>
+                <MainDashboard/>
+              </TabPanel>
+              <TabPanel className="background-for-tabs">
+                <Trends/>
               </TabPanel>
               <TabPanel>
-                <p className="p">two!</p>
-              </TabPanel>
-              <TabPanel>
-                <p className="p">three!</p>
+                <MainMeta/>
               </TabPanel>
             </TabPanels>
           </Tabs>
+         
         </DrawerBody>
       </Drawer>
     </>

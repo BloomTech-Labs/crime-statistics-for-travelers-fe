@@ -1,4 +1,4 @@
-/* 
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	line-height: 1.6;
@@ -11,9 +11,6 @@ ul {
   list-style: none;
 }
 
-#root{
-    width: 100%
-}
 
 h2,
 h3,
@@ -54,7 +51,7 @@ a {
 
 .logo{
 	margin-top: 20px;
-	margin-left: -198px;
+	margin-left: 9px;
     width: 2000px;
 }
 
@@ -67,7 +64,7 @@ a {
 	padding-top: .5em;
 	padding-bottom: .5em;
 	justify-content: flex-end;	
-} */
+}
 
 
 /* ================================= 
@@ -77,19 +74,22 @@ a {
 
 
 
-/* @media (min-width: 769px) {
+@media (min-width: 769px) {
 	.header,
 	.main-nav {
 		display: flex;
-		width: 1363px;
-		margin-left: 192px;
+		width: 1500px;
 	}
 	.header {
+		
 		align-items: center;
+    	.header{
 		width: 80%;
 		margin: 0 auto;
 		max-width: 1150px;
 	}
+	}
+
 }
 
 @media (min-width: 1025px) {
@@ -98,14 +98,14 @@ a {
 		
 	}
 
-} */
+}
 
 /* .mainMap {
 	border: 1px solid blue;
 	position: absolute;
 } */
 
-/* .search {
+.search {
 	margin-left: 299px;
     margin-top: -378px;
 }
@@ -163,7 +163,7 @@ a {
     width: 569px;
     height: 490px;
     left: 140px;
-    top: 1171px;
+    top: 1324px;
     z-index: 1;
 }
 
@@ -172,7 +172,7 @@ a {
     width: 967px;
     height: 676px;
     left: 532px;
-    top: 1100px;
+    top: 1233px;
     background: #5A6F80;
     opacity: 0.7;
 }
@@ -223,7 +223,7 @@ a {
     width: 629px;
     height: 541px;
     left: 669px;
-    top: 1473px;
+    top: 1599px;
 }
 
 .middleContent3 {
@@ -235,7 +235,7 @@ a {
 	width: 418px;
 	height: 68px;
 	left: 540px;
-	top: 2000px;
+	top: 2123px;
 	font-family: Libre Franklin;
 	font-style: normal;
 	font-weight: 300;
@@ -250,7 +250,7 @@ a {
     width: 1319px;
     height: 132px;
     left: 95px;
-    top: 2080px;
+    top: 2205px;
     font-family: Nunito;
     font-style: normal;
     font-weight: 300;
@@ -269,7 +269,7 @@ a {
     width: 311px;
     height: 162px;
     left: 776px;
-    top: 2161px;
+    top: 2275px;
 }
 
 .robberMap {
@@ -277,7 +277,7 @@ a {
     width: 1200px;
     height: 528px;
     left: 149px;
-    top: 2308px;
+    top: 2421px;
 }
 
 .middleContent5 {
@@ -289,7 +289,7 @@ a {
     width: 1583px;
     height: 276px;
     left: 0px;
-    top: 2823px;
+    top: 2942px;
     background: #ACB7BF;
 }
 
@@ -348,5 +348,4 @@ a {
 
 .footerLinks a:hover {
 	color: rgba(128, 128, 128, 0.527);
-} 
-*/
+}

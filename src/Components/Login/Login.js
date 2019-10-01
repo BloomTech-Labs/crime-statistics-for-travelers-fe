@@ -1,25 +1,12 @@
 import React, {useState} from "react";
 import {Link} from 'react-router-dom'
-import { withFormik, Form, Field } from "formik";
-import * as Yup from "yup";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
-import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import {
   Button,
   PseudoBox} from '@chakra-ui/core'
-import {
-  FormLabel, 
-  FormControl, 
-  FormErrorMessage, 
-  Input, 
-  Stack, 
-  Box, 
-  Heading, 
-  Text} from '@chakra-ui/core'
+import { Box, Heading} from '@chakra-ui/core'
   import google from '../../assets/web/1x/btn_google_signin_light_normal_web.png'
   import fb from '../../assets/web/1x/login-facebook.png'
 
@@ -34,10 +21,10 @@ const Login = (props) => {
 
   
   const token = window.localStorage.getItem('token')
-  console.log('state',input)
+ 
   
   const handleChange = e => {
-    console.log('login input change', e.target.value)
+    
     setInput({
       ...input,
       [e.target.name]: e.target.value
@@ -77,10 +64,10 @@ const Login = (props) => {
           <h1 className="heading">Log in to your account.</h1>
              <div className="auth-links">
                <div className="auth-link">
-               <img src={google}/>                    
+               <img src={google} alt="auth-0 link"/>                    
                </div>
                <div className="auth-link">
-                 <img src={fb}/>    
+                 <img src={fb} alt="Facebook auth0 button"/>    
                </div>
              </div>
             <form onSubmit={handleLoginSubmit} className="login-form">
