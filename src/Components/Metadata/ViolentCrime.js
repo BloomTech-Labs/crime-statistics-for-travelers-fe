@@ -16,7 +16,7 @@ align-items:center;
 `
 export default function ViolentCrime() {
     const [violent,SetViolent] = useState(
-{violentrate:"1283220"}
+{violentrate:"1,283,220"}
     )
     useEffect(() => {
 axios.get("violentendpoint")

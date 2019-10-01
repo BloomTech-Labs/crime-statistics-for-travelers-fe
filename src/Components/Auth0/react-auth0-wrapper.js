@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
-
+//Redirect to default callback url setup within the auth0 api
 const DEFAULT_REDIRECT_CALLBACK = () =>
   window.history.replaceState({}, document.title, window.location.pathname);
-
+//Creating my contexts
 export const Auth0Context = React.createContext();
 export const useAuth0 = () => useContext(Auth0Context);
+//Provider Component
 export const Auth0Provider = ({
   children,
   onRedirectCallback = DEFAULT_REDIRECT_CALLBACK,
@@ -41,7 +42,7 @@ export const Auth0Provider = ({
     initAuth0();
     // eslint-disable-next-line
   }, []);
-
+//Popup component from auth0
   const loginWithPopup = async (params = {}) => {
     setPopupOpen(true);
     try {
@@ -55,7 +56,7 @@ export const Auth0Provider = ({
     setUser(user);
     setIsAuthenticated(true);
   };
-
+//Another URL Callback
   const handleRedirectCallback = async () => {
     setLoading(true);
     await auth0Client.handleRedirectCallback();
@@ -64,6 +65,7 @@ export const Auth0Provider = ({
     setIsAuthenticated(true);
     setUser(user);
   };
+  //Provider for Auth0 Token
   return (
     <Auth0Context.Provider
       value={{
