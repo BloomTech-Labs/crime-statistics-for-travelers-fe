@@ -29,6 +29,7 @@ color:white;
 text-shadow:2px 2px black;
 :hover{
   transform: scale(1.2);
+  transition:2s;
 }
   @media(max-width:500px){
     margin:2px;

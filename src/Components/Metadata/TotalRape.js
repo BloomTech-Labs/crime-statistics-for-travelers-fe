@@ -1,6 +1,20 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
+import styled from 'styled-components';
 
+const Box =styled.div`
+
+background:#A5D2FF;
+border-left: 6px solid darkblue;
+color:darkblue;
+border-bottom-left-radius:25%;
+`
+const Inner = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+`
 
 export default function TotalRape() {
 
@@ -25,17 +39,22 @@ export default function TotalRape() {
  
     if(rape===undefined){
         return(
-            <div>
+          <Box>
+            <Inner>
              <h3>Total Rape in 2017</h3>
              <p>Loading...</p>   
-            </div>
+            </Inner>
+            </Box>
         )
     }else{
     return (
-        <div>
+      <Box>
+        <Inner>
             <h3>Total Rape in 2017</h3>
             <p>{rape.rapetotal} instances of rape occur in the US</p>
             
-        </div>
+
+        </Inner>
+        </Box>
     )}
 }

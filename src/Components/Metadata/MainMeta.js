@@ -1,10 +1,13 @@
 import React from 'react'
+import styled from 'styled-components';
 import Population from './Population'
 import Total from './Total'
 import ViolentCrime from './ViolentCrime'
 import TotalRape from './TotalRape'
 import TotalHomicides from './TotalHomicides';
 import './Meta.css'
+
+
 export default function MainMeta() {
     return (
         <div>
