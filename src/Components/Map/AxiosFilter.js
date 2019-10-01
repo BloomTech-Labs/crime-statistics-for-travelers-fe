@@ -16,6 +16,9 @@ setCityCrime(obj.data)
 })
 },[])
 
+//Going to try a filter function
+//const filterCrime = setSelected(selected.filter(x => x % 2))
+
     return (
         <div>
     if(cityCrime===undefined){
