@@ -22,15 +22,17 @@ export default function FilterList() {
         })
         setFilter({filter:filter})
     }
-
+    const filterMap = () => {
+        {filter.map((filters) => {
+            return(<CheckBox{...filters} />)
+        })}
+    }
     
     return (
         <div>
             <input type="checkbox" value="checkedall" /> Check / Uncheck All
             <ul>
-                {filter.map((filters) => {
-                    return(<CheckBox{...filters} />)
-                })}
+            {filterMap}
             </ul>
         </div>
     )

@@ -18,6 +18,7 @@ export default function MainMeta() {
             <ViolentCrime/>
             <TotalHomicides/>
             <TotalRape/>
+            
             <CountrySafety />
         </div>
     )
