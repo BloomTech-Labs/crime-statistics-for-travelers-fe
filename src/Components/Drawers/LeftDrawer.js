@@ -40,10 +40,10 @@ const LeftDrawer = () => {
               <FilterList/>
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+              <p className="p">two!</p>
             </TabPanel>
             <TabPanel>
-              <p>three!</p>
+              <p className="p">three!</p>
             </TabPanel>
           </TabPanels>
         </Tabs>

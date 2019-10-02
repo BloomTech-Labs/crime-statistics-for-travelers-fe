@@ -26,26 +26,18 @@ useEffect(() => {
   return ( 
     <ThemeProvider>
       <TokenContext.Provider value={{token, setToken}}>
-
         <Navbar/>
-        <Switch>
-
-        
-        <Route exact path="/" component={OurMap}/>
-        <Route exact path="/about" component={About}/>
-        <Route exact path="/login"  component={Login}/>
-        {/* <Route exact path="/Dashboard" component={MainDashboard}/> */}
-        <Route exact path="/signup" component={Signup}/>
-        <Route exact path="/about" component={About}/>
-        <Route exact path="/contact" component={Contact}/>
-        <Route path="/demo" component={Demographics}/>
+        <Switch>  
+          <Route exact path="/" component={OurMap}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/login"  component={Login}/>
+          {/* <Route exact path="/Dashboard" component={MainDashboard}/> */}
+          <Route exact path="/signup" component={Signup}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/contact" component={Contact}/>
+          <Route path="/demo" component={Demographics}/>
         </Switch>
-
-        
-
       </TokenContext.Provider>
     </ThemeProvider>
   )
-
 }
-     
