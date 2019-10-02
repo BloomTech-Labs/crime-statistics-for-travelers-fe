@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {TokenContext} from './Components/Context/Contexts';
 import {Route,Switch} from 'react-router-dom';
+import { useAuth0 } from "./Components/Auth0/react-auth0-wrapper";
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";

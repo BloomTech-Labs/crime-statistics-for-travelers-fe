@@ -23,9 +23,9 @@ export default function FilterList() {
         setFilter({filter:filter})
     }
     const filterMap = () => {
-        {filter.map((filters) => {
+        filter.map((filters) => {
             return(<CheckBox{...filters} />)
-        })}
+        })
     }
     
     return (
