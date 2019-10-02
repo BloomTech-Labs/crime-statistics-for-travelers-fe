@@ -10,27 +10,43 @@ export default function FilterList() {
     {id:4, value: "Arson", isChecked: false},
     {id:5, value: "Robbery", isChecked: false}])
 
-    const handleAllChecks = (event) => {
-        filter.forEach(filters => filters.isChecked = event.target.checked)
-        setFilter({filter:filter})
-    }
+    const handleAllChecks = event => {
+        const newFilter = filter.map(({ id, value, isChecked }) => ({
+            id,
+            value,
+            isChecked: event.target.checked
+        }));
+        setFilter(newFilter)
+        console.log("setFilter", filter);
+    };
     
-    const handleChecks = (event) => {
-        filter.forEach(filters => {
-            if(filters.value === event.target.value)
-            filters.isChecked = event.target.checked
-        })
-        setFilter({filter:filter})
-    }
+    const handleChecks = (event, currentId) => {
+        const newFilter = filter.map(({ id, value, isChecked }) => ({
+            id,
+            value,
+            isChecked: id == currentId ? event.target.checked : isChecked
+        }));
+        setFilter(newFilter);
+    };
+
+    // let filtered = () => {
+    //     filter.map((filters) => {
+    //         console.log(filters);
+    //         return(<CheckBox handleChecks={handleChecks} {...filters}  />)
+    //     })
+    // }
 
     
     return (
         <div>
-            <input type="checkbox" value="checkedall" /> Check / Uncheck All
+            <input type="checkbox" onClick={handleAllChecks} value="checkedall" /> Check / Uncheck All
             <ul>
-                {filter.map((filters) => {
-                    return(<CheckBox{...filters} />)
-                })}
+                {
+                    filter.map(currentFilter => {
+                    console.log(currentFilter);
+                    return(<CheckBox key={currentFilter.id} handleChecks={e => handleChecks(e, currentFilter.id)} {...currentFilter}  />)
+                })
+                }
             </ul>
         </div>
     )
