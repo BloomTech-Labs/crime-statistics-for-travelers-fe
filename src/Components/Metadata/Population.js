@@ -1,8 +1,22 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
+import styled from 'styled-components';
+
+
+const Box =styled.div`
+background:#A5D2FF;
+border-left: 6px solid darkblue;
+color:darkblue;
+`
+const Inner = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+`
 export default function Population() {
 const [pop, setPop] = useState(
-    {population:"325719178"}
+    {population:"325,719,178"}
 );
     useEffect(() => {
     axios.get("population")
@@ -22,9 +36,11 @@ const [pop, setPop] = useState(
         )
     }else{
     return (
-        <div>
+        <Box>
+        <Inner>
             <h1>Total Population of The United States in 2017</h1>
             {pop.population}
-        </div>
+        </Inner>
+        </Box>
     )
 }}

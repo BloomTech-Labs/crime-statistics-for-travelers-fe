@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 import {Button} from '@chakra-ui/core';
+import {useAuth0,loginWithRedirect,loginWithPopup, initAuth0} from '../Auth0/react-auth0-wrapper';
 import './Navbar.css'
 
 
@@ -29,6 +30,7 @@ color:white;
 text-shadow:2px 2px black;
 :hover{
   transform: scale(1.2);
+  transition:.5s;
 }
   @media(max-width:500px){
     margin:2px;
@@ -38,11 +40,14 @@ text-shadow:2px 2px black;
 
 
 const Navbar = () => {
-  const [token,setToken] =useState()
-  useEffect(() => {
-    setToken(localStorage.getItem("token"));
-    console.log("test");
-  }, [token]);
+  // const [token,setToken] =useState()
+
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
+  // useEffect(() => {
+  //   setToken(localStorage.getItem("token"));
+  //   console.log("test");
+  // }, [token]);
   return (
   
       
@@ -65,7 +70,7 @@ const Navbar = () => {
         About the data
        </NavItem> */}
 
-       {token === null ? (
+       {/* {token === null ? (
             <NavItem to="/login" activeClassName="active-cta">
               LOGIN
             </NavItem>
@@ -83,7 +88,22 @@ const Navbar = () => {
                 LOGOUT
               </Button>
               </NavItem>
-          )}
+          )} */}
+<NavItem>
+{!isAuthenticated && (
+        <button
+          onClick={() =>
+            loginWithRedirect({})
+          }
+        >
+          Log in
+        </button>
+      )}
+
+      {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+   
+</NavItem>
+
       {/* {token 
       ? <NavItem to="/" onClick={() => {
           localStorage.removeItem('token')
