@@ -89,7 +89,7 @@ const Navbar = () => {
               </Button>
               </NavItem>
           )} */}
-<NavItem>
+<NavItem to="/">
 {!isAuthenticated && (
         <button
           onClick={() =>
