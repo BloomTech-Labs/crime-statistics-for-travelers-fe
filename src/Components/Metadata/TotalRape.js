@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 const Box =styled.div`
 
-background:#A5D2FF;
+${'' /* background:#A5D2FF;
 border-left: 6px solid darkblue;
 color:darkblue;
-border-bottom-left-radius:25%;
+border-bottom-left-radius:25%; */}
 `
 const Inner = styled.div`
 display:flex;
