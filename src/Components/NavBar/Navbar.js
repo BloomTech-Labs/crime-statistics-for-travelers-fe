@@ -57,14 +57,7 @@ const Navbar = () => {
         MAP
       </NavItem>
 
-      <NavItem to="/demo">
-      DEMOGRAPHICS
-      </NavItem>
-     
 
-      <NavItem to='/about'>
-        ABOUT
-      </NavItem>
       {/* <NavItem to="/contact" component={Contact}>Contact</NavItem> */}
       {/* <NavItem to="/data">
         About the data
