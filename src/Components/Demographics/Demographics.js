@@ -62,32 +62,40 @@ const Demogrphics= props => {
                             <Container>
                             <Field type="name" name="name" placeholder="name" />
                             <Field component="select" name="age" placeholder="Please enter your age">
-                                <option value="InitAge" disabled="disabled">Enter your age</option>
+                            <optgroup label="Age">
+                                <option value="InitAge" >Enter your age</option>
                                 <option value="18-24">18-24</option>
                                 <option value="25-30">25-30</option>
                                 <option value="31-55">31-55</option>
                                 <option value="55+">55+</option>
+                                </optgroup>
                             </Field>
                             <Field component="select" name="height" placeholder="Please enter your height">
-                                <option value="InitHeight" disabled="disabled" >Enter your Height Here</option>
+                                <optgroup label="Height">
+                                <option value="InitHeight"  >Enter your Height Here</option>
                                 <option value="4ft">4ft</option>
                                 <option value="4ft-5ft">4ft-5ft</option>
                                 <option value ="5ft-5.5ft">5ft-5.5ft</option>
                                 <option value="5.5ft-6ft">5.5ft-6ft</option>
                                 <option value="6ft+">6ft+</option>
+                                </optgroup>
                             </Field>
                             <Field component="select" name="gender">
-                                <option value = "InitGender" disabled="disabled">Choose a gender</option>
+                                <optgroup label="gender">
+                                <option value = "InitGender">Choose a gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>
+                                </optgroup>
                             </Field>
                             <Field component="select" name="race">
-                                <option value="InitRace" disabled="disabled">Choose Race</option>
+                                <optgroup label="Race">
+                                <option value="InitRace" >Choose Race</option>
                                 <option value="White">White</option>
                                 <option value="Black">Black</option>
                                 <option value="Hispanic">Hispanic</option>
                                 <option value="Asian">Asian</option>
+                                </optgroup>
                             </Field>
                             
                             <Button variantColor="blue" variant = "solid" type="submit">Let's Travel</Button>

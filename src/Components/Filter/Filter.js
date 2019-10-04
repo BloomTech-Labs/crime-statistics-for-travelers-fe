@@ -10,6 +10,7 @@ export default function Filter() {
 const variable = 'count';
 const offense = 'rape';
 const stateAbbr = 'IA';
+
 // const rapeToggle = () => {
 //     return setOffense("rape")
 // }
@@ -26,17 +27,17 @@ const stateAbbr = 'IA';
 //     setStateAbbr("IA");
     
 // }, [])
-const conditionalMap =() => {
-    state.map(el => {
-        return (
-            <span>
-            <p>${el.value}</p>
-            <p> Instances of {offense} occured in </p>
-            <p>{el.data_year}</p>
-            </span>
-        )
-    })
-}
+// const conditionalMap =() => {
+//     state.map(el => {
+//         return (
+//             <span>
+//             <p>${el.value}</p>
+//             <p> Instances of {offense} occured in </p>
+//             <p>{el.data_year}</p>
+//             </span>
+//         )
+//     })
+// }
 
 
     useEffect(() => {
@@ -59,9 +60,14 @@ axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/stat
     },[])
 console.log(state,"state")
 
+const ALHandler = () => {
+    return(stateAbbr = 'AL')
+}
+
     return (
         <div >
 <select id="Offense">
+    <optgroup label="Offense">
   <option value="Select a Crime">Select a crime</option>
   <option value="arson">Arson</option>
   <option value="rape">Rape</option>
@@ -73,10 +79,12 @@ console.log(state,"state")
   <option value="larceny">Larceny</option>
   <option value="homicide">Homicide</option>
   <option value="property-crime">Property-Crime</option>
+  </optgroup>
 </select>
 <select id="StateAbbr">
+    <optgroup label="State">
 <option value="Select an Option">Select A State</option>
-<option value="AL">Alabama</option>
+<option value="AL" onClick={ALHandler}>Alabama</option>
 <option value="AK">Alaska</option>
 <option value="AZ">Arizona</option>
 <option value="AR">Arkansas</option>
@@ -127,7 +135,7 @@ console.log(state,"state")
 <option value="WI">Wisconsin</option>
 <option value="WY">Wyoming</option>
 
-
+</optgroup>
 </select>
             <ul>{state}</ul>
             {/* <div>
