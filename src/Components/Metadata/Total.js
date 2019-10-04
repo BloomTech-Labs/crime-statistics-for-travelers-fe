@@ -1,19 +1,20 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components';
+import './Meta.css'
 
 
 const Box =styled.div`
 
-background:#A5D2FF;
+${'' /* background:#A5D2FF;
 border-left: 6px solid darkblue;
-color:darkblue;
+color:darkblue; */}
 `
 const Inner = styled.div`
 display:flex;
 flex-direction:column;
-justify-content:center;
-align-items:center;
+${'' /* justify-content:center;
+align-items:center; */}
 `
 
 export default function UScrime() {
@@ -45,7 +46,7 @@ export default function UScrime() {
  
     if(crimeData===undefined){
         return(
-          <Box>
+          <Box className="total-crime-stats">
             <Inner>
              <h3>Total Crimes in 2017</h3>
              <p>Loading...</p>   
@@ -54,7 +55,7 @@ export default function UScrime() {
         )
     }else{
     return (
-      <Box>
+      <Box className="total-crime-stats">
         <Inner>
             <h3>US Crime Rate 2017</h3>
             {crimeData} %

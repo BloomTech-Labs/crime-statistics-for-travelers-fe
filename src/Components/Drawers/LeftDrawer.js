@@ -3,7 +3,7 @@ import {
   Drawer,
   DrawerHeader,
   DrawerBody,
-  Button,
+  IconButton,
   Tab,
   Tabs, 
   TabList, 
@@ -18,9 +18,9 @@ const LeftDrawer = () => {
   return (
     <div className="left-drawer-content">
       <>
-      <Button variantColor="blue" variant = "solid" onClick={() => setIsOpen(true)}>
+      <IconButton variantColor="blue" icon="search" variant = "solid" onClick={() => setIsOpen(true)}>
         Filter
-      </Button>
+      </IconButton>
       <Drawer
         isOpen={isOpen}
         size="md"

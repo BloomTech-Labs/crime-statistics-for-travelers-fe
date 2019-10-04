@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 import fakedata from '../Map/data/fakedata.json';
+import './Meta.css'
 
 function CountrySafety(){
     const [safety, setSafety] = useState(0);
@@ -18,11 +19,10 @@ function CountrySafety(){
     },[])
     
     return (
-        <div>
+        <div className="safety-stats">
             <h1>Average safety rate of the United States</h1>
             <p>{safety} per 100,000</p>
-            <h1>Average safety percent rate of the United States</h1> 
-            <p>{safetyPercent}% per 100,000</p> 
+
         </div>
     )
 }
