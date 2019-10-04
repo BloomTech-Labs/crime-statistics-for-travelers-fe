@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import Population from './Population'
 import Total from './Total'
-import ViolentCrime from './ViolentCrime'
+// import ViolentCrime from './ViolentCrime'
 import TotalRape from './TotalRape'
 import TotalHomicides from './TotalHomicides';
 import CountrySafety from './CountrySafety';
@@ -15,7 +15,7 @@ export default function MainMeta() {
             <h1>General Data For The United States</h1>
             <Population/>
             <Total/>
-            <ViolentCrime/>
+            {/* <ViolentCrime/> */}
             <TotalHomicides/>
             <TotalRape/>
             
