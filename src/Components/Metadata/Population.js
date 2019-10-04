@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components';
+import './Meta.css'
 
 
 const Box =styled.div`
@@ -11,8 +12,8 @@ color:darkblue; */}
 const Inner = styled.div`
 display:flex;
 flex-direction:column;
-justify-content:center;
-align-items:center;
+${'' /* justify-content:center;
+align-items:center; */}
 `
 export default function Population() {
 const [pop, setPop] = useState(
@@ -36,10 +37,10 @@ const [pop, setPop] = useState(
         )
     }else{
     return (
-        <Box>
+        <Box className="pop-stats">
         <Inner>
             <h1>Total Population of The United States in 2017</h1>
-            {pop.population}
+            <p>{pop.population}</p>
         </Inner>
         </Box>
     )

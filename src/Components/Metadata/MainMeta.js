@@ -12,7 +12,7 @@ import {Heading } from '@chakra-ui/core'
 
 export default function MainMeta() {
     return (
-        <div>
+        <div className="meta-container">
             <h4 className="meta-head">General Data For The United States</h4>
             <Population/>
             <Total/>

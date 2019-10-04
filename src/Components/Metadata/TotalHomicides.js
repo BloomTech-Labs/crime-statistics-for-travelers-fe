@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components';
+import './Meta.css'
 
 
 const Box =styled.div`
@@ -11,8 +12,8 @@ color:darkblue; */}
 const Inner = styled.div`
 display:flex;
 flex-direction:column;
-justify-content:center;
-align-items:center;
+${'' /* justify-content:center;
+align-items:center; */}
 `
 export default function TotalHomicides() {
 
@@ -37,7 +38,7 @@ export default function TotalHomicides() {
  
     if(homicides===undefined){
         return(
-          <Box>
+          <Box className="murder-stats">
             <Inner>
              <h3>Total Homicides</h3>
              <p>Loading...</p>   
@@ -46,7 +47,7 @@ export default function TotalHomicides() {
         )
     }else{
     return (
-      <Box>
+      <Box className="murder-stats">
         <Inner>
             <h3>Murder rate in 2017</h3>
             <p>{homicides.homicide} People murdered in 2017</p>
