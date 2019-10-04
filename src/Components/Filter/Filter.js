@@ -58,8 +58,23 @@ axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/stat
 // console.log("state",state)
     },[])
 console.log(state,"state")
+
     return (
-        <div>
+        <div >
+<select id="Offense">
+  <option value="Select a Crime">Select a crime</option>
+  <option value="arson">Arson</option>
+  <option value="rape">Rape</option>
+  <option value="assault">Assault</option>
+  <option value="burglary">Burglary</option>
+  <option value="aggravated-assault">aggravated assault</option>
+  <option value="robbery">Robbery</option>
+  <option value="violent-crime">Violent-Crime</option>
+  <option value="larceny">Larceny</option>
+  <option value="homicide">Homicide</option>
+  <option value="property-crime">Property-Crime</option>
+</select>
+
             <ul>{state}</ul>
             {/* <div>
             <option onClick={rapeToggle}>Rape</option>
