@@ -1,19 +1,20 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components';
+import './Meta.css'
 
 const Box =styled.div`
 
-background:#A5D2FF;
+${'' /* background:#A5D2FF;
 border-left: 6px solid darkblue;
 color:darkblue;
-border-bottom-left-radius:25%;
+border-bottom-left-radius:25%; */}
 `
 const Inner = styled.div`
 display:flex;
 flex-direction:column;
-justify-content:center;
-align-items:center;
+${'' /* justify-content:center;
+align-items:center; */}
 `
 
 export default function TotalRape() {
@@ -49,7 +50,7 @@ export default function TotalRape() {
  
     if(rape===undefined){
         return(
-          <Box>
+          <Box className="rape-stats">
             <Inner>
              <h3>Total Rape in 2017</h3>
              <p>Loading...</p>   
@@ -58,7 +59,7 @@ export default function TotalRape() {
         )
     }else{
     return (
-      <Box>
+      <Box className="rape-stats">
         <Inner>
             <h3>Total Rape in 2018</h3>
             <p>Number of instances of rape in 2018</p>

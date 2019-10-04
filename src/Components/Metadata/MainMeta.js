@@ -7,12 +7,13 @@ import TotalRape from './TotalRape'
 import TotalHomicides from './TotalHomicides';
 import CountrySafety from './CountrySafety';
 import './Meta.css'
+import {Heading } from '@chakra-ui/core'
 
 
 export default function MainMeta() {
     return (
-        <div>
-            <h1>General Data For The United States</h1>
+        <div className="meta-container">
+            <h4 className="meta-head">General Data For The United States</h4>
             <Population/>
             <Total/>
             {/* <ViolentCrime/> */}

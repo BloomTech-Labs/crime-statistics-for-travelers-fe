@@ -72,7 +72,7 @@ input:focus {
   outline: none;
 }
 
-input, input[palceholder] {
+input, input[placeholder] {
   text-align: center;
  }
 

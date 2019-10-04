@@ -3,7 +3,7 @@ import {
   Drawer,
   DrawerHeader,
   DrawerBody,
-  Button,
+  IconButton,
   Tab,
   Tabs, 
   TabList, 
@@ -12,15 +12,16 @@ import {
 } from "@chakra-ui/core";
 import FilterList from './LeftTabOne';
 import TestGet from '../crimeometer/testGet';
+import Filter from '../Filter/Filter';
 
 const LeftDrawer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div className="left-drawer-content">
       <>
-      <Button variantColor="blue" variant = "solid" onClick={() => setIsOpen(true)}>
+      <IconButton variantColor="blue" icon="search" variant = "solid" onClick={() => setIsOpen(true)}>
         Filter
-      </Button>
+      </IconButton>
       <Drawer
         isOpen={isOpen}
         size="md"
@@ -41,7 +42,7 @@ const LeftDrawer = () => {
               <FilterList/>
             </TabPanel>
             <TabPanel>
-              <p className="p">two!</p>
+              <Filter/>
             </TabPanel>
             <TabPanel>
               <TestGet/>

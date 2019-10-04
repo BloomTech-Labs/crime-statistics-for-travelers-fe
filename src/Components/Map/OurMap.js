@@ -46,7 +46,7 @@ class OurMap extends Component {
         });
 
              //finds users current location
-             map.addControl(new mapboxgl.GeolocateControl({
+             var geolocator = map.addControl(new mapboxgl.GeolocateControl({
               positionOptions: {
               enableHighAccuracy: true
               },
@@ -205,8 +205,7 @@ map.on('load', function () {
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
           <div className='mainAboutCss'>
-
-           
+            {/* <About /> */}
 
           </div>
          
