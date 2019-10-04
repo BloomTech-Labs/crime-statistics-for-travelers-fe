@@ -16,19 +16,19 @@ ${'' /* justify-content:center;
 align-items:center; */}
 `
 export default function Population() {
-const [pop, setPop] = useState(
-    {population:"325,719,178"}
-);
+const [pop, setPop] = useState();
     useEffect(() => {
-    axios.get("population")
+    axios.get('https://api.census.gov/data/2018/pep/population?get=GEONAME,POP&for=us:*&key=7c3178507ddb6e6901538dddc8191ce4706ed8ee',"population")
     .then((res) => {
-    setPop(res.data)
-    console.log(res.data)
+        let data = (res.data[1])
+        let newData = (data[1])
+        setPop(newData)
     }).catch((err) => {
         console.log(err);
     })
-
-    }, [])
+    
+}, [])
+console.log(pop, "Census Data")
     if(pop===undefined){
         return(
             <div>
@@ -41,6 +41,7 @@ const [pop, setPop] = useState(
         <Inner>
             <h1>Total Population of The United States in 2017</h1>
             <p>{pop.population}</p>
+
         </Inner>
         </Box>
     )

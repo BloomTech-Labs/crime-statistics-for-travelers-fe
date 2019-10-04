@@ -19,23 +19,33 @@ align-items:center; */}
 
 export default function TotalRape() {
 
-   const [rape,setRape] = useState({
-    rapetotal:"135,755"
-   })
+   const [rape,setRape] = useState()
 
-   const fetchData = () => {
-     axios.get("I am a fake endpoint")
-     .then(res => {
-       console.log(res.data)
-      //  console.log(res.data.number)
-       setRape(res.data);
-     })
-     .catch(err => {
-       console.log(err);
-     })
-   }
+
+   useEffect(() => {
+    axios.get('https://api.usa.gov/crime/fbi/sapi/api/nibrs/rape/offense/national/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv')
+    .then(res => {
+     //  console.log(res.data.number)
+     let data = (res.data.data);
+      console.log(data);
+      let currentData = data.filter( function(cD) {
+        return cD.data_year == "2018" && cD.key == "Offense Count";
+      });
+      let newData = currentData.map( nD => {
+        return nD.value;
+      });
+      
+      setRape(newData)
+      
+    })
+    .catch(err => {
+      console.log(err);
+    })
+   }, []);
+
+   console.log(rape);
+
  
-   useEffect(fetchData, []);
  
  
     if(rape===undefined){
@@ -51,9 +61,9 @@ export default function TotalRape() {
     return (
       <Box className="rape-stats">
         <Inner>
-            <h3>Total Rape in 2017</h3>
-            <p>{rape.rapetotal} instances of rape occur in the US</p>
-            
+            <h3>Total Rape in 2018</h3>
+            <p>Number of instances of rape in 2018</p>
+            {rape}
 
         </Inner>
         </Box>
