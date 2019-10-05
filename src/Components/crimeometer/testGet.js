@@ -21,6 +21,7 @@ axios.get("https://api.usa.gov/crime/fbi/sapi/api/data/nibrs/rape/offense/states
 .then((res) => {
     setstate(res.data[1])
 
+
 })
 .catch((err) => {
     console.error(err)
