@@ -46,7 +46,8 @@ const RightDrawer = () => {
                 <MainDashboard/>
               </TabPanel>
               <TabPanel className="background-for-tabs">
-                <Demographics/>
+                {/* <Demographics/> */}
+                <Trends/>
               </TabPanel>
               <TabPanel>
                 <MainMeta/>
