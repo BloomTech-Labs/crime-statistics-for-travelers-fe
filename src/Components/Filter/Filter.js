@@ -1,45 +1,45 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 export default function Filter() {
-const [state, setState] = useState()
-const [offense,setOffense] = useState();
-const [stateAbbr,setStateAbbr]= useState();
-const variable = 'count';
-
-  function handleOffense(event) {
-      setOffense(event.target.value )
-
-  }
-;
-  function handleStateAbbr(event) {
-    setStateAbbr(event.target.value)
+    //Three select value menus
+    // Set state to selected value
+    const [state, setState] = useState()
+    const [offense,setOffense] = useState();
+    const [stateAbbr,setStateAbbr]= useState();
     
-}
-console.log(offense);
-console.log(stateAbbr);
-
-const fetchData = () => {  
-    axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/states/${stateAbbr}/${variable}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
+    function handleOffense(event) {
+        setOffense(event.target.value )
+    
+    }
+    
+    function handleStateAbbr(event) {
+      setStateAbbr( event.target.value )
+      
+    }
+    console.log(offense);
+    console.log(stateAbbr);
+useEffect(() => {
+    console.log(`${offense}`,"API");
+    axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/states/${stateAbbr}/COUNT?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
     .then((res) => {
         let data = (res.data.data);
-
-          let newData = data.map( nD => {
-            return <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p>
+        let currentData = data.filter((cD) => {
+            return parseInt(cD.data_year) > 2010 && cD.key == "Count";
           });
+        let newData = currentData.map( nD => {
+            return <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p>
+        });
         setState(newData)
-        console.log("filter res.data", res.data.data)
-    
+        console.log("filter res.data", newData)
+
     }).catch((err) => {
         console.error(err)
     })
-}
-
-if((offense !== undefined)&&(stateAbbr !== undefined)){
-    return fetchData();
-}
 
 
-console.log(state,"i am state in your filter component")
+// console.log("state",state)
+    },[offense,stateAbbr])
+
 
 
 
@@ -48,7 +48,7 @@ console.log(state,"i am state in your filter component")
         <div >
 <select id="Offense" onChange={handleOffense} >
     <optgroup label="Offense" >
-  <option value="Select a Crime">Select a crime</option>
+  <option>Select Crime</option>
   <option value="arson" >Arson</option>
   <option value="rape">Rape</option>
   <option value="assault">Assault</option>
@@ -63,7 +63,7 @@ console.log(state,"i am state in your filter component")
 </select>
 <select id="StateAbbr" onChange={handleStateAbbr}>
     <optgroup label="State">
-<option value="Select an Option">Select A State</option>
+<option>Select State</option>
 <option value="AL">Alabama</option>
 <option value="AK">Alaska</option>
 <option value="AZ">Arizona</option>
@@ -117,8 +117,15 @@ console.log(state,"i am state in your filter component")
 
 </optgroup>
 </select>
-            <div>{state}</div>
- 
+            <ul>{state}</ul>
+            {/* <div>
+            <option onClick={rapeToggle}>Rape</option>
+            <option onClick={arsonToggle}>Arson</option>
+            <option onClick={assaultToggle}>Assault</option>
+            </div>
+            <div>
+                <option>poggers</option>
+            </div> */}
 
         </div>
     )
