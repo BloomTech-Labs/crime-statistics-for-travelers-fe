@@ -6,7 +6,7 @@ import App from "./App"
 import { Auth0Provider } from "./Components/Auth0/react-auth0-wrapper";
 import config from "./auth_config.json";
  
-Sentry.init({dsn: "https://8b1b483a6bfd4f25bcf93cf3be6c960d@sentry.io/1761396"})
+// Sentry.init({dsn: "https://8b1b483a6bfd4f25bcf93cf3be6c960d@sentry.io/1761396"})
 const onRedirectCallback = appState => {
     window.history.replaceState(
       {},
