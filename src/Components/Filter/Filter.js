@@ -50,13 +50,8 @@ useEffect(() => {
         <div >
 <select id="Offense" onChange={handleOffense} >
     <optgroup label="Offense" >
-<<<<<<< HEAD
-  <option>Select Crime</option>
-=======
 
   <option>Select Crime</option>
-
->>>>>>> 697d5bd080b4b7508da908aeef77d10f4765c594
   <option value="arson" >Arson</option>
   <option value="rape">Rape</option>
   <option value="assault">Assault</option>
@@ -71,13 +66,8 @@ useEffect(() => {
 </select>
 <select id="StateAbbr" onChange={handleStateAbbr}>
     <optgroup label="State">
-<<<<<<< HEAD
-<option>Select State</option>
-=======
 
 <option>Select State</option>
-
->>>>>>> 697d5bd080b4b7508da908aeef77d10f4765c594
 <option value="AL">Alabama</option>
 <option value="AK">Alaska</option>
 <option value="AZ">Arizona</option>
