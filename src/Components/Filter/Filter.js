@@ -24,7 +24,7 @@ useEffect(() => {
     .then((res) => {
         let data = (res.data.data);
         // let currentData = data.filter((cD) => {
-        //     return cD.data_year == "2018" && cD.key == "Count";
+        //     return cD.data_year < "2010" && cD.key == "Count";
         //   });
         let newData = data.map( nD => {
             return <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p>
@@ -48,6 +48,7 @@ useEffect(() => {
         <div >
 <select id="Offense" onChange={handleOffense} >
     <optgroup label="Offense" >
+  <option>Select Crime</option>
   <option value="arson" >Arson</option>
   <option value="rape">Rape</option>
   <option value="assault">Assault</option>
@@ -62,6 +63,7 @@ useEffect(() => {
 </select>
 <select id="StateAbbr" onChange={handleStateAbbr}>
     <optgroup label="State">
+<option>Select State</option>
 <option value="AL">Alabama</option>
 <option value="AK">Alaska</option>
 <option value="AZ">Arizona</option>
