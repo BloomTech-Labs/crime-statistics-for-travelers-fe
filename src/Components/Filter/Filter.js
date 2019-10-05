@@ -4,12 +4,12 @@ export default function Filter() {
     //Three select value menus
     // Set state to selected value
     const [state, setState] = useState()
-    // const [offense,setOffense] = useState();
+    const [offense,setOffense] = useState();
     // const [variable,setVariable]=useState();
-    // const [stateAbbr,setStateAbbr]= useState();
+    const [stateAbbr,setStateAbbr]= useState();
 const variable = 'count';
-const offense = 'rape';
-const stateAbbr = 'IA';
+// const offense = 'rape';
+// const stateAbbr = 'IA';
 
 // const rapeToggle = () => {
 //     return setOffense("rape")
@@ -38,9 +38,22 @@ const stateAbbr = 'IA';
 //         )
 //     })
 // }
+  function handleOffense(event) {
+      setOffense({ value: event.target.value })
+
+  }
+
+  function handleStateAbbr(event) {
+    setStateAbbr({ value: event.target.value })
+    
+}
+console.log(offense);
+console.log(stateAbbr);
 
 
     useEffect(() => {
+
+
 axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/states/${stateAbbr}/${variable}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
 .then((res) => {
     let data = (res.data.data);
@@ -58,18 +71,16 @@ axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/stat
 })
 // console.log("state",state)
     },[])
-console.log(state,"state")
 
-const ALHandler = () => {
-    return(stateAbbr = 'AL')
-}
+
+
 
     return (
         <div >
-<select id="Offense">
-    <optgroup label="Offense">
+<select id="Offense" onChange={handleOffense} >
+    <optgroup label="Offense" >
   <option value="Select a Crime">Select a crime</option>
-  <option value="arson">Arson</option>
+  <option value="arson" >Arson</option>
   <option value="rape">Rape</option>
   <option value="assault">Assault</option>
   <option value="burglary">Burglary</option>
@@ -81,10 +92,10 @@ const ALHandler = () => {
   <option value="property-crime">Property-Crime</option>
   </optgroup>
 </select>
-<select id="StateAbbr">
+<select id="StateAbbr" onChange={handleStateAbbr}>
     <optgroup label="State">
 <option value="Select an Option">Select A State</option>
-<option value="AL" onClick={ALHandler}>Alabama</option>
+<option value="AL">Alabama</option>
 <option value="AK">Alaska</option>
 <option value="AZ">Arizona</option>
 <option value="AR">Arkansas</option>
