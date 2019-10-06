@@ -32,7 +32,7 @@ export default function MainDashboard() {
     return (
         <Container>
             <Item>
-                <H1>Crime rates for {city}</H1>
+                <H1>National Offense Analytics</H1>
             <PieChart/>
             </Item>
             <Item>

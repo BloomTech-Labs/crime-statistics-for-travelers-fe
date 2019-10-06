@@ -1,20 +1,19 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 export default function Filter() {
-    //Three select value menus
-    // Set state to selected value
+
     const [state, setState] = useState()
     const [offense,setOffense] = useState();
     const [stateAbbr,setStateAbbr]= useState();
     
     function handleOffense(event) {
         setOffense(event.target.value )
-    
+
     }
     
     function handleStateAbbr(event) {
-      setStateAbbr( event.target.value )
-      
+      setStateAbbr( event.target.value)
+
     }
     console.log(offense);
     console.log(stateAbbr);
@@ -25,7 +24,7 @@ useEffect(() => {
         let data = (res.data.data);
 
         let currentData = data.filter((cD) => {
-            return parseInt(cD.data_year) > 2010 && cD.key == "Count";
+            return parseInt(cD.data_year) > 2010;
           });
         let newData = currentData.map( nD => {
 
@@ -71,14 +70,14 @@ useEffect(() => {
 <option>Select State</option>
 
 <option value="AL">Alabama</option>
-<option value="AK">Alaska</option>
+{/* <option value="AK">Alaska</option> */}
 <option value="AZ">Arizona</option>
 <option value="AR">Arkansas</option>
-<option value="CA">California</option>
+{/* <option value="CA">California</option> */}
 <option value="CO">Colorado</option>
 <option value="CT">Connecticut</option>
 <option value="DE">Delaware</option>
-<option value="FL">Florida</option>
+{/* <option value="FL">Florida</option> */}
 <option value="GA">Georgia</option>
 <option value="HI">Hawaii</option>
 <option value="ID">Idaho</option>
@@ -97,12 +96,12 @@ useEffect(() => {
 <option value="MO">Missouri</option>
 <option value="MT">Montana</option>
 <option value="NE">Nebraska</option>
-<option value="NV">Nevada</option>
+{/* <option value="NV">Nevada</option> */}
 <option value="NH">New Hampshire</option>
-<option value="NJ">New Jersey</option>
+{/* <option value="NJ">New Jersey</option> */}
 <option value="NM">New Mexico</option>
-<option value="NY">New York</option>
-<option value="NC">North Carolina</option>
+{/* <option value="NY">New York</option> */}
+{/* <option value="NC">North Carolina</option> */}
 <option value="ND">North Dakota</option>
 <option value="OH">Ohio</option>
 <option value="OK">Oklahoma</option>
@@ -119,19 +118,12 @@ useEffect(() => {
 <option value="WA">Washington</option>
 <option value="WV">West Virginia</option>
 <option value="WI">Wisconsin</option>
-<option value="WY">Wyoming</option>
+{/* <option value="WY">Wyoming</option> */}
 
 </optgroup>
 </select>
             <ul>{state}</ul>
-            {/* <div>
-            <option onClick={rapeToggle}>Rape</option>
-            <option onClick={arsonToggle}>Arson</option>
-            <option onClick={assaultToggle}>Assault</option>
-            </div>
-            <div>
-                <option>poggers</option>
-            </div> */}
+
 
         </div>
     )
