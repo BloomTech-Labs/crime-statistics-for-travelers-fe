@@ -1,5 +1,15 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
+import styled from 'styled-components';
+
+const PrettyDiv = styled.div`
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px auto;
+    box-shadow: 11px 11px 12px -10px rgba(217,217,217,1);
+
+`
 export default function Filter() {
 
     const [state, setState] = useState()
@@ -28,7 +38,7 @@ useEffect(() => {
           });
         let newData = currentData.map( nD => {
 
-            return <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p>
+            return(<PrettyDiv> <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p></PrettyDiv>)
         });
         setState(newData)
         console.log("filter res.data", newData)
