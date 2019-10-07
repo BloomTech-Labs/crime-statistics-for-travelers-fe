@@ -142,6 +142,10 @@ align-items: center;
 .p{
   color: black
 }
+.left-drawer{
+  width: 10%;
+}
+
 .left-drawer div button{
   z-index:6
 }
