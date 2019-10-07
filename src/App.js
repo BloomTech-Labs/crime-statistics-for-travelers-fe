@@ -11,6 +11,7 @@ import Contact from './Components/Contact/Contact';
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
 import './App.css'
+import AgencyData from '../src/Components/Filter/AgencyData'
 export default function App() {
 //Styles
 
@@ -36,6 +37,7 @@ useEffect(() => {
           {/* <Route exact path="/about" component={About}/> */}
           <Route exact path="/contact" component={Contact}/>
           <Route path="/demo" component={Demographics}/>
+          <Route exact path="/test" component={AgencyData}/>
         </Switch>
       </TokenContext.Provider>
     </ThemeProvider>

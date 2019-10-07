@@ -13,6 +13,7 @@ import {
 import FilterList from './LeftTabOne';
 import TestGet from '../crimeometer/testGet';
 import Filter from '../Filter/Filter';
+import AgencyData from '../Filter/AgencyData';
 
 const LeftDrawer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -35,7 +36,7 @@ const LeftDrawer = () => {
           <TabList mb="1em">
             <Tab>Checkboxes</Tab>
             <Tab>Offense Filter</Tab>
-            <Tab>Three</Tab>
+            <Tab>Time Filter</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
@@ -45,8 +46,7 @@ const LeftDrawer = () => {
               <Filter/>
             </TabPanel>
             <TabPanel>
-              <TestGet/>
-              <p className="p">three!</p>
+ <AgencyData/>
             </TabPanel>
           </TabPanels>
         </Tabs>
