@@ -26,7 +26,7 @@ export default function UScrime() {
      .then(res => {
        let data = (res.data.results)
        let currentData = data.filter((cD) => {
-         return cD.data_year === "2018";
+         return cD.data_year === 2018;
         });
        let newData = currentData.map( nD => {
          return nD.offense_count
