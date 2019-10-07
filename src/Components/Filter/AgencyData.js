@@ -1,16 +1,8 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
-import styled from 'styled-components';
 
-const PrettyDiv = styled.div`
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 10px auto;
-    box-shadow: 11px 11px 12px -10px rgba(217,217,217,1);
 
-`
-export default function Filter() {
+export default function AgencyData() {
 
     const [state, setState] = useState()
     const [offense,setOffense] = useState();
@@ -41,17 +33,27 @@ useEffect(() => {
     //https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
     axios.get(`https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
     .then((res) => {
-        let data = (res.data.data);
+        let data = (res.data.results);
+        let actual = 0;
+       data =  data.forEach((x => {
+            actual += x.actual
+        }))
+const render = () => {
+    return <p>{"amount of "+offense+"==="+actual+" within selected timeframe"}</p>
+}
+        // data = data.map(x => {
+        //     return(<p>{"actual:"+x.actual+"cleared:"+x.cleared}</p>)
+        // })
 
-        let currentData = data.filter((cD) => {
-            return parseInt(cD.data_year) > 2010;
-          });
-        let newData = currentData.map( nD => {
+        setState(render)
+        // var reducedArray = data.reduce((accumulator, item) => {
+        //     Object.keys(item).forEach(key => {
+        //       accumulator[key] = (accumulator[key] || 0) + item[key];
+        //     });
+        //     return accumulator;
+        //   }, {});
+        // setState(reducedArray)
 
-            return(<PrettyDiv> <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p></PrettyDiv>)
-        });
-        setState(newData)
-        console.log("filter res.data", newData)
 
     }).catch((err) => {
         console.error(err)
@@ -60,9 +62,7 @@ useEffect(() => {
 
 // console.log("state",state)
     },[offense,stateAbbr,until,since])
-
-
-
+console.log(state)
 
 
     return (
@@ -143,21 +143,25 @@ useEffect(() => {
 
 </optgroup>
 </select>
-<optgroup label="Since">
+
     <select id="since" onChange={handleSince}>
+    <optgroup label="Since">
     <option value="2015">2015</option>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
         <option value="2018">2018</option>
-       
+        </optgroup>
     </select>
-</optgroup>
-<optgroup label="Until">
-    <select id="until" onChange={handleUntil}></select>
-<option value="2016">2016</option>
+
+
+    <select id="until" onChange={handleUntil}>
+    <optgroup label="Until">
+    <option value="2016">2016</option>
 <option value="2017">2017</option>
 <option value="2018">2018</option>
 </optgroup>
+    </select>
+
             <ul>{state}</ul>
 
 
