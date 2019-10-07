@@ -56,6 +56,7 @@ useEffect(() => {
 
 
     return (
+
         <div >
 <select id="Offense" onChange={handleOffense} >
     <optgroup label="Offense" >
@@ -133,6 +134,7 @@ useEffect(() => {
 </optgroup>
 </select>
             <ul>{state}</ul>
+
 
 
         </div>
