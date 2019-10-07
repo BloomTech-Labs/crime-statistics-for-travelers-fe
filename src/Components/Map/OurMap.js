@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import {FaDice} from "react-icons/fa";
+import {IconButton} from '@chakra-ui/core'
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
 // import About from '../About/About';
@@ -12,11 +14,8 @@ import image from './legend.png';
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
-
 //Public mapbox token used in api documentation. This key is available to everyone.
 mapboxgl.accessToken ='pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
-
-
 
 class OurMap extends Component {
     constructor(props) {
@@ -57,12 +56,12 @@ class OurMap extends Component {
           });
         }
              //finds users current location
-             var geolocator = map.addControl(new mapboxgl.GeolocateControl({
-              positionOptions: {
-              enableHighAccuracy: true
-              },
-              trackUserLocation: true
-              }));
+              // map.addControl(new mapboxgl.GeolocateControl({
+              // positionOptions: {
+              // enableHighAccuracy: true
+              // },
+              // trackUserLocation: true
+              // }));
     
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
@@ -216,10 +215,17 @@ map.on('load', function () {
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
-          <button onClick={this.handleClick} id='fly'>Fly To</button>
-          <div className='mainAboutCss'>
-            {/* <About /> */}
-          </div>
+         
+          <IconButton
+          onClick={this.handleClick}
+
+  variant="solid"
+  variantColor="blue"
+  aria-label="Call Sage"
+  fontSize="20px"
+  icon={FaDice}
+/>
+
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
         </div>
       <img src = {image} id="legend-image" alt="legend for the crime overlay"/>

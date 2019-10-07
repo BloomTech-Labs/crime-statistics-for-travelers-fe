@@ -28,7 +28,6 @@ justify-content:center; */
 
 
 export default function MainDashboard() {
-    const city = "Ames";
     return (
         <Container>
             <Item>

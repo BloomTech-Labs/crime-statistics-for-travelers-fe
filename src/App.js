@@ -1,12 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import {TokenContext} from './Components/Context/Contexts';
 import {Route,Switch} from 'react-router-dom';
-import { useAuth0 } from "./Components/Auth0/react-auth0-wrapper";
 import Signup from './Components/SignUp/Signup';
 import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";
 import Navbar from './Components/NavBar/Navbar'
-import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import { ThemeProvider } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';

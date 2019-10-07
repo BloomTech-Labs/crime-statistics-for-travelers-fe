@@ -14,8 +14,6 @@ import MainDashboard from "../Dashboard/MainDashboard";
 import Trends from '../Trends/Trends';
 import './Drawer.css'
 import MainMeta from '../Metadata/MainMeta';
-import Conditional from '../ConditionalTrend/Conditional';
-import Demographics from '../Demographics/Demographics';
 
 const RightDrawer = () => {
   const [isOpen, setIsOpen] = useState(false);

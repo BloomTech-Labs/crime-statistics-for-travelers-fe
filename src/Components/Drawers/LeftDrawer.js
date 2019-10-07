@@ -11,7 +11,6 @@ import {
   TabPanel
 } from "@chakra-ui/core";
 import FilterList from './LeftTabOne';
-import TestGet from '../crimeometer/testGet';
 import Filter from '../Filter/Filter';
 import AgencyData from '../Filter/AgencyData';
 

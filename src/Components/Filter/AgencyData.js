@@ -39,13 +39,13 @@ const handleUntil = (event) => {
     console.log(offense);
     console.log(stateAbbr);
 useEffect(() => {
-    console.log(`${offense}`,"API");
+   
     //https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
     axios.get(`https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
     .then((res) => {
         let data = (res.data.results);
         let actual = 0;
-       data =  data.forEach((x => {
+      data.forEach((x => {
             actual += x.actual
         }))
 const render = () => {
@@ -156,6 +156,7 @@ console.log(state)
 
     <select id="since" onChange={handleSince}>
     <optgroup label="Since">
+    <option>Select Start Date</option>
     <option value="2015">2015</option>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
@@ -166,6 +167,7 @@ console.log(state)
 
     <select id="until" onChange={handleUntil}>
     <optgroup label="Until">
+        <option>Select End Date</option>
     <option value="2016">2016</option>
 <option value="2017">2017</option>
 <option value="2018">2018</option>

@@ -1,8 +1,7 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
-import {Button} from '@chakra-ui/core';
-import {useAuth0,loginWithRedirect,loginWithPopup, initAuth0} from '../Auth0/react-auth0-wrapper';
+import {useAuth0} from '../Auth0/react-auth0-wrapper';
 import './Navbar.css'
 
 
