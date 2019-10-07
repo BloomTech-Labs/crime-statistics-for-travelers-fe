@@ -27,7 +27,7 @@ export default function TotalHomicides() {
      let data = (res.data.data);
       console.log(data);
       let currentData = data.filter((cD) => {
-        return cD.data_year === "2018" && cD.key === "Offense Count";
+        return cD.data_year === 2018 && cD.key === "Offense Count";
       });
       let newData = currentData.map( nD => {
         return nD.value;
