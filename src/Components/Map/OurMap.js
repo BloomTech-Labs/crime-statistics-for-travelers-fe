@@ -57,12 +57,12 @@ class OurMap extends Component {
           });
         }
              //finds users current location
-             var geolocator = map.addControl(new mapboxgl.GeolocateControl({
-              positionOptions: {
-              enableHighAccuracy: true
-              },
-              trackUserLocation: true
-              }));
+              // map.addControl(new mapboxgl.GeolocateControl({
+              // positionOptions: {
+              // enableHighAccuracy: true
+              // },
+              // trackUserLocation: true
+              // }));
     
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
@@ -217,9 +217,7 @@ map.on('load', function () {
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
           <button onClick={this.handleClick} id='fly'>Random</button>
-          <div className='mainAboutCss'>
-            {/* <About /> */}
-          </div>
+
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
         </div>
       <img src = {image} id="legend-image" alt="legend for the crime overlay"/>

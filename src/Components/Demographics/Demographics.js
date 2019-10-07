@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { Form, Field, Formik } from "formik";
 import {Button} from "@chakra-ui/core"
 import * as Yup from "yup";
@@ -20,7 +20,7 @@ margin-bottom:20px;
 
 
 const Demogrphics= props => {
-    const [update, setUpdate]= useState(undefined);
+    // const [update, setUpdate]= useState(undefined);
 
     return(
 
@@ -52,7 +52,7 @@ const Demogrphics= props => {
                             .post(`https://backend-for-production.herokuapp.com/api/demo/`, values)
                             .then(res => {
                                 props.history.push('/');
-                                setUpdate("updated")
+                                // setUpdate("updated")
                             })
                             .catch(err => console.log(err.response));
                     }}

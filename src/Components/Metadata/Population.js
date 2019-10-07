@@ -39,7 +39,7 @@ console.log(pop, "Census Data")
     return (
         <Box className="pop-stats">
         <Inner>
-            <h1>Total Population of The United States in 2017</h1>
+            <h1>Total Population of The United States in 2018</h1>
             <p>{pop}</p>
 
         </Inner>

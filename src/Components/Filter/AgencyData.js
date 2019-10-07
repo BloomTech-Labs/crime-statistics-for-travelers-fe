@@ -39,13 +39,13 @@ const handleUntil = (event) => {
     console.log(offense);
     console.log(stateAbbr);
 useEffect(() => {
-    console.log(`${offense}`,"API");
+   
     //https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
     axios.get(`https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
     .then((res) => {
         let data = (res.data.results);
         let actual = 0;
-       data =  data.forEach((x => {
+      data.forEach((x => {
             actual += x.actual
         }))
 const render = () => {
