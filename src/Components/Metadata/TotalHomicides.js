@@ -17,24 +17,30 @@ align-items:center; */}
 `
 export default function TotalHomicides() {
 
-   const [homicides,setHomicides] = useState({
-    homicide:"17284"
-   })
+   const [homicides,setHomicides] = useState()
 
-   const fetchData = () => {
-     axios.get("I am a fake endpoint")
-     .then(res => {
-       console.log(res.data)
-      //  console.log(res.data.number)
-       setHomicides(res.data);
-     })
-     .catch(err => {
-       console.log(err);
-     })
-   }
- 
-   useEffect(fetchData, []);
- 
+
+   useEffect(() => {
+    axios.get('https://api.usa.gov/crime/fbi/sapi/api/nibrs/homicide/offense/national/count?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv')
+    .then(res => {
+     //  console.log(res.data.number)
+     let data = (res.data.data);
+      console.log(data);
+      let currentData = data.filter((cD) => {
+        return cD.data_year == "2018" && cD.key == "Offense Count";
+      });
+      let newData = currentData.map( nD => {
+        return nD.value;
+      });
+      
+      setHomicides(newData)
+      
+    })
+    .catch(err => {
+      console.log(err);
+    })
+   }, []);
+   console.log(homicides);
  
     if(homicides===undefined){
         return(
@@ -49,9 +55,9 @@ export default function TotalHomicides() {
     return (
       <Box className="murder-stats">
         <Inner>
-            <h3>Murder rate in 2017</h3>
-            <p>{homicides.homicide} People murdered in 2017</p>
-            
+            <h3>Murders in 2018</h3>
+            <p> People murdered in 2018</p>
+            {homicides}
         </Inner>
         </Box>
     )}

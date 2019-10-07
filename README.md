@@ -14,7 +14,7 @@
 
 |                                       [Bryce A. Soghigian](https://github.com/Bryce-Soghigian)                                        |                                       [Jacob Tharp](https://github.com/jengopockets)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://raw.githubusercontent.com/Lambda-School-Labs/crime-statistics-for-travelers-fe/bryce/ReadmeAssets/Bryce.jpg" width = "200" />](https://github.com/Bryce-Soghigian)                       |                      [<img src="https://pbs.twimg.com/profile_images/1131617955282866176/MsKS-5vG_400x400.jpg" width = "200" />](https://github.com/jengopockets)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
+|                      [<img src="https://raw.githubusercontent.com/Lambda-School-Labs/crime-statistics-for-travelers-fe/master/ReadmeAssets/Bryce.jpg" width = "200" />](https://github.com/Bryce-Soghigian)                       |                      [<img src="https://pbs.twimg.com/profile_images/1131617955282866176/MsKS-5vG_400x400.jpg" width = "200" />](https://github.com/jengopockets)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jengopockets)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/bryce-soghigian-0556a9184/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/jacob-tharp-79382311b/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
@@ -61,9 +61,9 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 #### Front end deployed to `https://crime-statistics-master.netlify.com/`
 
-#### [Back end](https://github.com/Lambda-School-Labs/crime-statistics-for-travelers-be) built using:
+#### [Back end](https://github.com/Lambda-School-Labs/crime-statistics-for-travelers-be) built using: NodeJS/KNEX/ExpressJS/Posgress
 
-#### NodeJS/Express/Knex
+#### Reasons for our backend architecture
 
 -    NodeJS is great for building out rest apis. We took advantage of the wonderful packages built explictly for NodeJS
 -    We used Express THE lightweight framework used to build powerful servers. 
@@ -73,23 +73,19 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 # APIs
 
-## 2️⃣ Auth0
+##  Auth0
 
--Amazing Api for security and easy authentication for the user.
+Amazing Api for security and easy authentication for the use. It allows for a secure login that goes through the google servers. So no vulnerablities within our application. The only downside is you have to edit your login component in their online editor to style it.
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
-
-## 2️⃣ Mapbox-gl-js
+##  Mapbox-gl-js
 
 -Powerful map framework used for visualizing our wonderful planet.
 
 With Mapbox you have the power to travese the world at your finger tips. And with the mapbox geocoder api you can search locations limit searched locations and do much more. We chose mapbox over googlemaps due to its insane custom features.
 
-## 3️⃣ Misc API here
+## FBI Crime Data Explorer
 
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
+This is our crime data api. We used this api for all of our crime data. Their api is the best for crime data. We researched building out our own dataset and api, but the only documented good data that exists has been created by the FBI.
 
 ## 3️⃣ Misc API here
 
@@ -129,22 +125,18 @@ In order for the app to function correctly, the user must set up their own envir
 | doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
 | rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
 
-# 4️⃣ Testing
-
-🚫Document what you used for testing and why
 
 # 4️⃣ Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
 
 ## Other Scripts
 
 🚫replace these examples with your own
 
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+    * npm i - installs all of the dependencies
+    * npm start - starts the application locally
+    * npm run build - creates a build of the application
+    * npm run test - runs our tests
 
 # Contributing
 

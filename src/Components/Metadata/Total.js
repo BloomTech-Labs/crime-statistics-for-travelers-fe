@@ -21,19 +21,27 @@ export default function UScrime() {
 
    const [crimeData,setCrimeData] = useState([])
 
-   const fetchData = () => {
-     axios.get("https://test3ts.tk/")
+  useEffect(() => {
+     axios.get('https://api.usa.gov/crime/fbi/sapi/api/data/nibrs/crime-against-person/offense/national/COUNT?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv')
      .then(res => {
-       console.log(res.data)
-      //  console.log(res.data.number)
-       setCrimeData(res.data);
-     })
-     .catch(err => {
-       console.log(err);
-     })
-   }
- 
-   useEffect(fetchData, []);
+       let data = (res.data.results)
+       let currentData = data.filter((cD) => {
+         return cD.data_year == "2018";
+        });
+       let newData = currentData.map( nD => {
+         return nD.offense_count
+       })
+       let allData = newData.reduce((a,b) => a + b, 0)
+       let finalData = ( allData / 327167434)*100
+       setCrimeData(finalData)
+      })
+      
+      .catch(err => {
+        console.log(err);
+      })
+    }, []);
+    console.log(crimeData, "totalCrime")
+    
  
  
     if(crimeData===undefined){
@@ -50,7 +58,7 @@ export default function UScrime() {
       <Box className="total-crime-stats">
         <Inner>
             <h3>US Crime Rate 2017</h3>
-            <p>{crimeData.number} per 100,000</p>
+            {crimeData} %
             
         </Inner>
         </Box>

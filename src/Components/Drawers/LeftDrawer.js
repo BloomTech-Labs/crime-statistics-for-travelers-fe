@@ -11,6 +11,8 @@ import {
   TabPanel
 } from "@chakra-ui/core";
 import FilterList from './LeftTabOne';
+import TestGet from '../crimeometer/testGet';
+import Filter from '../Filter/Filter';
 
 const LeftDrawer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -40,9 +42,10 @@ const LeftDrawer = () => {
               <FilterList/>
             </TabPanel>
             <TabPanel>
-              <p className="p">two!</p>
+              <Filter/>
             </TabPanel>
             <TabPanel>
+              <TestGet/>
               <p className="p">three!</p>
             </TabPanel>
           </TabPanels>
