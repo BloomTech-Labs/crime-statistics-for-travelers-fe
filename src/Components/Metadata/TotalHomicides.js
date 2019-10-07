@@ -27,7 +27,7 @@ export default function TotalHomicides() {
      let data = (res.data.data);
       console.log(data);
       let currentData = data.filter((cD) => {
-        return cD.data_year == "2018" && cD.key == "Offense Count";
+        return cD.data_year === 2018 && cD.key === "Offense Count";
       });
       let newData = currentData.map( nD => {
         return nD.value;
@@ -55,8 +55,8 @@ export default function TotalHomicides() {
     return (
       <Box className="murder-stats">
         <Inner>
-            <h3>Murders in 2018</h3>
-            <p> People murdered in 2018</p>
+            <h3>Total Murders in 2018 within the US</h3>
+            
             {homicides}
         </Inner>
         </Box>

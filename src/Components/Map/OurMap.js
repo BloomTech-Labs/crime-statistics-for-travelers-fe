@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import {FaDice} from "react-icons/fa";
+import {IconButton} from '@chakra-ui/core'
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
 // import About from '../About/About';
@@ -12,11 +14,8 @@ import image from './legend.png';
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
-
 //Public mapbox token used in api documentation. This key is available to everyone.
 mapboxgl.accessToken ='pk.eyJ1IjoiYnNvZ2hpZ2lhbiIsImEiOiJjazBhOTUxam4wMDNtM2RvNXJzbjQ5aGV6In0.eL8NJ0-ikx_5Dl49994bGw';
-
-
 
 class OurMap extends Component {
     constructor(props) {
@@ -28,30 +27,41 @@ class OurMap extends Component {
           zoom: 3.5
         };
       }
-    //Setting bounds in our mount allows our map to exlusively show only the united states.
+
+      
+      
+      //Setting bounds in our mount allows our map to exclusively show only the united states.
       componentDidMount() {
         const { lng, lat, zoom } = this.state;
         const bounds = [
-            [-170, 9], // Southwest coordinates
-            [-24, 75] 
+          [-170, 9], // Southwest coordinates
+          [-24, 75] 
         ]
-   
+        
         //Generating our map======================================================================
         const map = new mapboxgl.Map({
           container: this.mapContainer,
-         style:'mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8',//Dynamic Style URL for our map style
+          style:'mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8',//Dynamic Style URL for our map style
           center: [lng, lat],//Center of where the mapbox map 
           zoom:zoom,//State value that allows you to set a default application zoom.
-          maxBounds: bounds//it takes the SW coordinates and the NE coorinates and sets teh map in place
+          maxBounds: bounds//it takes the SW coordinates and the NE coordinates and sets teh map in place
         });
-
+        // Calls flyTo function which smoothly interpolates between locations.
+        this.handleClick = () => {
+          map.flyTo({
+            center: [
+            -74.50 + (Math.random() - 0.5) * 10,
+            40 + (Math.random() - 0.5) * 10],
+            zoom: 9
+          });
+        }
              //finds users current location
-             var geolocator = map.addControl(new mapboxgl.GeolocateControl({
-              positionOptions: {
-              enableHighAccuracy: true
-              },
-              trackUserLocation: true
-              }));
+              // map.addControl(new mapboxgl.GeolocateControl({
+              // positionOptions: {
+              // enableHighAccuracy: true
+              // },
+              // trackUserLocation: true
+              // }));
     
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
@@ -187,6 +197,8 @@ map.on('load', function () {
           });
         });
       }
+
+    
     
       render() {
         // const { lng, lat, zoom } = this.state;//Deconstucting your state object.
@@ -200,27 +212,26 @@ map.on('load', function () {
           <RightDrawer />
         </div> 
         <div ref={el => this.mapContainer = el}
-        
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
-          <div className='mainAboutCss'>
-            {/* <About /> */}
-
-          </div>
          
+          <IconButton
+          onClick={this.handleClick}
+
+  variant="solid"
+  variantColor="blue"
+  aria-label="Call Sage"
+  fontSize="20px"
+  icon={FaDice}
+/>
+
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
-
-          
-     
-      </div>
+        </div>
       <img src = {image} id="legend-image" alt="legend for the crime overlay"/>
-
-
       </div>
-    );
+    );   
   }
 }
-
 
 export default OurMap; 
