@@ -156,6 +156,7 @@ console.log(state)
 
     <select id="since" onChange={handleSince}>
     <optgroup label="Since">
+    <option>Select Start Date</option>
     <option value="2015">2015</option>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
@@ -166,6 +167,7 @@ console.log(state)
 
     <select id="until" onChange={handleUntil}>
     <optgroup label="Until">
+        <option>Select End Date</option>
     <option value="2016">2016</option>
 <option value="2017">2017</option>
 <option value="2018">2018</option>

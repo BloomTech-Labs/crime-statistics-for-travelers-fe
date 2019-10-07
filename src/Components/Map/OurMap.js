@@ -216,7 +216,7 @@ map.on('load', function () {
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
-          <button onClick={this.handleClick} id='fly'>Fly To</button>
+          <button onClick={this.handleClick} id='fly'>Random</button>
           <div className='mainAboutCss'>
             {/* <About /> */}
           </div>
