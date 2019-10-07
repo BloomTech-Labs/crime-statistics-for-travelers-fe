@@ -1,5 +1,15 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
+import styled from 'styled-components';
+
+const PrettyDiv = styled.div`
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px auto;
+    box-shadow: 11px 11px 12px -10px rgba(217,217,217,1);
+
+`
 
 
 export default function AgencyData() {
@@ -39,7 +49,7 @@ useEffect(() => {
             actual += x.actual
         }))
 const render = () => {
-    return <p>{"amount of "+offense+"==="+actual+" within selected timeframe"}</p>
+    return <PrettyDiv><p>{offense+" occured "+actual+" times within selected timeframe"}</p></PrettyDiv>
 }
         // data = data.map(x => {
         //     return(<p>{"actual:"+x.actual+"cleared:"+x.cleared}</p>)
