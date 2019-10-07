@@ -51,7 +51,7 @@ class OurMap extends Component {
         this.handleClick = () => {
           map.flyTo({
             center: [
-            -74.50 + (Math.random() - 0.5) * 10,
+            -96 + (Math.random() - 0.5) * 10,
             40 + (Math.random() - 0.5) * 10],
             zoom: 9
           });
