@@ -19,10 +19,12 @@ export default function Filter() {
     function handleOffense(event) {
         setOffense(event.target.value )
 
+
     }
     
     function handleStateAbbr(event) {
       setStateAbbr( event.target.value)
+
 
     }
     console.log(offense);
@@ -39,6 +41,7 @@ useEffect(() => {
         let newData = currentData.map( nD => {
 
             return(<PrettyDiv> <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p></PrettyDiv>)
+
         });
         setState(newData)
         console.log("filter res.data", newData)
@@ -81,7 +84,9 @@ useEffect(() => {
 <option>Select State</option>
 
 <option value="AL">Alabama</option>
+
 {/* <option value="AK">Alaska</option> */}
+
 <option value="AZ">Arizona</option>
 <option value="AR">Arkansas</option>
 {/* <option value="CA">California</option> */}
