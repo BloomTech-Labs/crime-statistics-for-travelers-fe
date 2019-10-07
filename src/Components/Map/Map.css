@@ -2,6 +2,23 @@
     text-align: center;
   }
 
+    #fly {
+      display: block;
+      position: relative;
+      margin: 0px auto;
+      width: 52px;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 12px;
+      text-align: center;
+      color: #fff;
+      background: #3182ce;
+      margin-left: 0px;
+      margin-top: 2px;
+      }
+
   .mapboxgl-canvas {
     position:absolute;
      top:0;
