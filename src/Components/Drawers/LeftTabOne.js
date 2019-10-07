@@ -24,7 +24,7 @@ export default function FilterList() {
         const newFilter = filter.map(({ id, value, isChecked }) => ({
             id,
             value,
-            isChecked: id == currentId ? event.target.checked : isChecked
+            isChecked: id === currentId ? event.target.checked : isChecked
         }));
         setFilter(newFilter);
     };

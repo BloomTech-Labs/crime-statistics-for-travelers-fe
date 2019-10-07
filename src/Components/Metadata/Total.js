@@ -26,14 +26,14 @@ export default function UScrime() {
      .then(res => {
        let data = (res.data.results)
        let currentData = data.filter((cD) => {
-         return cD.data_year == "2018";
+         return cD.data_year === 2018;
         });
        let newData = currentData.map( nD => {
          return nD.offense_count
        })
        let allData = newData.reduce((a,b) => a + b, 0)
        let finalData = ( allData / 327167434)*100
-       setCrimeData(finalData)
+       setCrimeData(Math.round(1000*finalData)/1000)
       })
       
       .catch(err => {
@@ -48,7 +48,7 @@ export default function UScrime() {
         return(
           <Box className="total-crime-stats">
             <Inner>
-             <h3>Total Crimes in 2017</h3>
+            <h3>Total Violent Crime rate Within The US</h3>
              <p>Loading...</p>   
             </Inner>
             </Box>
@@ -57,7 +57,7 @@ export default function UScrime() {
     return (
       <Box className="total-crime-stats">
         <Inner>
-            <h3>US Crime Rate 2017</h3>
+            <h3>Total Violent Crime rate Within The US</h3>
             {crimeData} %
             
         </Inner>
