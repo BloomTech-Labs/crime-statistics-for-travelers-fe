@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Link} from 'react-router-dom'
 import axios from "axios";
-import createAuth0Client from '@auth0/auth0-spa-js';
 import { Redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import {

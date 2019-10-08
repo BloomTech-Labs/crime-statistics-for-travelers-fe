@@ -28,11 +28,10 @@ justify-content:center; */
 
 
 export default function MainDashboard() {
-    const city = "Ames";
     return (
         <Container>
             <Item>
-                <H1>Crime rates for {city}</H1>
+                <H1>National Offense Analytics</H1>
             <PieChart/>
             </Item>
             <Item>

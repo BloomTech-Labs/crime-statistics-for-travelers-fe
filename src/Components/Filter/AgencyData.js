@@ -10,41 +10,60 @@ const PrettyDiv = styled.div`
     box-shadow: 11px 11px 12px -10px rgba(217,217,217,1);
 
 `
-export default function Filter() {
+
+
+export default function AgencyData() {
 
     const [state, setState] = useState()
     const [offense,setOffense] = useState();
     const [stateAbbr,setStateAbbr]= useState();
+    const [since,setSince] = useState();
+    const [until,setUntil] = useState();
     
+const handleSince = (event) => {
+    setSince(parseInt(event.target.value))
+} 
+const handleUntil = (event) => {
+    setUntil(parseInt(event.target.value))
+}
+
     function handleOffense(event) {
         setOffense(event.target.value )
-
 
     }
     
     function handleStateAbbr(event) {
       setStateAbbr( event.target.value)
 
-
     }
     console.log(offense);
     console.log(stateAbbr);
 useEffect(() => {
-    console.log(`${offense}`,"API");
-    axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/states/${stateAbbr}/COUNT?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
+   
+    //https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
+    axios.get(`https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
     .then((res) => {
-        let data = (res.data.data);
+        let data = (res.data.results);
+        let actual = 0;
+      data.forEach((x => {
+            actual += x.actual
+        }))
+const render = () => {
+    return <PrettyDiv><p>{offense+" occured "+actual+" times within selected timeframe"}</p></PrettyDiv>
+}
+        // data = data.map(x => {
+        //     return(<p>{"actual:"+x.actual+"cleared:"+x.cleared}</p>)
+        // })
 
-        let currentData = data.filter((cD) => {
-            return parseInt(cD.data_year) > 2010;
-          });
-        let newData = currentData.map( nD => {
+        setState(render)
+        // var reducedArray = data.reduce((accumulator, item) => {
+        //     Object.keys(item).forEach(key => {
+        //       accumulator[key] = (accumulator[key] || 0) + item[key];
+        //     });
+        //     return accumulator;
+        //   }, {});
+        // setState(reducedArray)
 
-            return(<PrettyDiv> <p>{nD.value + " Instances of "+offense +" occured in the year " + nD.data_year+ " within the state "+stateAbbr}</p></PrettyDiv>)
-
-        });
-        setState(newData)
-        console.log("filter res.data", newData)
 
     }).catch((err) => {
         console.error(err)
@@ -52,14 +71,11 @@ useEffect(() => {
 
 
 // console.log("state",state)
-    },[offense,stateAbbr])
-
-
-
+    },[offense,stateAbbr,until,since])
+console.log(state)
 
 
     return (
-
         <div >
 <select id="Offense" onChange={handleOffense} >
     <optgroup label="Offense" >
@@ -68,8 +84,8 @@ useEffect(() => {
 
   <option value="arson" >Arson</option>
   <option value="rape">Rape</option>
-  <option value="assault">Assault</option>
-  <option value="burglary">Burglary</option>
+  <option value="motor-vehicle-theft">Vehicle Theft</option>
+ <option value="burglary">Burglary</option>
   <option value="aggravated-assault">aggravated assault</option>
   <option value="robbery">Robbery</option>
   <option value="violent-crime">Violent-Crime</option>
@@ -78,22 +94,21 @@ useEffect(() => {
   <option value="property-crime">Property-Crime</option>
   </optgroup>
 </select>
+
 <select id="StateAbbr" onChange={handleStateAbbr}>
     <optgroup label="State">
 
 <option>Select State</option>
 
 <option value="AL">Alabama</option>
-
 {/* <option value="AK">Alaska</option> */}
-
 <option value="AZ">Arizona</option>
 <option value="AR">Arkansas</option>
 {/* <option value="CA">California</option> */}
 <option value="CO">Colorado</option>
 <option value="CT">Connecticut</option>
 <option value="DE">Delaware</option>
-{/* <option value="FL">Florida</option> */}
+ <option value="FL">Florida</option>
 <option value="GA">Georgia</option>
 <option value="HI">Hawaii</option>
 <option value="ID">Idaho</option>
@@ -138,8 +153,28 @@ useEffect(() => {
 
 </optgroup>
 </select>
-            <ul>{state}</ul>
 
+    <select id="since" onChange={handleSince}>
+    <optgroup label="Since">
+    <option>Select Start Date</option>
+    <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        </optgroup>
+    </select>
+
+
+    <select id="until" onChange={handleUntil}>
+    <optgroup label="Until">
+        <option>Select End Date</option>
+    <option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+</optgroup>
+    </select>
+
+            <ul>{state}</ul>
 
 
         </div>
