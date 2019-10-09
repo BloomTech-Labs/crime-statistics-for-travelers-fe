@@ -8,6 +8,7 @@ import {
     DrawerOverlay,
     DrawerContent
   } from "@chakra-ui/core";
+  import "../Map/Map.css"
 
 export default function BottomDrawer() {
     const { isOpen, onOpen, onClose } = useDisclosure();

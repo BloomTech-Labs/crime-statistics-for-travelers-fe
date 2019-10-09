@@ -69,6 +69,9 @@ p {
   bottom: 0;
   width: 100%;
 }
+.css-1if6rq1{
+  z-index:10;
+}
 
 /**
 * Set rules for how the map overlays
@@ -133,15 +136,15 @@ height: 150px;
   color: black
 }
 .left-drawer div button{
-  z-index:6
+  z-index:6;
 }
 .bottom-drawer div button{
   z-index:6;
-  position: absolute;
-  left: 0%;
-  top: 58px
 }
-
+.css-eci14t{
+  z-index:6;
+  left:0;
+}
 .right-drawer div button{
   z-index:6;
   position: absolute;
