@@ -19,14 +19,14 @@ export default function ViolentCrime() {
     const [violent,SetViolent] = useState(
 {violentrate:"1,283,220"}
     )
-    useEffect(() => {
-axios.get("violentendpoint")
-.then((res) => {
-    SetViolent(res.data)
-    console.log(res.data)
-})
-    }, [])
-    
+//     useEffect(() => {
+// axios.get("violentendpoint")
+// .then((res) => {
+//     SetViolent(res.data)
+//     console.log(res.data)
+// })
+//     }, [])
+    console.table(...violent,SetViolent)
     return (
         <Box className="violent-crime-stats">
         <Inner>

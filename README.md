@@ -10,7 +10,8 @@
 
 ## 4️⃣ Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
+🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
+
 
 |                                       [Bryce A. Soghigian](https://github.com/Bryce-Soghigian)                                        |                                       [Jacob Tharp](https://github.com/jengopockets)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
@@ -21,13 +22,13 @@
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
+
 
 
 ## Project Overview
 
  [Trello Board](https://trello.com/b/d9Ut99fr/labs-16-crime-statistics-for-travelers)
-[<img src="https://raw.githubusercontent.com/Lambda-School-Labs/crime-statistics-for-travelers-fe/bryce/ReadmeAssets/trelloBoardForCrimeStatsReadme.png" width="250"/>]
+<img src="https://raw.githubusercontent.com/Lambda-School-Labs/crime-statistics-for-travelers-fe/bryce/ReadmeAssets/trelloBoardForCrimeStatsReadme.png" width="250"/>
  [Product Canvas](https://www.notion.so/Crime-Statistics-for-Travelers-a7e69847024d4cdc85aaf85cb413df71)
  [UX Design files](https://www.figma.com/file/HjoxfuYoel2otaeDTOPP8F/Labs16_LambdaCrime-Stats-for-Travelers) 
 
@@ -46,7 +47,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 -    feature four
 -    feature five
 
-## 1️⃣ Tech Stack
+##  Tech Stack
 
 ### Front end built using:
 
@@ -56,8 +57,6 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 -    React JS has a really great ways to manage component state. Our team is a huge fan of hooks and the power of Context Api(which is built in the box for react)
 -  There is this styling library called Chakra.UI which works really well for our UX vision that is really compatible with react
 
-
-🚫List the rest of the front end features and libraries in the same format as the framework above.
 
 #### Front end deployed to `https://crime-statistics-master.netlify.com/`
 
@@ -130,8 +129,6 @@ In order for the app to function correctly, the user must set up their own envir
 
 
 ## Other Scripts
-
-🚫replace these examples with your own
 
     * npm i - installs all of the dependencies
     * npm start - starts the application locally
