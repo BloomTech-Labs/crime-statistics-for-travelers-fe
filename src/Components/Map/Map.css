@@ -109,17 +109,7 @@ height: 150px;
 
 
 }
-/* #total {
-  position: absolute;
-  bottom:70%;
-  display:flex;
-  flex-direction: column;
-justify-content: center;
-align-items: center;
-  width:80%;
-  height:100px;
-  
-} */
+
 #legend {
 
   margin-right:10px;
@@ -147,15 +137,14 @@ align-items: center;
 }
 .bottom-drawer div button{
   z-index:6;
+  position: absolute;
+  left: 0%;
+  top: 58px
 }
 
 .right-drawer div button{
   z-index:6;
   position: absolute;
   right: 0%;
-  top: 58px
-}
-
-.mainAboutCss {
-  margin-top: 164px;
+  top: 90px
 }
