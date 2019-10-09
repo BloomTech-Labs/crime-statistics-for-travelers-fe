@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 import styled from 'styled-components';
+import './Filter.css'
 
 const PrettyDiv = styled.div`
     border: 1px solid lightgrey;
@@ -76,7 +77,7 @@ console.log(state)
 
 
     return (
-        <div >
+        <div className="filter-group">
 <select id="Offense" onChange={handleOffense} >
     <optgroup label="Offense" >
 

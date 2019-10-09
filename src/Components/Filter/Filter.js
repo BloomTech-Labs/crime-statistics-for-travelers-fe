@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 import styled from 'styled-components';
+import './Filter.css'
 
 const PrettyDiv = styled.div`
     border: 1px solid lightgrey;
@@ -8,7 +9,6 @@ const PrettyDiv = styled.div`
     padding: 5px;
     margin: 10px auto;
     box-shadow: 11px 11px 12px -10px rgba(217,217,217,1);
-
 `
 export default function Filter() {
 
@@ -57,7 +57,7 @@ useEffect(() => {
 
     return (
 
-        <div >
+        <div className="filter-group">
 <select id="Offense" onChange={handleOffense} >
     <optgroup label="Offense" >
 

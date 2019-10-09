@@ -2,12 +2,13 @@ import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import {FaDice} from "react-icons/fa";
+// import {FaDice} from "react-icons/fa";
 import {IconButton} from '@chakra-ui/core'
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
 // import About from '../About/About';
 import image from './legend.png';
+import MediaQuery from 'react-responsive'
 
 
 
@@ -204,7 +205,7 @@ map.on('load', function () {
         // const { lng, lat, zoom } = this.state;//Deconstucting your state object.
     
     return (
-      <div>
+      <div>         
         <div className="left-drawer">
           <LeftDrawer />
         </div>    
@@ -223,7 +224,7 @@ map.on('load', function () {
   variantColor="blue"
   aria-label="Call Sage"
   fontSize="20px"
-  icon={FaDice}
+  // icon={FaDice}
 />
 
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
