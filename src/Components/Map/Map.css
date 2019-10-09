@@ -140,6 +140,7 @@ height: 150px;
 }
 .bottom-drawer div button{
   z-index:6;
+
 }
 .css-eci14t{
   z-index:6;
@@ -149,5 +150,5 @@ height: 150px;
   z-index:6;
   position: absolute;
   right: 0%;
-  top: 90px
+  top: 130px
 }

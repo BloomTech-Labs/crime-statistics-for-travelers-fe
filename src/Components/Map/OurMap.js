@@ -59,13 +59,13 @@ class OurMap extends Component {
         // document.getElementById('zoomControl').appendChild(zoomControl);
         
              //finds users current location
-        //     let getLocation= map.addControl(new mapboxgl.GeolocateControl({
-        //       positionOptions: {
-        //       enableHighAccuracy: true
-        //       },
-        //       trackUserLocation: true
-        //       }));
-        //  document.getElementById('getLocation').appendChild(getLocation)
+          map.addControl(new mapboxgl.GeolocateControl({
+              positionOptions: {
+              enableHighAccuracy: true
+              },
+               trackUserLocation: true
+              }));
+         
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
         //     accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
