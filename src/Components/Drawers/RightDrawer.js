@@ -27,7 +27,7 @@ const RightDrawer = () => {
         isOpen={isOpen}
         size="md"
         zIndex={6}
-        placement="right"
+        // placement="right"
         onClose={() => setIsOpen(false)}
       >
         <DrawerHeader borderBottomWidth="1px">Crime Analytics</DrawerHeader>
