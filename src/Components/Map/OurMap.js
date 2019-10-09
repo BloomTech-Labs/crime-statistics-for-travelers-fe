@@ -55,6 +55,19 @@ class OurMap extends Component {
             zoom: 9
           });
         }
+        //URL SWAPPER FUNCTIONS====================================================================
+   var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+        function switchLayer(layer) {
+          var layerId = layer.target.id;
+          map.setStyle('mapbox://styles/mapbox/' + layerId);
+          }
+           
+          for (var i = 0; i < inputs.length; i++) {
+          inputs[i].onclick = switchLayer;
+          }
+
+
         // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
         // document.getElementById('zoomControl').appendChild(zoomControl);
         
@@ -196,14 +209,25 @@ map.on('load', function () {
         <div className="right-drawer">
           <RightDrawer />
         </div> 
-        <div className="bottom-drawer">
+        {/* <div className="bottom-drawer">
           <BottomDrawer/>
-        </div>
+        </div> */}
         <div ref={el => this.mapContainer = el}
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
-          
+          <div id='menu'>
+<input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'/>
+<label for='streets'>streets</label>
+<input id='light-v10' type='radio' name='rtoggle' value='light'/>
+<label for='light'>light</label>
+<input id='dark-v10' type='radio' name='rtoggle' value='dark'/>
+<label for='dark'>dark</label>
+<input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'/>
+<label for='outdoors'>outdoors</label>
+<input id='satellite-v9' type='radio' name='rtoggle' value='satellite'/>
+<label for='satellite'>satellite</label>
+</div>
          
           <IconButton
           onClick={this.handleClick}
