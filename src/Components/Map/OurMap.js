@@ -8,7 +8,7 @@ import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
 // import About from '../About/About';
 import image from './legend.png';
-
+import BottomDrawer from '../Drawers/BottomDrawer'
 
 
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
@@ -55,14 +55,17 @@ class OurMap extends Component {
             zoom: 9
           });
         }
+        // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
+        // document.getElementById('zoomControl').appendChild(zoomControl);
+        
              //finds users current location
-              // map.addControl(new mapboxgl.GeolocateControl({
-              // positionOptions: {
-              // enableHighAccuracy: true
-              // },
-              // trackUserLocation: true
-              // }));
-    
+        //     let getLocation= map.addControl(new mapboxgl.GeolocateControl({
+        //       positionOptions: {
+        //       enableHighAccuracy: true
+        //       },
+        //       trackUserLocation: true
+        //       }));
+        //  document.getElementById('getLocation').appendChild(getLocation)
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
         //     accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
@@ -181,9 +184,9 @@ map.on('load', function () {
   //===========================================================================================================
 
 
-        // // Add zoom and rotation controls to the map.
+        // Add zoom and rotation controls to the map.
         // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
-        // document.getElementById('zoomControl').appendChild(zoomControl);
+        // // document.getElementById('zoomControl').appendChild(zoomControl);
         
 
 
@@ -211,10 +214,14 @@ map.on('load', function () {
         <div className="right-drawer">
           <RightDrawer />
         </div> 
+        <div className="bottom-drawer">
+          <BottomDrawer/>
+        </div>
         <div ref={el => this.mapContainer = el}
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
+          
          
           <IconButton
           onClick={this.handleClick}
@@ -223,6 +230,7 @@ map.on('load', function () {
   variantColor="blue"
   aria-label="Call Sage"
   fontSize="20px"
+
   icon={FaDice}
 />
 
