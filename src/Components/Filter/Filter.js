@@ -32,13 +32,13 @@ export default function Filter() {
     console.log(offense);
     console.log(stateAbbr);
 useEffect(() => {
+    setLoading(true)
     console.log(`${offense}`,"API");
     axios.get(`https://api.usa.gov/crime/fbi/sapi/api/nibrs/${offense}/offender/states/${stateAbbr}/COUNT?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
     .then((res) => {
         let data = (res.data.data);
         
-        setLoading(true)
-        
+
         let currentData = data.filter((cD) => {
             return parseInt(cD.data_year) > 2010;
           });
