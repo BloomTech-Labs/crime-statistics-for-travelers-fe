@@ -6,11 +6,6 @@ import {FaDice} from "react-icons/fa";
 import {IconButton} from '@chakra-ui/core'
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
-// import About from '../About/About';
-import image from './legend.png';
-import BottomDrawer from '../Drawers/BottomDrawer'
-
-
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
@@ -60,13 +55,17 @@ class OurMap extends Component {
 var inputs = layerList.getElementsByTagName('input');
         function switchLayer(layer) {
           var layerId = layer.target.id;
-          map.setStyle('mapbox://styles/mapbox/' + layerId);
+          map.setStyle('mapbox://styles/bsoghigian/' + layerId);
           }
            
           for (var i = 0; i < inputs.length; i++) {
           inputs[i].onclick = switchLayer;
           }
-
+          // mapbox://styles/bsoghigian/ck1k7n5b01evx1cpge8vpwyzl
+          // mapbox://styles/bsoghigian/ck1jmw1ch0m1m1cqt8i9a98mw
+          // mapbox://styles/bsoghigian/ck0ajx7nj33rd1cla7ghajroz
+          // mapbox://styles/bsoghigian/ck1jl2tx525oz1cn3bstgci37
+          // mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8
 
         // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
         // document.getElementById('zoomControl').appendChild(zoomControl);
@@ -217,16 +216,16 @@ map.on('load', function () {
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
           <div id='menu'>
-<input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'/>
-<label for='streets'>streets</label>
-<input id='light-v10' type='radio' name='rtoggle' value='light'/>
-<label for='light'>light</label>
-<input id='dark-v10' type='radio' name='rtoggle' value='dark'/>
-<label for='dark'>dark</label>
-<input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'/>
-<label for='outdoors'>outdoors</label>
-<input id='satellite-v9' type='radio' name='rtoggle' value='satellite'/>
-<label for='satellite'>satellite</label>
+<input id='ck0pnu0fmb4i41co6azcmgrn8' type='radio' name='rtoggle' value='streets' checked='checked'/>
+<label for='streets'>Data Overlay</label>
+<input id='ck1k7n5b01evx1cpge8vpwyzl' type='radio' name='rtoggle' value='light'/>
+<label for='light'>Moonlight</label>
+<input id='ck1jl2tx525oz1cn3bstgci37' type='radio' name='rtoggle' value='dark'/>
+<label for='dark'>Mineral</label>
+<input id='ck1jmw1ch0m1m1cqt8i9a98mw' type='radio' name='rtoggle' value='outdoors'/>
+<label for='outdoors'>Blue</label>
+<input id='ck0ajx7nj33rd1cla7ghajroz' type='radio' name='rtoggle' value='satellite'/>
+<label for='satellite'>Decimal</label>
 </div>
          
           <IconButton
@@ -239,7 +238,9 @@ map.on('load', function () {
 />
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
         </div>
-      <img src = {image} id="legend-image" alt="legend for the crime overlay"/>
+        
+      {/* <img src = {image} id="legend-image" alt="legend for the crime overlay"/>*/}
+     
       </div>
     );   
   }
