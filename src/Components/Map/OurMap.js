@@ -158,7 +158,7 @@ class OurMap extends Component {
 
       // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
       map.on("click", "symbols", function(e) {
-        map.flyTo({ center: e.features[0].geometry.coordinates });
+        map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 9 });
         console.log("hello");
       });
 
