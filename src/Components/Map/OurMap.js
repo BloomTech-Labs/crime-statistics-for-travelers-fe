@@ -60,13 +60,17 @@ class OurMap extends Component {
 var inputs = layerList.getElementsByTagName('input');
         function switchLayer(layer) {
           var layerId = layer.target.id;
-          map.setStyle('mapbox://styles/mapbox/' + layerId);
+          map.setStyle('mapbox://styles/bsoghigian/' + layerId);
           }
            
           for (var i = 0; i < inputs.length; i++) {
           inputs[i].onclick = switchLayer;
           }
-
+          // mapbox://styles/bsoghigian/ck1k7n5b01evx1cpge8vpwyzl
+          // mapbox://styles/bsoghigian/ck1jmw1ch0m1m1cqt8i9a98mw
+          // mapbox://styles/bsoghigian/ck0ajx7nj33rd1cla7ghajroz
+          // mapbox://styles/bsoghigian/ck1jl2tx525oz1cn3bstgci37
+          // mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8
 
         // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
         // document.getElementById('zoomControl').appendChild(zoomControl);
@@ -217,16 +221,16 @@ map.on('load', function () {
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
           <div id='menu'>
-<input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'/>
-<label for='streets'>streets</label>
-<input id='light-v10' type='radio' name='rtoggle' value='light'/>
-<label for='light'>light</label>
-<input id='dark-v10' type='radio' name='rtoggle' value='dark'/>
-<label for='dark'>dark</label>
-<input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'/>
-<label for='outdoors'>outdoors</label>
-<input id='satellite-v9' type='radio' name='rtoggle' value='satellite'/>
-<label for='satellite'>satellite</label>
+<input id='ck0pnu0fmb4i41co6azcmgrn8' type='radio' name='rtoggle' value='streets' checked='checked'/>
+<label for='streets'>Data Overlay</label>
+<input id='ck1k7n5b01evx1cpge8vpwyzl' type='radio' name='rtoggle' value='light'/>
+<label for='light'>Moonlight</label>
+<input id='ck1jl2tx525oz1cn3bstgci37' type='radio' name='rtoggle' value='dark'/>
+<label for='dark'>Mineral</label>
+<input id='ck1jmw1ch0m1m1cqt8i9a98mw' type='radio' name='rtoggle' value='outdoors'/>
+<label for='outdoors'>Blue</label>
+<input id='ck0ajx7nj33rd1cla7ghajroz' type='radio' name='rtoggle' value='satellite'/>
+<label for='satellite'>Decimal</label>
 </div>
          
           <IconButton
