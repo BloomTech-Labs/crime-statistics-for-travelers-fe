@@ -54,12 +54,14 @@ class OurMap extends Component {
       });
     };
     //finds users current location
-    // map.addControl(new mapboxgl.GeolocateControl({
-    // positionOptions: {
-    // enableHighAccuracy: true
-    // },
-    // trackUserLocation: true
-    // }));
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    );
 
     //GeoLocation =========================================================================================
     // map.addControl(new MapboxGeocoder({
