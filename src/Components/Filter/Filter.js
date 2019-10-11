@@ -56,11 +56,12 @@ export default function Filter() {
 if(offense === undefined && stateAbbr === undefined){
     return(
     <div>
-        <select id="Offense" onChange={handleOffense} >
-            <optgroup label="Offense" >
+        <select id="Offense" onChange={handleOffense}>
+            <optgroup label="Offense">
 
                 <option>Select Crime</option>
-                <option value="arson" >Arson</option>
+
+                <option value="arson">Arson</option>
                 <option value="rape">Rape</option>
                 <option value="assault">Assault</option>
                 <option value="burglary">Burglary</option>
@@ -70,17 +71,17 @@ if(offense === undefined && stateAbbr === undefined){
                 <option value="larceny">Larceny</option>
                 <option value="homicide">Homicide</option>
                 <option value="property-crime">Property-Crime</option>
+
             </optgroup>
         </select>
+
         <select id="StateAbbr" onChange={handleStateAbbr}>
             <optgroup label="State">
 
                 <option>Select State</option>
 
                 <option value="AL">Alabama</option>
-
                 {/* <option value="AK">Alaska</option> */}
-
                 <option value="AZ">Arizona</option>
                 <option value="AR">Arkansas</option>
                 {/* <option value="CA">California</option> */}
