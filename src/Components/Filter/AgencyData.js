@@ -165,7 +165,7 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
     <div >
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
-                <option value="null">Select Crime</option> 
+                <option>Select Crime</option> 
                 <option value="arson" >Arson</option>
                 <option value="rape">Rape</option>
                 <option value="motor-vehicle-theft">Vehicle Theft</option>
@@ -181,7 +181,7 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
 
         <select id="StateAbbr" onChange={handleStateAbbr}>
             <optgroup label="State">
-                <option value="null">Select State</option>
+                <option>Select State</option>
                 <option value="AL">Alabama</option>
                 {/* <option value="AK">Alaska</option> */}
                 <option value="AZ">Arizona</option>
@@ -237,7 +237,7 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
 
         <select id="since" onChange={handleSince}>
             <optgroup label="Since">
-                <option value="null">Select Start Date</option>
+                <option>Select Start Date</option>
                 <option value="2015">2015</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
@@ -248,7 +248,7 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
 
         <select id="until" onChange={handleUntil}>
             <optgroup label="Until">
-                <option value="null">Select End Date</option>
+                <option>Select End Date</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
