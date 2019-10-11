@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+import { Spinner } from "@chakra-ui/core"
 import axios from 'axios'
 import styled from 'styled-components';
 import './Meta.css'
@@ -49,7 +50,13 @@ export default function UScrime() {
           <Box className="total-crime-stats">
             <Inner>
             <h3>Total Violent Crime rate Within The US</h3>
-             <p>Loading...</p>   
+             <Spinner
+             thickness="4px"
+             speed="0.65s"
+             emptyColor="gray.200"
+             color="blue.500"
+             size="xl"
+           />  
             </Inner>
             </Box>
         )

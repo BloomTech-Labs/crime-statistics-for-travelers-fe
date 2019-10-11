@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
+import Axios from 'axios'
 
 const data = [
   {
@@ -35,6 +36,9 @@ const data = [
 
 export default class Example extends PureComponent {
   static jsfiddleUrl = 'https://jsfiddle.net/alidingling/xqjtetw0/';
+  componentDidMount(){
+    Axios.get("")
+  }
 
   render() {
     return (
