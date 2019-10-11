@@ -77,7 +77,7 @@ var inputs = layerList.getElementsByTagName('input');
               enableHighAccuracy: true
               },
                trackUserLocation: true
-              }));
+              }), "bottom-right");
          
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
