@@ -18,6 +18,7 @@ export default function Filter() {
     const [stateAbbr,setStateAbbr]= useState();
     
     function handleOffense(event) {
+        console.log('offense value', event.target.value)
         setOffense(event.target.value)
         setState(undefined)
     };
@@ -55,7 +56,7 @@ export default function Filter() {
 
 if(offense === undefined && stateAbbr === undefined){
     return(
-    <div>
+    <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
 
@@ -137,7 +138,7 @@ if(offense === undefined && stateAbbr === undefined){
 
 }else if(offense !== undefined  && stateAbbr !== undefined && state === undefined){
     return(
-    <div>
+    <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
 
@@ -231,12 +232,10 @@ if(offense === undefined && stateAbbr === undefined){
 
     return (
 
-    <div >
+    <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
-
                 <option value="null">Select Crime</option>
-
                 <option value="arson" >Arson</option>
                 <option value="rape">Rape</option>
                 <option value="assault">Assault</option>
