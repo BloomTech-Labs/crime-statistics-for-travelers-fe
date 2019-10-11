@@ -25,6 +25,7 @@ const LeftDrawer = () => {
       <Drawer
         isOpen={isOpen}
         size="md"
+        
         zIndex={6}
         placement="left"
         onClose={() => setIsOpen(false)}
@@ -45,7 +46,7 @@ const LeftDrawer = () => {
               <Filter/>
             </TabPanel>
             <TabPanel>
- <AgencyData/>
+              <AgencyData/>
             </TabPanel>
           </TabPanels>
         </Tabs>

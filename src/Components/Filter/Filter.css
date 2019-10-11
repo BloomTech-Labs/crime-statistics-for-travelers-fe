@@ -1,0 +1,10 @@
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group select {
+  height: 2.2rem;
+  border-radius: 7px;
+  margin: 5px 0;
+}
