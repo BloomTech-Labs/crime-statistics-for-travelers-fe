@@ -41,27 +41,27 @@ export default function AgencyData() {
     }
     console.log(offense);
     console.log(stateAbbr);
-useEffect(() => {
-   
-    //https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
-    axios.get(`https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
-    .then((res) => {
-        let data = (res.data.results);
-        let actual = 0;
-        data.forEach((x => {
-            actual += x.actual
-        }))
-    const render = () => {
-        return <PrettyDiv><p>{offense+" occured "+actual+" times within selected timeframe"}</p></PrettyDiv>
-    }
-    setState(render)
-    }).catch((err) => {
-        console.error(err)
-    })
+    useEffect(() => {
+    
+        //https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
+        axios.get(`https://api.usa.gov/crime/fbi/sapi/api/summarized/state/${stateAbbr}/${offense}/${since}/${until}?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv`)
+        .then((res) => {
+            let data = (res.data.results);
+            let actual = 0;
+            data.forEach((x => {
+                actual += x.actual
+            }))
+        const render = () => {
+            return <PrettyDiv><p>{offense+" occured "+actual+" times within selected timeframe"}</p></PrettyDiv>
+        }
+        setState(render)
+        }).catch((err) => {
+            console.error(err)
+        })
 
 
-// console.log("state",state)
-    },[offense,stateAbbr,until,since])
+    // console.log("state",state)
+        },[offense,stateAbbr,until,since])
 
 if(offense === undefined && stateAbbr === undefined && until === undefined && since === undefined){
     return(

@@ -23,8 +23,8 @@ export default function Filter() {
     };
     
     function handleStateAbbr(event) {
-      setStateAbbr(event.target.value)
-      setState(undefined)
+        setStateAbbr(event.target.value)
+        setState(undefined)
     };
     console.log(offense);
     console.log(stateAbbr);
