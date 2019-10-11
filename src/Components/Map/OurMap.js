@@ -2,16 +2,11 @@ import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl';
 import './Map.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
-// import {FaDice} from "react-icons/fa";
+import {FaDice} from "react-icons/fa";
 import {IconButton} from '@chakra-ui/core'
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
-// import About from '../About/About';
-import image from './legend.png';
-import MediaQuery from 'react-responsive'
-
-
-
+import image from "./legend.png";
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
@@ -51,19 +46,40 @@ class OurMap extends Component {
         this.handleClick = () => {
           map.flyTo({
             center: [
-            -74.50 + (Math.random() - 0.5) * 10,
+            -96 + (Math.random() - 0.5) * 10,
             40 + (Math.random() - 0.5) * 10],
             zoom: 9
           });
         }
+        //URL SWAPPER FUNCTIONS====================================================================
+   var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+        function switchLayer(layer) {
+          var layerId = layer.target.id;
+          map.setStyle('mapbox://styles/bsoghigian/' + layerId);
+          }
+           
+          for (var i = 0; i < inputs.length; i++) {
+          inputs[i].onclick = switchLayer;
+          }
+          // mapbox://styles/bsoghigian/ck1k7n5b01evx1cpge8vpwyzl
+          // mapbox://styles/bsoghigian/ck1jmw1ch0m1m1cqt8i9a98mw
+          // mapbox://styles/bsoghigian/ck0ajx7nj33rd1cla7ghajroz
+          // mapbox://styles/bsoghigian/ck1jl2tx525oz1cn3bstgci37
+          // mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8
+
+        // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
+        // document.getElementById('zoomControl').appendChild(zoomControl);
+        
              //finds users current location
-              // map.addControl(new mapboxgl.GeolocateControl({
-              // positionOptions: {
-              // enableHighAccuracy: true
-              // },
-              // trackUserLocation: true
-              // }));
-    
+          let current = new mapboxgl.GeolocateControl({
+            positionOptions: {
+            enableHighAccuracy: true
+            },
+             trackUserLocation: true
+            })
+          map.addControl(current, 'bottom-right');
+         
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
         //     accessToken: mapboxgl.accessToken,//Passes in public token to authorize geolocation
@@ -92,25 +108,7 @@ class OurMap extends Component {
       });
 
 
-      // map.on('load', function() {
-      //   var layers = ['0-10', '10-50', '50-100', '100-250', '250-499', '499-1000'];
-      //   var colors = ['#d5f26d','#a7bf50','#738c3f','#495931','2c4b0c','#0c0c0c'];
-      //   // the rest of the code will go in here
-      //   for (let i = 0; i < layers.length; i++) {
-      //     var layer = layers[i];
-      //     var color = colors[i];
-      //     var item = document.createElement('div');
-      //     var key = document.createElement('span');
-      //     key.className = 'legend-key';
-      //     key.style.backgroundColor = color;
-        
-      //     var value = document.createElement('span');
-      //     value.innerHTML = layer;
-      //     item.appendChild(key);
-      //     item.appendChild(value);
-      //     // legend.appendChild(item);
-      //   }
-      // });
+
 //=======================================================================================================
 //Adding Icons to Popular Hotspots
 map.on('load', function () {
@@ -182,9 +180,9 @@ map.on('load', function () {
   //===========================================================================================================
 
 
-        // // Add zoom and rotation controls to the map.
+        // Add zoom and rotation controls to the map.
         // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
-        // document.getElementById('zoomControl').appendChild(zoomControl);
+        // // document.getElementById('zoomControl').appendChild(zoomControl);
         
 
 
@@ -212,24 +210,41 @@ map.on('load', function () {
         <div className="right-drawer">
           <RightDrawer />
         </div> 
+        {/* <div className="bottom-drawer">
+          <BottomDrawer/>
+        </div> */}
         <div ref={el => this.mapContainer = el}
           id="map" className='map'/>
           <div id='geocoder' className='geocoder'></div>
           <div id='zoomControl' className='zoomControl'></div>
+          <div id='menu'>
+<input id='ck0pnu0fmb4i41co6azcmgrn8' type='radio' name='rtoggle' value='streets' checked='checked'/>
+<label for='streets'>Data Overlay</label>
+<input id='ck1k7n5b01evx1cpge8vpwyzl' type='radio' name='rtoggle' value='light'/>
+<label for='light'>Moonlight</label>
+<input id='ck1jl2tx525oz1cn3bstgci37' type='radio' name='rtoggle' value='dark'/>
+<label for='dark'>Mineral</label>
+<input id='ck1jmw1ch0m1m1cqt8i9a98mw' type='radio' name='rtoggle' value='outdoors'/>
+<label for='outdoors'>Blue</label>
+<input id='ck0ajx7nj33rd1cla7ghajroz' type='radio' name='rtoggle' value='satellite'/>
+<label for='satellite'>Decimal</label>
+</div>
          
           <IconButton
           onClick={this.handleClick}
-
-  variant="solid"
-  variantColor="blue"
-  aria-label="Call Sage"
-  fontSize="20px"
-  // icon={FaDice}
+          variant="solid"
+          variantColor="blue"
+          aria-label="Call Sage"
+          fontSize="20px"
+          icon={FaDice}
 />
-
+<img src={image} id="legend-image" alt="legend for the crime overlay" />
+     
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
         </div>
-      <img src = {image} id="legend-image" alt="legend for the crime overlay"/>
+        
+      {/* <img src = {image} id="legend-image" alt="legend for the crime overlay"/>*/}
+     
       </div>
     );   
   }
