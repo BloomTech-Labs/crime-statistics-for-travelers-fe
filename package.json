@@ -31,7 +31,6 @@
     "react-mapbox-gl-geocoder": "^1.0.3",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
-    "react-test-renderer": "^16.9.0",
     "rechart": "0.0.1",
     "recharts": "^1.7.1",
     "styled-components": "^4.3.2",
@@ -61,6 +60,21 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^8.1.0"
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "dotenv": "^8.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jest-cli": "^24.9.0",
+    "react-test-renderer": "^16.10.2"
+  },
+  "jest" : {
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/react-runtime"
+    ]
   }
 }
