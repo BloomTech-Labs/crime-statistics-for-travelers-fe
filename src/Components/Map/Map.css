@@ -37,7 +37,7 @@ p {
 
 .geocoder {
   position:absolute;
-  z-index:1;
+  z-index:100;
  left:1%;
 margin-top:-110px;
 
@@ -155,7 +155,8 @@ height: 150px;
   color: black
 }
 .left-drawer div button{
-  z-index:6;
+  z-index:1;
+
 }
 .bottom-drawer div button{
   z-index:6;

@@ -43,6 +43,7 @@
     "build": "react-scripts build",
     "test": "jest --config ./jest.config.json",
     "eject": "react-scripts eject",
+    "storybook": "start-storybook",
     "test:watch": "npm run test -- --watch"
   },
   "eslintConfig": {
