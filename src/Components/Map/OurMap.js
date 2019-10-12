@@ -6,6 +6,7 @@ import {FaDice} from "react-icons/fa";
 import {IconButton} from '@chakra-ui/core'
 import RightDrawer from '../Drawers/RightDrawer'
 import LeftDrawer from '../Drawers/LeftDrawer'
+import image from "./legend.png";
 // import 'mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
@@ -236,6 +237,8 @@ map.on('load', function () {
           fontSize="20px"
           icon={FaDice}
 />
+<img src={image} id="legend-image" alt="legend for the crime overlay" />
+     
         <div className='map-overlay' id='features'><h2>State Crime Data</h2><div id='pd'><p>Hover over a state!</p></div>
         </div>
         

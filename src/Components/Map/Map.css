@@ -3,14 +3,14 @@
   }
 
   .mapboxgl-canvas {
-    position:absolute;
-     top:0;
+    position:absolute; 
+     /* top:0; */
       bottom:-60px;
-       width:100%;
+      width:100%;
     
-   top:-60px;
-    /* position: fixed !important; */
-     height: 100% !important;
+   /* top:-60px; */
+    position: fixed !important; 
+    height: 100% !important;
   }
   .map-overlay h2{
     color:white;
