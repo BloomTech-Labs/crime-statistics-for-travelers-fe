@@ -72,12 +72,13 @@ var inputs = layerList.getElementsByTagName('input');
         // document.getElementById('zoomControl').appendChild(zoomControl);
         
              //finds users current location
-          map.addControl(new mapboxgl.GeolocateControl({
-              positionOptions: {
-              enableHighAccuracy: true
-              },
-               trackUserLocation: true
-              }));
+          let current = new mapboxgl.GeolocateControl({
+            positionOptions: {
+            enableHighAccuracy: true
+            },
+             trackUserLocation: true
+            })
+          map.addControl(current, 'bottom-right');
          
         //GeoLocation =========================================================================================
         // map.addControl(new MapboxGeocoder({
@@ -202,7 +203,7 @@ map.on('load', function () {
         // const { lng, lat, zoom } = this.state;//Deconstucting your state object.
     
     return (
-      <div>
+      <div>         
         <div className="left-drawer">
           <LeftDrawer />
         </div>    
