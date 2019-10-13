@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test for Signup page 1`] = `
+<div
+  className="col-container"
+>
+  <div
+    className="col1"
+  >
+    <div
+      className="heading-container"
+    >
+      <h1
+        className="css-1kdk8in"
+      >
+        Where to next?
+      </h1>
+      <strong>
+        <p>
+          Welcome Back!
+        </p>
+        <p>
+          Please sign in 
+        </p>
+        <p>
+          with your info.
+        </p>
+      </strong>
+      <a
+        href="/login"
+        onClick={[Function]}
+      >
+        <button
+          className="css-3n2czx"
+        >
+          Sign In
+        </button>
+      </a>
+    </div>
+  </div>
+  <div
+    className="col2"
+  >
+    <div
+      className="form-container css-192m1qh"
+    >
+      <h1
+        className="heading"
+      >
+        Create an account.
+      </h1>
+      <div
+        className="auth-links"
+      >
+        <div
+          className="auth-link"
+        >
+          <img
+            alt="google auth0 button"
+            src="btn_google_signin_light_normal_web.png"
+          />
+        </div>
+        <div
+          className="auth-link"
+        >
+          <img
+            alt="facebook auth0 button"
+            src="login-facebook.png"
+          />
+        </div>
+      </div>
+      <form
+        className="signup-form"
+        onSubmit={[Function]}
+      >
+        <input
+          className="form-input"
+          name="username"
+          onChange={[Function]}
+          placeholder="Username"
+          value=""
+        />
+        <input
+          className="form-input"
+          name="email"
+          onChange={[Function]}
+          placeholder="Email"
+          value=""
+        />
+        <input
+          className="form-input"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+        />
+        <button
+          className="css-17ddmg5"
+          onClick={[Function]}
+          type="button"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
