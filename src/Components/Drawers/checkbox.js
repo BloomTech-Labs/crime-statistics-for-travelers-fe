@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Checkbox} from '@chakra-ui/core'
 export const CheckBox = props => {
     console.log(props.handleChecks);
     return (

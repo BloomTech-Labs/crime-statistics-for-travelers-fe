@@ -1,14 +1,17 @@
 import React, {useState} from 'react';
 import CheckBox from "./checkbox";
+import './Drawer.css'
 
 
 export default function FilterList() {
 
-    const [filter, setFilter] = useState([{id:1, value: "Rape", isChecked: false},
+    const [filter, setFilter] = useState([
+    {id:1, value: "Rape", isChecked: false},
     {id:2, value: "Assault", isChecked: false},
     {id:3, value: "Burglary", isChecked: false},
     {id:4, value: "Arson", isChecked: false},
-    {id:5, value: "Robbery", isChecked: false}])
+    {id:5, value: "Robbery", isChecked: false}
+    ])
 
     const handleAllChecks = event => {
         const newFilter = filter.map(({ id, value, isChecked }) => ({
@@ -38,8 +41,8 @@ export default function FilterList() {
 
     
     return (
-        <div>
-            <input type="checkbox" onClick={handleAllChecks} value="checkedall" /> Check / Uncheck All
+        <div className="crime-filter-checkboxes">
+            <input type="checkbox"  className="check-all" onClick={handleAllChecks} placeholder="Check / Uncheck All" value="checkedall" /> Check / Uncheck All
             <ul>
                 {
                     filter.map(currentFilter => {

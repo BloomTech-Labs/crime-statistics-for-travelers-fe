@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react'
 import { Spinner } from "@chakra-ui/core"
 import axios from 'axios';
 import styled from 'styled-components';
+import './Filter.css'
 
 const PrettyDiv = styled.div`
     border: 1px solid lightgrey;
@@ -65,7 +66,7 @@ export default function AgencyData() {
 
 if(offense === undefined && stateAbbr === undefined && until === undefined && since === undefined){
     return(
-    <div >
+    <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
 
@@ -173,7 +174,7 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
             )
 }else if(offense !== undefined  && stateAbbr !== undefined && until !== undefined && since !== undefined && state === undefined){
     return(
-    <div >
+    <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
 
@@ -293,7 +294,7 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
 
 }else{
     return (
-    <div >
+    <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
 
