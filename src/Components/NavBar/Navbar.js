@@ -12,7 +12,7 @@ justify-content:flex-end;
 z-index:4;
 align-items:center;
 
-  height: 58px;
+  height: 60px;
   width: 100%;
   background-image:linear-gradient(45deg, rgb(11, 45, 126) 0%, rgb(11, 45, 126) 44%,rgb(21, 87, 153) 44%, rgb(21, 87, 153) 45%,rgb(30, 129, 181) 45%, rgb(30, 129, 181) 61%,rgb(40, 170, 208) 61%, rgb(40, 170, 208) 67%,rgb(49, 212, 235) 67%, rgb(49, 212, 235) 100%);
   @media(max-width:500px){
