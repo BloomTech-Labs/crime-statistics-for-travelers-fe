@@ -42,7 +42,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --config ./jest.config.json",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook",
     "test:watch": "npm run test -- --watch"
@@ -66,6 +66,8 @@
     "@babel/core": "^7.6.4",
     "@storybook/react": "^5.2.3",
     "babel-loader": "^8.0.6",
-    "dotenv": "^8.1.0"
+    "dotenv": "^8.1.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1"
   }
 }
