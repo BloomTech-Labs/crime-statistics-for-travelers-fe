@@ -6,13 +6,19 @@ import Login from './Components/Login/Login';
 import Demographics from "./Components/Demographics/Demographics";
 import Navbar from './Components/NavBar/Navbar'
 import Contact from './Components/Contact/Contact';
-import { ThemeProvider } from "@chakra-ui/core";
+import { ThemeProvider, ColorModeProvider, useColorMode, Button } from "@chakra-ui/core";
 import OurMap from './Components/Map/OurMap';
 import './App.css'
 import AgencyData from '../src/Components/Filter/AgencyData'
-export default function App() {
-//Styles
 
+
+
+
+
+export default function App() {
+//Dark Mode hook from Chakra
+const {colorMode, toggleColorMode } = useColorMode()
+console.log(toggleColorMode)
 //Gets Token from local storage.
 const [token,setToken] = useState(false);
 useEffect(() => {
@@ -24,20 +30,25 @@ useEffect(() => {
 //Return===========================================================
   return ( 
     <ThemeProvider>
-      <TokenContext.Provider value={{token, setToken}}>
-        <Navbar/>
-        <Switch>  
-          <Route exact path="/" component={OurMap}/>
-          {/* <Route exact path="/about" component={About}/> */}
-          <Route exact path="/login"  component={Login}/>
-          {/* <Route exact path="/Dashboard" component={MainDashboard}/> */}
-          <Route exact path="/signup" component={Signup}/>
-          {/* <Route exact path="/about" component={About}/> */}
-          <Route exact path="/contact" component={Contact}/>
-          <Route path="/demo" component={Demographics}/>
-          <Route exact path="/test" component={AgencyData}/>
-        </Switch>
-      </TokenContext.Provider>
+      <ColorModeProvider>
+        <TokenContext.Provider value={{token, setToken}}>
+          <Navbar/>
+          <Switch>  
+            <Route exact path="/" component={OurMap}/>
+            {/* <Route exact path="/about" component={About}/> */}
+            <Route exact path="/login"  component={Login}/>
+            {/* <Route exact path="/Dashboard" component={MainDashboard}/> */}
+            <Route exact path="/signup" component={Signup}/>
+            {/* <Route exact path="/about" component={About}/> */}
+            <Route exact path="/contact" component={Contact}/>
+            <Route path="/demo" component={Demographics}/>
+            <Route exact path="/test" component={AgencyData}/>
+          </Switch>
+          <Button classname="toggle-dark-mode" onClick={console.log('clicked!'), toggleColorMode}>
+            Toggle {colorMode === "light" ? "Dark" : "Light"}
+          </Button>
+        </TokenContext.Provider>
+      </ColorModeProvider>
     </ThemeProvider>
   )
 }
