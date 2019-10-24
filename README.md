@@ -10,7 +10,6 @@
 
 ## 4️⃣ Contributors
 
-Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
 
 ## Contributors
@@ -81,6 +80,8 @@ Amazing Api for security and easy authentication for the use. It allows for a se
 -Powerful map framework used for visualizing our wonderful planet.
 
 With Mapbox you have the power to travese the world at your finger tips. And with the mapbox geocoder api you can search locations limit searched locations and do much more. We chose mapbox over googlemaps due to its insane custom features.
+
+We Chose to use Mapbox-gl-js over React-Map-GL and Google Maps due to its insane range of functionality
 
 ## FBI Crime Data Explorer
 
