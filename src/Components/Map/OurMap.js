@@ -74,15 +74,8 @@ class OurMap extends Component {
     for (var i = 0; i < inputs.length; i++) {
       inputs[i].onclick = switchLayer;
     }
-    // mapbox://styles/bsoghigian/ck1k7n5b01evx1cpge8vpwyzl
-    // mapbox://styles/bsoghigian/ck1jmw1ch0m1m1cqt8i9a98mw
-    // mapbox://styles/bsoghigian/ck0ajx7nj33rd1cla7ghajroz
-    // mapbox://styles/bsoghigian/ck1jl2tx525oz1cn3bstgci37
-    // mapbox://styles/bsoghigian/ck0pnu0fmb4i41co6azcmgrn8
-
-    // const zoomControl = map.addControl(new mapboxgl.NavigationControl(), "top-left");
-    // document.getElementById('zoomControl').appendChild(zoomControl);
-
+  
+ 
     //finds users current location
     map.addControl(
       new mapboxgl.GeolocateControl({
@@ -104,7 +97,7 @@ class OurMap extends Component {
             );
             map.flyTo({
               center: [position.coords.longitude, position.coords.latitude],
-              zoom: 9
+              zoom: 16
             });
           });
         } else {
