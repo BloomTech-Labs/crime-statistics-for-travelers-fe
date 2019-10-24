@@ -69,8 +69,10 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
     <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
+
                 <option>Select Crime</option>
-                <option value="arson" >Arson</option>
+                
+                <option value="arson">Arson</option>
                 <option value="rape">Rape</option>
                 <option value="motor-vehicle-theft">Vehicle Theft</option>
                 <option value="burglary">Burglary</option>
@@ -80,12 +82,15 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
                 <option value="larceny">Larceny</option>
                 <option value="homicide">Homicide</option>
                 <option value="property-crime">Property-Crime</option>
+
             </optgroup>
         </select>
 
         <select id="StateAbbr" onChange={handleStateAbbr}>
             <optgroup label="State">
+
                 <option>Select State</option>
+
                 <option value="AL">Alabama</option>
                 {/* <option value="AK">Alaska</option> */}
                 <option value="AZ">Arizona</option>
@@ -142,21 +147,27 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
 
         <select id="since" onChange={handleSince}>
             <optgroup label="Since">
+
                 <option>Select Start Date</option>
+
                 <option value="2015">2015</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
+
             </optgroup>
         </select>
 
 
         <select id="until" onChange={handleUntil}>
             <optgroup label="Until">
+
                 <option>Select End Date</option>
+
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
+
             </optgroup>
         </select>
     </div>
@@ -166,7 +177,9 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
     <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
+
                 <option>Select Crime</option> 
+
                 <option value="arson" >Arson</option>
                 <option value="rape">Rape</option>
                 <option value="motor-vehicle-theft">Vehicle Theft</option>
@@ -177,12 +190,15 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
                 <option value="larceny">Larceny</option>
                 <option value="homicide">Homicide</option>
                 <option value="property-crime">Property-Crime</option>
+
             </optgroup>
         </select>
 
         <select id="StateAbbr" onChange={handleStateAbbr}>
             <optgroup label="State">
+
                 <option>Select State</option>
+
                 <option value="AL">Alabama</option>
                 {/* <option value="AK">Alaska</option> */}
                 <option value="AZ">Arizona</option>
@@ -233,28 +249,36 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
                 <option value="WV">West Virginia</option>
                 <option value="WI">Wisconsin</option>
                 {/* <option value="WY">Wyoming</option> */}
+
             </optgroup>
         </select>
 
         <select id="since" onChange={handleSince}>
             <optgroup label="Since">
+
                 <option>Select Start Date</option>
+
                 <option value="2015">2015</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
+
             </optgroup>
         </select>
 
 
         <select id="until" onChange={handleUntil}>
             <optgroup label="Until">
+
                 <option>Select End Date</option>
+
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
+
             </optgroup>
         </select>
+
         <div>
             <Spinner
             thickness="4px"
@@ -264,6 +288,7 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
             size="xl"
             />
         </div>
+
     </div>
     )
 
@@ -272,7 +297,9 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
     <div className="filter-group">
         <select id="Offense" onChange={handleOffense} >
             <optgroup label="Offense" >
+
                 <option>Select Crime</option>
+
                 <option value="arson" >Arson</option>
                 <option value="rape">Rape</option>
                 <option value="motor-vehicle-theft">Vehicle Theft</option>
@@ -283,12 +310,15 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
                 <option value="larceny">Larceny</option>
                 <option value="homicide">Homicide</option>
                 <option value="property-crime">Property-Crime</option>
+
             </optgroup>
         </select>
 
         <select id="StateAbbr" onChange={handleStateAbbr}>
             <optgroup label="State">
+
                 <option>Select State</option>
+
                 <option value="AL">Alabama</option>
                 {/* <option value="AK">Alaska</option> */}
                 <option value="AZ">Arizona</option>
@@ -345,21 +375,27 @@ if(offense === undefined && stateAbbr === undefined && until === undefined && si
 
         <select id="since" onChange={handleSince}>
             <optgroup label="Since">
+
                 <option>Select Start Date</option>
+
                 <option value="2015">2015</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
+
             </optgroup>
         </select>
 
 
         <select id="until" onChange={handleUntil}>
             <optgroup label="Until">
+
                 <option>Select End Date</option>
+
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
+                
             </optgroup>
         </select>
 
