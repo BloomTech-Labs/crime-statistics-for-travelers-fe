@@ -6,7 +6,7 @@
 
 #  Crime Statistics For Travelers
 
-1️⃣ You can find the deployed project[Here](https://crime-statistics-master.netlify.com/).
+1️⃣ You can find the deployed project [Here](https://crimestatsfortravelers.com/).
 
 ## 4️⃣ Contributors
 
@@ -14,7 +14,7 @@ Add contributor info below, make sure add images and edit the social links for e
 
 
 ## Contributors
-|                                       [Bryce A. Soghigian](https://github.com/Bryce-Soghigian)                                        |                                       [Jacob Tharp](https://github.com/jengopockets)                                        |                                       [Tigran Sargsyan](https://github.com/umbur)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
+|                                       [Bryce A. Soghigian](https://github.com/Bryce-Soghigian)                                        |                                       [Jacob Tharp](https://github.com/jengopockets)                                        |                                       [Tigran Sargsyan](https://github.com/umbur)                                        |                                       [Scott Prins](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                      [<img src="https://raw.githubusercontent.com/Lambda-School-Labs/crime-statistics-for-travelers-fe/master/ReadmeAssets/Bryce.jpg" width = "200" />](https://github.com/Bryce-Soghigian)                       |                      [<img src="https://pbs.twimg.com/profile_images/1131617955282866176/MsKS-5vG_400x400.jpg" width = "200" />](https://github.com/jengopockets)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/jengopockets)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/umbur)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
@@ -29,7 +29,6 @@ Add contributor info below, make sure add images and edit the social links for e
 ## Project Overview
 
  [Trello Board](https://trello.com/b/d9Ut99fr/labs-16-crime-statistics-for-travelers)
-<img src="https://raw.githubusercontent.com/Lambda-School-Labs/crime-statistics-for-travelers-fe/bryce/ReadmeAssets/trelloBoardForCrimeStatsReadme.png" width="250"/>
  [Product Canvas](https://www.notion.so/Crime-Statistics-for-Travelers-a7e69847024d4cdc85aaf85cb413df71)
  [UX Design files](https://www.figma.com/file/HjoxfuYoel2otaeDTOPP8F/Labs16_LambdaCrime-Stats-for-Travelers) 
 
