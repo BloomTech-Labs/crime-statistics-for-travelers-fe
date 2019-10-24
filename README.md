@@ -28,9 +28,9 @@
 
 ## Project Overview
 
- [Trello Board](https://trello.com/b/d9Ut99fr/labs-16-crime-statistics-for-travelers)
- [Product Canvas](https://www.notion.so/Crime-Statistics-for-Travelers-a7e69847024d4cdc85aaf85cb413df71)
- [UX Design files](https://www.figma.com/file/HjoxfuYoel2otaeDTOPP8F/Labs16_LambdaCrime-Stats-for-Travelers) 
+ [Trello Board](https://trello.com/b/d9Ut99fr/labs-16-crime-statistics-for-travelers)</br>
+ [Product Canvas](https://www.notion.so/Crime-Statistics-for-Travelers-a7e69847024d4cdc85aaf85cb413df71)</br>
+ [UX Design files](https://www.figma.com/file/HjoxfuYoel2otaeDTOPP8F/Labs16_LambdaCrime-Stats-for-Travelers) </br>
 
 The goal of this project is to make the world a safer place
 
