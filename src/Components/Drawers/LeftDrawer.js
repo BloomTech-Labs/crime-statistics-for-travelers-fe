@@ -36,7 +36,7 @@ const LeftDrawer = () => {
           <TabList mb="1em">
             <Tab>Checkboxes</Tab>
             <Tab>Offense Filter</Tab>
-            <Tab>Time Filter</Tab>
+            <Tab>Reported Data</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
