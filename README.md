@@ -57,8 +57,7 @@ Through our application we bring awareness to current safety issues in the unite
 That allows us to see a video replay of our application.
 
 #### Google Analytics
--      We used google analytics to monitor general user data, such as bounce rate, time spent on our platform, Daily Active Users, 
-Basically it gives you general data on the users of an application.
+-   We used google analytics to monitor general user data, such as bounce rate, time spent on our platform, Daily Active Users,Basically it gives you general data on the users of an application.
 
 #### Sentry 
 -   We set up sentry to monitor and recieve real time bugs that exist within our application. Whenever there is an error anywhere in our application we get a notfication in our Slack.
