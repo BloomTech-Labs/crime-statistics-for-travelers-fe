@@ -7,6 +7,9 @@ body::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     
 }
+p{
+  color:black;
+}
  
 body::vertical::-webkit-scrollbar-thumb {
   background-image: linear-gradient(45deg, rgb(51, 138, 249),rgb(47, 248, 255));
