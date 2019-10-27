@@ -47,6 +47,13 @@ if(update==="string"){
                     // equivilent of submitHandler
                     onSubmit={(values, actions) => {
                         setUpdate("updated");
+                        Swal.fire({
+                            position: 'center',
+                            type: 'success',
+                            title: 'Fetching Your Crime Statistics',
+                            showConfirmButton: false,
+                            timer: 2500
+                          })
                         setTimeout(() => {
                             // alert(JSON.stringify(values, null, 2));
                             actions.setSubmitting(false);
@@ -59,7 +66,9 @@ if(update==="string"){
                                 // setUpdate("updated")
                             })
                             .catch(err => console.log(err.response));
-                    }}
+                    }
+
+                }
                     render={(props) => (
                         
                         <Form onSubmit={props.handleSubmit}>
