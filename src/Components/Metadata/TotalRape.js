@@ -5,16 +5,12 @@ import './Meta.css'
 
 const Box =styled.div`
 
-${'' /* background:#A5D2FF;
-border-left: 6px solid darkblue;
-color:darkblue;
-border-bottom-left-radius:25%; */}
+
 `
 const Inner = styled.div`
 display:flex;
 flex-direction:column;
-${'' /* justify-content:center;
-align-items:center; */}
+
 `
 
 export default function TotalRape() {
