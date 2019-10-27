@@ -1,10 +1,13 @@
-import React from 'react';
+import React,{useGlobal} from 'reactn';
 import { Form, Field, Formik } from "formik";
 import {Button} from "@chakra-ui/core"
 import * as Yup from "yup";
 import styled from "styled-components";
 import axiosWithAuth from '../../Utillities/axioswithauth';
+import Trends from '../Trends/Trends';
 import './Demo.css'
+import { useState } from 'react';
+import Swal from 'sweetalert2'
 
 const Container = styled.div`
 display:flex;
@@ -21,7 +24,8 @@ margin-bottom:20px;
 
 const Demogrphics= props => {
     // const [update, setUpdate]= useState(undefined);
-
+    const [update,setUpdate]=useState("string");
+if(update==="string"){
     return(
 
 
@@ -42,7 +46,14 @@ const Demogrphics= props => {
                     })}
                     // equivilent of submitHandler
                     onSubmit={(values, actions) => {
-
+                        setUpdate("updated");
+                        Swal.fire({
+                            position: 'center',
+                            type: 'success',
+                            title: 'Fetching Your Crime Statistics',
+                            showConfirmButton: false,
+                            timer: 2500
+                          })
                         setTimeout(() => {
                             // alert(JSON.stringify(values, null, 2));
                             actions.setSubmitting(false);
@@ -55,7 +66,9 @@ const Demogrphics= props => {
                                 // setUpdate("updated")
                             })
                             .catch(err => console.log(err.response));
-                    }}
+                    }
+
+                }
                     render={(props) => (
                         
                         <Form onSubmit={props.handleSubmit}>
@@ -108,6 +121,14 @@ const Demogrphics= props => {
             </div>
     
     )
+         }else{
+             return(
+                 <div>
+                     <Trends/>
+                 </div>
+             )
+         }
+                
 }
 
 
