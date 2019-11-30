@@ -34,14 +34,14 @@ const LeftDrawer = () => {
         <DrawerBody>
         <Tabs isFitted variant="enclosed">
           <TabList mb="1em">
-            <Tab>Checkboxes</Tab>
+            
             <Tab>Offense Filter</Tab>
             <Tab>Reported Data</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel>
+            {/* <TabPanel>
               <FilterList/>
-            </TabPanel>
+            </TabPanel> */}
             <TabPanel>
               <Filter/>
             </TabPanel>
