@@ -12,7 +12,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@mapbox/mapbox-gl-geocoder": "^4.4.1",
     "@sentry/browser": "^5.6.3",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "chakra-ui": "^0.3.9",
     "chartjs": "^0.3.24",
     "emotion-theming": "^10.0.19",
