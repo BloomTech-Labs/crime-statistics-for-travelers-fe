@@ -20,9 +20,9 @@ const RightDrawer = () => {
   return (
     <div className="right-drawer-content">
       <>
-      <IconButton variantColor="blue" icon="check" onClick={() => setIsOpen(true)}>
+      {/* <IconButton variantColor="blue" icon="check" onClick={() => setIsOpen(true)}>
         Analytics
-      </IconButton>
+      </IconButton> */}
       <Drawer
         isOpen={isOpen}
         size="md"
